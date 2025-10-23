@@ -1,117 +1,150 @@
-/* FAQ & CTA alignment improvements
-   - Desktop: centraliza a grade de dúvidas e alinha o conteúdo ao centro
-   - Mobile: reduz espaçamentos, encolhe cards, empilha em 1 coluna e harmoniza visual com a CTA final
-   Adicione este bloco ao final do styles.css (ou mescle onde preferir). */
- 
-/* Desktop: centralizar seção de FAQ */
+/* ===============================
+   FAQ & CTA RESPONSIVE IMPROVEMENTS
+   =============================== */
+
+/* Desktop (≥961px): Centraliza grade e mantém estrutura limpa */
 @media (min-width: 961px) {
-  /* limita largura das colunas e centraliza a grade inteira */
   #li-root .li-faq {
     justify-content: center !important;
-    grid-template-columns: repeat(2, minmax(0, 540px)) !important; /* duas colunas centradas com max-width */
-    gap: 20px !important;
+    grid-template-columns: repeat(2, minmax(0, 540px)) !important;
+    gap: 24px !important;
+    margin: 0 auto;
   }
 
-  /* cards centralizados visualmente */
   #li-root .li-q {
     max-width: 540px;
     margin: 0 auto;
-    text-align: center;       /* alinha o conteúdo do card centralizado no desktop */
+    text-align: center;
     padding: 20px !important;
   }
 
-  /* título da seção centralizado */
   #li-root .li-section-title {
     text-align: center;
   }
 }
 
-/* Tablet / small desktop fallback */
+/* Tablet (769px–960px): layout intermediário */
 @media (max-width: 960px) and (min-width: 769px) {
   #li-root .li-faq {
     grid-template-columns: 1fr 1fr !important;
     justify-content: center !important;
-    gap: 16px !important;
+    gap: 18px !important;
   }
+
   #li-root .li-q {
-    max-width: 520px;
+    max-width: 500px;
     margin: 0 auto;
     text-align: center;
     padding: 18px !important;
   }
-  #li-root .li-section-title { text-align: center; }
+
+  #li-root .li-section-title {
+    text-align: center;
+  }
 }
 
-/* Mobile: reduzir e harmonizar FAQ, aproximar da CTA final */
+/* Mobile (≤768px): foco na leitura e espaçamento natural */
 @media (max-width: 768px) {
-  /* empilha em 1 coluna, remove espaçamentos desnecessários */
+  /* FAQ */
   #li-root .li-faq {
+    display: grid;
     grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    padding: 0 6px !important;
-    justify-items: center; /* centraliza os cards dentro da coluna */
+    gap: 14px !important;
+    padding: 0 12px !important;
+    justify-items: center;
   }
 
-  /* cards menores, menos padding, bordas e texto centralizados */
   #li-root .li-q {
     width: 100% !important;
     max-width: 640px;
     margin: 0 auto;
-    padding: 12px 14px !important;
+    padding: 14px 16px !important;
     border-radius: 12px !important;
     text-align: center !important;
-    line-height: 1.45;
+    line-height: 1.5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
 
-  /* reduzir padding vertical da seção para aproximar da CTA */
   #li-root .li-section {
-    padding-top: 28px !important;
-    padding-bottom: 12px !important;
+    padding-top: 32px !important;
+    padding-bottom: 16px !important;
   }
 
-  /* título da seção menor e centralizado */
   #li-root .li-section-title {
-    font-size: clamp(1.05rem, 4.2vw, 1.25rem) !important;
-    margin-bottom: 8px !important;
+    font-size: clamp(1.05rem, 4vw, 1.3rem) !important;
+    margin-bottom: 10px !important;
     text-align: center;
   }
 
-  /* CTA final: centralizar e diminuir espaçamento acima para harmonizar com FAQ */
+  /* CTA */
   #li-root .li-cta-bar {
-    padding-top: 18px !important;
-    padding-bottom: 26px !important;
+    padding-top: 22px !important;
+    padding-bottom: 30px !important;
   }
+
   #li-root .li-cta-bar .li-container {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 0 8px !important;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 10px !important;
+    text-align: center;
   }
+
   #li-root .li-cta-bar .li-btn {
     width: 100% !important;
     max-width: 420px !important;
     margin: 0 auto !important;
+    font-size: 1rem !important;
+    border-radius: 9999px !important;
   }
 
-  /* reduz altura das hero/entre-seções no mobile */
-  #li-root .li-hero { padding-bottom: 40px !important; }
+  #li-root .li-hero {
+    padding-bottom: 40px !important;
+  }
 }
 
-/* Extra small screens (ex: 390px iPhone) - ajustes finos */
+/* Extra Small (≤420px): otimização para iPhone / Android compactos */
 @media (max-width: 420px) {
-  #li-root .li-faq { gap: 10px !important; padding: 0 8px !important; }
-  #li-root .li-q { padding: 10px 12px !important; font-size: clamp(0.95rem, 3.2vw, 1rem) !important; }
-  #li-root .li-section { padding-top: 22px !important; padding-bottom: 10px !important; }
-  #li-root .li-cta-bar { padding-top: 14px !important; padding-bottom: 20px !important; }
-  #li-root .li-cta-bar .li-btn { padding: 12px 16px !important; font-size: 1rem !important; }
-  #li-root .li-section-sub { margin-bottom: 12px !important; }
+  #li-root .li-faq {
+    gap: 10px !important;
+    padding: 0 10px !important;
+  }
+
+  #li-root .li-q {
+    padding: 10px 12px !important;
+    font-size: clamp(0.92rem, 3vw, 1rem) !important;
+  }
+
+  #li-root .li-section {
+    padding-top: 24px !important;
+    padding-bottom: 10px !important;
+  }
+
+  #li-root .li-cta-bar {
+    padding-top: 16px !important;
+    padding-bottom: 22px !important;
+  }
+
+  #li-root .li-cta-bar .li-btn {
+    padding: 12px 18px !important;
+    font-size: 0.95rem !important;
+  }
+
+  #li-root .li-section-sub {
+    margin-bottom: 10px !important;
+  }
 }
 
-/* Pequena melhoria: garantir que os cards não causem overflow */
-#li-root .li-q, #li-root .li-card, .li-benefits-box, .li-testimonial {
+/* Evita overflow horizontal e quebra de layout */
+#li-root .li-q,
+#li-root .li-card,
+.li-benefits-box,
+.li-testimonial {
   box-sizing: border-box;
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
+  max-width: 100%;
 }
