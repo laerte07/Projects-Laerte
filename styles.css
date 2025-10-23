@@ -267,25 +267,28 @@ body {
    ========================================================= */
 @media (max-width: 960px) {
 
-  /* ===== HERO: Empilhamento dos blocos ===== */
+  /* ===== HERO: Empilhamento e centralização do TEXTO ===== */
   #li-root .li-hero .li-wrap {
-    /* Força uma coluna, corrigindo o problema de layout */
     grid-template-columns: 1fr !important;
-    text-align: center !important;
+    text-align: center !important; /* <--- GARANTE QUE H1, P, ETC. ESTEJAM CENTRALIZADOS */
     gap: 30px !important;
   }
 
-  /* Opcional: Coloca a imagem acima do texto no mobile */
-  #li-root .li-hero-card {
-    order: initial !important; 
-    max-width: 420px !important;
-    margin: 0 auto !important;
+  /* **CRÍTICO:** Centraliza o grupo de botões (que é flex) */
+  #li-root .li-cta-group {
+    justify-content: center !important;
   }
 
-  /* Centraliza botões e features */
-  #li-root .li-cta-group,
+  /* **CRÍTICO:** Centraliza o grupo de features/benefícios (que é grid/flex) */
   #li-root .li-hero-feat {
     justify-content: center !important;
+  }
+  
+  /* Remove o 'order: -1' para o card, mantendo o card na ordem original (embaixo do texto) */
+  #li-root .li-hero-card {
+    /* order: initial !important; ou remover a linha de order completamente */ 
+    max-width: 420px !important;
+    margin: 0 auto !important;
   }
 }
 /* =========================================================
