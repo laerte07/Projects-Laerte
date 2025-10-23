@@ -22,7 +22,7 @@ export default async function loadTypebot() {
         chatWindow: {
           backgroundColor: "rgba(255, 255, 255, 0.75)",
           backdropFilter: "blur(18px) saturate(160%)",
-          borderRadius: "16px",
+          borderRadius: "12px",
           textColor: "#1e1e1e",
           width: "380px",
           height: "580px",
