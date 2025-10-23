@@ -260,28 +260,41 @@ body {
   margin-bottom: 14px !important;
   width: 100% !important;
 }
-/* --- RESPONSIVIDADE --- */
+/*
+ * Seção: Media Query para Dispositivos Menores (máximo 960px) ''''''''''''''''''''''
+ * Força o layout a empilhar (uma coluna) em vez de lado a lado.
+ */
 @media (max-width: 960px) {
-  /*
-   * Ajustes para telas menores no container principal (.li-wrap)
-   */
-  #li-root .li-wrap {
-    /* Layout e Posicionamento */
-    grid-template-columns: 1fr !important;
+  #li-root .li-hero .li-wrap {
+    /* **Ajuste para empilhamento** */
+    display: flex !important;            /* Sobrescreve 'display: grid' */
+    flex-direction: column !important;   /* Empilha os itens verticalmente */
+
+    /* **Ajuste para uma coluna** */
+    grid-template-columns: 1fr !important; 
+    gap: 20px !important;                /* Reduz o espaçamento entre os blocos (ou coloque '0' se preferir) */
 
     /* Tipografia */
     text-align: center !important;
   }
 
-  /*
-   * Ajustes para o Card do Hero (.li-hero-card)
-   */
   #li-root .li-hero-card {
     /* Layout e Posicionamento */
-    justify-self: center !important;
+    justify-self: center !important;     /* Garante que o card fique centralizado */
 
     /* Modelo de Caixa */
     max-width: 420px !important;
+    order: -1 !important;                /* OPCIONAL: Coloca o Card de imagem ACIMA do texto no mobile */
+  }
+  
+  /* Centraliza botões no mobile */
+  #li-root .li-cta-group {
+    justify-content: center !important;
+  }
+
+  /* Centraliza a lista de features no mobile */
+  #li-root .li-hero-feat {
+    justify-content: center !important;
   }
 }
 
