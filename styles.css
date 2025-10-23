@@ -130,14 +130,15 @@ body {
  * Estilo para o container interno que usa Grid
  */
 #li-root .li-hero .li-wrap {
-  /* Layout e Posicionamento */
-  align-items: center !important;
+  /* ... outras propriedades ... */
   display: grid !important;
-  gap: 44px !important;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr) !important;
+  grid-template-columns: 1.1fr 0.9fr !important;
+  align-items: center !important;
+  gap: 48px !important;
 
-  /* Modelo de Caixa */
-  width: 80% !important;
+  /* CORREÇÃO: Usar 100% de largura, mas limitar o tamanho MÁXIMO (desktop) */
+  width: 100% !important;
+  max-width: 1000px !important; /* Exemplo de limite para desktop */
 }
 
 /*
@@ -259,6 +260,52 @@ body {
   border-radius: 14px !important;
   margin-bottom: 14px !important;
   width: 100% !important;
+}
+/* =========================================================
+   RESPONSIVIDADE AJUSTADA (Hero Section)
+   ========================================================= */
+
+/* * PONTO DE CORTE PARA EMPILHAR O HERO: 960px
+ * Garante que o layout de 2 colunas se torne 1 coluna 
+ * antes de ficar muito espremido.
+*/
+@media (max-width: 960px) {
+
+  /* ===== HERO: Empilhamento dos blocos ===== */
+  #li-root .li-hero .li-wrap {
+    /* Força uma coluna e centraliza o texto */
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 30px !important; /* Reduz o espaço no mobile */
+  }
+
+  /* Faz com que o Card da Imagem apareça primeiro (opcional, mas comum no mobile) */
+  #li-root .li-hero .li-hero-card {
+    order: -1 !important; 
+    max-width: 420px !important;
+    margin: 0 auto !important; /* Centraliza a caixa no mobile */
+  }
+
+  /* Centraliza o grupo de botões */
+  #li-root .li-cta-group {
+    justify-content: center !important;
+  }
+}
+
+/* * PONTO DE CORTE PARA AJUSTES FINOS EM CELULARES: 640px
+ * Mantém os ajustes de tamanho de fonte e padding que você já tinha.
+*/
+@media (max-width: 640px) {
+  /* ... (Mantenha seus ajustes existentes aqui) ... */
+  #li-root .li-hero h1 {
+    font-size: 28px !important;
+  }
+  #li-root .li-hero-card {
+    max-width: 100% !important;
+  }
+  #li-root .li-container {
+    padding: 0 16px !important; /* Diminui o padding lateral em telas muito pequenas */
+  }
 }
 
 /* =========================================================
