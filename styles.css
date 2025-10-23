@@ -1,4 +1,6 @@
-/* ===== Base isolada por namespace ===== */
+/* =========================================================
+   BASE GLOBAL — namespaces e estrutura geral
+   ========================================================= */
 body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
@@ -12,6 +14,9 @@ body {
   padding: 0 20px !important;
 }
 
+/* =========================================================
+   BOTÕES — estilos gerais e variações
+   ========================================================= */
 #li-root .li-btn {
   display: inline-block !important;
   background: #2ecc71 !important;
@@ -29,7 +34,9 @@ body {
   opacity: .9 !important;
 }
 
-/* ===== Hero ===== */
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 #li-root .li-hero {
   background: linear-gradient(135deg, #0b3d91 0%, #124bb3 60%, #1e5ee0 100%) !important;
   color: #fff !important;
@@ -107,7 +114,9 @@ body {
   display: block !important;
 }
 
-/* ===== Sections ===== */
+/* =========================================================
+   SEÇÕES GENÉRICAS
+   ========================================================= */
 #li-root .li-section {
   padding: 72px 0 !important;
 }
@@ -123,6 +132,9 @@ body {
   font-size: 16px !important;
 }
 
+/* =========================================================
+   BENEFÍCIOS
+   ========================================================= */
 #li-root .li-benefits {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
@@ -142,6 +154,9 @@ body {
   font-size: 16px !important;
 }
 
+/* =========================================================
+   PRODUTO E CARDS
+   ========================================================= */
 #li-root .li-product {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
@@ -166,6 +181,9 @@ body {
   margin-bottom: 10px !important;
 }
 
+/* =========================================================
+   TESTEMUNHOS
+   ========================================================= */
 .li-testimonials {
   margin-top: 40px;
 }
@@ -192,6 +210,9 @@ body {
   font-weight: 500;
 }
 
+/* =========================================================
+   FAQ SECTION
+   ========================================================= */
 #li-root .li-faq {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
@@ -205,7 +226,9 @@ body {
   padding: 16px !important;
 }
 
-/* ===== CTA Bar ===== */
+/* =========================================================
+   CTA BAR E FOOTER
+   ========================================================= */
 #li-root .li-cta-bar {
   background: #0b3d91 !important;
   color: #fff !important;
@@ -223,7 +246,9 @@ body {
   font-size: 14px !important;
 }
 
-/* ===== Modal ===== */
+/* =========================================================
+   MODAL DE CHECKOUT
+   ========================================================= */
 #li-checkout-modal {
   display: none;
   position: fixed;
@@ -233,6 +258,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 16px;
+  backdrop-filter: blur(6px) !important;
 }
 
 #li-checkout-modal .li-modal-box {
@@ -296,40 +322,103 @@ body {
   }
 }
 
-/* ===== Responsivo forçado ===== */
-@media (max-width: 960px) {
-  #li-root .li-hero .li-wrap {
-    grid-template-columns: 1fr !important;
-  }
-  #li-root .li-product {
-    grid-template-columns: 1fr !important;
-  }
-  #li-root .li-benefits {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  #li-root .li-faq {
-    grid-template-columns: 1fr !important;
-  }
+/* =========================================================
+   (PARTE 2/2)
+   ========================================================= */
+
+/* =========================================================
+   RECEBER SECTION
+   ========================================================= */
+#li-root .li-receber {
+  background: #f1f5f9 !important;
+  padding: 72px 0 !important;
 }
 
-@media (max-width: 520px) {
-  #li-root .li-benefits {
-    grid-template-columns: 1fr !important;
-  }
-  #li-root .li-hero h1 {
-    font-size: 30px !important;
-  }
+#li-root .li-receber-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 22px !important;
 }
 
-/* ===== Modal Melhorado ===== */
-#li-checkout-modal.show .li-modal-box {
-  animation: li-zoomIn .3s ease forwards !important;
+#li-root .li-receber-item {
+  background: #fff !important;
+  border-radius: 14px !important;
+  padding: 24px !important;
+  border: 1px solid #e6eaf2 !important;
+  text-align: center !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .05) !important;
 }
 
-@keyframes li-zoomIn {
+#li-root .li-receber-item img {
+  width: 68px !important;
+  margin-bottom: 14px !important;
+}
+
+/* =========================================================
+   ÚLTIMA CHANCE / CTA FINAL
+   ========================================================= */
+#li-root .li-last-chance {
+  background: linear-gradient(135deg, #0b3d91, #1e5ee0) !important;
+  color: #fff !important;
+  text-align: center !important;
+  padding: 64px 18px !important;
+  border-top: 6px solid #2ecc71 !important;
+}
+
+#li-root .li-last-chance h2 {
+  font-size: 26px !important;
+  margin-bottom: 14px !important;
+}
+
+#li-root .li-last-chance p {
+  font-size: 17px !important;
+  margin-bottom: 24px !important;
+}
+
+#li-root .li-last-chance .li-btn {
+  background: #2ecc71 !important;
+  border-radius: 10px !important;
+  font-size: 18px !important;
+  padding: 14px 28px !important;
+}
+
+/* =========================================================
+   BOTÕES ESPECIAIS E EFEITOS
+   ========================================================= */
+#li-root .li-btn.neon {
+  background: #2ecc71 !important;
+  box-shadow: 0 0 12px #2ecc71, 0 0 24px #2ecc71 !important;
+}
+
+#li-root .li-btn.neon:hover {
+  box-shadow: 0 0 18px #2ecc71, 0 0 36px #2ecc71 !important;
+  transform: translateY(-2px) !important;
+}
+
+#li-root .li-btn-gradient {
+  background: linear-gradient(90deg, #2ecc71, #27ae60) !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+@keyframes li-fade-in {
   from {
-    transform: scale(.85);
     opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes li-zoom {
+  from {
+    transform: scale(0.98);
+    opacity: 0.9;
   }
   to {
     transform: scale(1);
@@ -337,420 +426,133 @@ body {
   }
 }
 
-#li-checkout-modal {
-  backdrop-filter: blur(6px) !important;
-}
+/* =========================================================
+   RESPONSIVIDADE GERAL
+   ========================================================= */
+/* 
+   🔧 PONTO DE CORTE PRINCIPAL: 640px
+   Para ajustar o comportamento mobile manualmente,
+   altere o valor abaixo. Exemplo:
+   @media (max-width: 768px) { ... }
+*/
+@media (max-width: 640px) {
 
-#li-checkout-modal .li-social-proof {
-  padding: 12px 18px !important;
-  border-top: 1px solid #e5e7eb !important;
-  font-size: 14px !important;
-  color: #475569 !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-}
-
-#li-checkout-modal .li-stars {
-  color: #fbbf24 !important;
-  font-size: 16px !important;
-}
-
-/* ===================== */
-/* BOTÕES (apenas estilos) */
-/* ===================== */
-#li-root .li-btn {
-  text-decoration: none !important;
-}
-
-/* 1) "GARANTIR ACESSO" neon */
-#li-root .li-hero-card .li-btn,
-#li-checkout-modal .li-modal-footer .li-btn {
-  width: auto !important;
-  min-height: 3.5em !important;
-  padding: 0 18px !important;
-  border: 3px ridge #00FF7F !important;
-  outline: none !important;
-  background: transparent !important;
-  color: #fff !important;
-  transition: 1s !important;
-  border-radius: 0.3em !important;
-  font-size: 16px !important;
-  font-weight: 800 !important;
-  cursor: pointer !important;
-  position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  white-space: nowrap !important;
-}
-
-/* reflexos do neon */
-#li-root .li-hero-card .li-btn::after,
-#li-checkout-modal .li-modal-footer .li-btn::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 3%;
-  width: 95%;
-  height: 40%;
-  background: transparent;
-  transition: .5s;
-  transform-origin: center;
-}
-
-#li-root .li-hero-card .li-btn::before,
-#li-checkout-modal .li-modal-footer .li-btn::before {
-  content: "";
-  position: absolute;
-  top: 80%;
-  left: 3%;
-  width: 95%;
-  height: 40%;
-  background: transparent;
-  transition: .5s;
-  transform-origin: center;
-}
-
-#li-root .li-hero-card .li-btn:hover::before,
-#li-root .li-hero-card .li-btn:hover::after,
-#li-checkout-modal .li-modal-footer .li-btn:hover::before,
-#li-checkout-modal .li-modal-footer .li-btn:hover::after {
-  transform: scale(0);
-}
-
-#li-root .li-hero-card .li-btn:hover,
-#li-checkout-modal .li-modal-footer .li-btn:hover {
-  box-shadow: inset 0 0 50px #00FF7F !important;
-}
-
-/* 2) DEMAIS BOTÕES – estilo gradiente */
-#li-root .li-cta-group .li-btn,
-#li-root #li-conteudo .li-card .li-btn,
-#li-root .li-cta-bar .li-btn {
-  width: auto !important;
-  height: 3em !important;
-  padding: 0 22px !important;
-  border-radius: 30em !important;
-  font-size: 15px !important;
-  border: none !important;
-  position: relative !important;
-  overflow: hidden !important;
-  z-index: 1 !important;
-  background: transparent !important;
-  color: #0f172a !important;
-  font-weight: 800 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  white-space: nowrap !important;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff !important;
-}
-
-/* preenchimento em hover */
-#li-root .li-cta-group .li-btn::before,
-#li-root #li-conteudo .li-card .li-btn::before,
-#li-root .li-cta-bar .li-btn::before {
-  content: '';
-  width: 0;
-  height: 100%;
-  border-radius: 30em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(to right, #0fd850 0%, #00CD66 100%);
-  transition: .5s ease;
-  display: block;
-  z-index: -1;
-}
-
-#li-root .li-cta-group .li-btn:hover::before,
-#li-root #li-conteudo .li-card .li-btn:hover::before,
-#li-root .li-cta-bar .li-btn:hover::before {
-  width: 100%;
-}
-
-#li-root .li-cta-group .li-btn:hover,
-#li-root #li-conteudo .li-card .li-btn:hover,
-#li-root .li-cta-bar .li-btn:hover {
-  color: #fff !important;
-}
-
-/* ajuste opcional: remove halo branco no topo (fundo azul) */
-#li-root .li-hero .li-cta-group .li-btn {
-  box-shadow: none !important;
-  border: 1px solid rgba(255, 255, 255, .2) !important;
-  color: #fff !important;
-}
-
-/* BOTÃO ESPECIAL – "Ir para o checkout" */
-.button {
-  --border_radius: 9999px;
-  --transtion: 0.3s ease-in-out;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: var(--border_radius);
-  transform-origin: center;
-  transform: scale(1);
-  transition: transform var(--transtion), background-color var(--transtion), color var(--transtion);
-  z-index: 1;
-  text-decoration: none !important;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: black;
-  border-radius: var(--border_radius);
-  z-index: -1;
-  transition: all var(--transtion);
-}
-
-.button:hover::before,
-.button:focus-visible::before {
-  background-color: #00CD66;
-  transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(0, 205, 102, 0.6);
-}
-
-.button:hover,
-.button:focus-visible {
-  color: white;
-}
-
-.button:active {
-  transform: scale(0.98);
-}
-
-.button .text_button {
-  position: relative;
-  font-size: 1rem;
-  font-weight: bold;
-  z-index: 2;
-  color: inherit;
-}
-
-.li-benefits-box {
-  background: #f8fafc !important;
-  border: 1px solid #e6eaf2 !important;
-  border-radius: 16px !important;
-  padding: 26px !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .05) !important;
-}
-
-.li-receber-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 16px;
-}
-
-.li-receber-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 14px;
-  border: 1px solid #e6eaf2;
-  border-radius: 12px;
-  background: #fff;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.li-receber-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, .08);
-}
-
-.li-receber-item .icon {
-  font-size: 28px;
-}
-
-.li-receber-item h4 {
-  margin: 0 0 4px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.li-receber-item p {
-  margin: 0;
-  font-size: 14px;
-  color: #475569;
-}
-
-/* Responsivo para celular */
-@media (max-width: 768px) {
-  .li-receber-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.li-receber-item .icon {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-}
-
-.li-receber-item .icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* ===============================
-   FAQ & CTA RESPONSIVE IMPROVEMENTS
-   =============================== */
-
-/* Desktop (≥961px): Centraliza grade e mantém estrutura limpa */
-@media (min-width: 961px) {
-  #li-root .li-faq {
-    justify-content: center !important;
-    grid-template-columns: repeat(2, minmax(0, 540px)) !important;
-    gap: 24px !important;
-    margin: 0 auto;
-  }
-
-  #li-root .li-q {
-    max-width: 540px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px !important;
-  }
-
-  #li-root .li-section-title {
-    text-align: center;
-  }
-}
-
-/* Tablet (769px–960px): layout intermediário */
-@media (max-width: 960px) and (min-width: 769px) {
-  #li-root .li-faq {
-    grid-template-columns: 1fr 1fr !important;
-    justify-content: center !important;
-    gap: 18px !important;
-  }
-
-  #li-root .li-q {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 18px !important;
-  }
-
-  #li-root .li-section-title {
-    text-align: center;
-  }
-}
-
-/* Mobile (≤768px): foco na leitura e espaçamento natural */
-@media (max-width: 768px) {
-  /* FAQ */
-  #li-root .li-faq {
-    display: grid;
+  /* ===== HERO ===== */
+  #li-root .li-hero .li-wrap {
     grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    padding: 0 12px !important;
-    justify-items: center;
-  }
-
-  #li-root .li-q {
-    width: 100% !important;
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 14px 16px !important;
-    border-radius: 12px !important;
     text-align: center !important;
-    line-height: 1.5;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
 
-  #li-root .li-section {
-    padding-top: 32px !important;
-    padding-bottom: 16px !important;
+  #li-root .li-hero h1 {
+    font-size: 28px !important;
   }
 
-  #li-root .li-section-title {
-    font-size: clamp(1.05rem, 4vw, 1.3rem) !important;
-    margin-bottom: 10px !important;
-    text-align: center;
+  #li-root .li-hero p {
+    font-size: 15px !important;
   }
 
-  /* CTA */
-  #li-root .li-cta-bar {
-    padding-top: 22px !important;
-    padding-bottom: 30px !important;
+  #li-root .li-cta-group {
+    justify-content: center !important;
   }
 
-  #li-root .li-cta-bar .li-container {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 0 10px !important;
-    text-align: center;
-  }
-
-  #li-root .li-cta-bar .li-btn {
-    width: 100% !important;
-    max-width: 420px !important;
+  #li-root .li-hero-card {
+    max-width: 400px !important;
     margin: 0 auto !important;
-    font-size: 1rem !important;
-    border-radius: 9999px !important;
   }
 
-  #li-root .li-hero {
-    padding-bottom: 40px !important;
+  /* ===== BENEFÍCIOS ===== */
+  #li-root .li-benefits {
+    grid-template-columns: 1fr 1fr !important;
   }
-}
 
-/* Extra Small (≤420px): otimização para iPhone / Android compactos */
-@media (max-width: 420px) {
+  #li-root .li-benefit {
+    padding: 14px !important;
+  }
+
+  /* ===== RECEBER ===== */
+  #li-root .li-receber-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ===== TESTEMUNHOS ===== */
+  .li-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ===== FAQ ===== */
   #li-root .li-faq {
-    gap: 10px !important;
-    padding: 0 10px !important;
+    grid-template-columns: 1fr !important;
   }
 
   #li-root .li-q {
-    padding: 10px 12px !important;
-    font-size: clamp(0.92rem, 3vw, 1rem) !important;
+    padding: 14px !important;
+    text-align: left !important;
   }
 
-  #li-root .li-section {
-    padding-top: 24px !important;
-    padding-bottom: 10px !important;
+  /* ===== ÚLTIMA CHANCE ===== */
+  #li-root .li-last-chance h2 {
+    font-size: 22px !important;
   }
 
-  #li-root .li-cta-bar {
-    padding-top: 16px !important;
-    padding-bottom: 22px !important;
+  #li-root .li-last-chance p {
+    font-size: 15px !important;
   }
 
-  #li-root .li-cta-bar .li-btn {
-    padding: 12px 18px !important;
-    font-size: 0.95rem !important;
+  #li-root .li-last-chance .li-btn {
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
 
-  #li-root .li-section-sub {
-    margin-bottom: 10px !important;
+  /* ===== MODAL ===== */
+  #li-checkout-modal .li-modal-box {
+    max-width: 90% !important;
+  }
+
+  #li-checkout-modal img {
+    max-height: 240px !important;
   }
 }
 
-/* Evita overflow horizontal e quebra de layout */
-#li-root .li-q,
-#li-root .li-card,
-.li-benefits-box,
-.li-testimonial {
-  box-sizing: border-box;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
+/* =========================================================
+   RESPONSIVIDADE MÉDIA (entre 641px e 900px)
+   ========================================================= */
+@media (min-width: 641px) and (max-width: 900px) {
+
+  #li-root .li-hero .li-wrap {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 30px !important;
+  }
+
+  #li-root .li-benefits {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  #li-root .li-receber-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .li-testimonials-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  #li-root .li-faq {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   AJUSTES FINAIS
+   ========================================================= */
+#li-root .li-center {
+  text-align: center !important;
+}
+
+#li-root .li-hidden {
+  display: none !important;
+}
+
+#li-root .li-show {
+  display: block !important;
 }
