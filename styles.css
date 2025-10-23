@@ -43,9 +43,9 @@ body {
   border-color: transparent;
   font-size: 16px;
   background-color: inherit;
-  border-radius: 100px;
+  border-radius: 8px;
   font-weight: 600;
-  color: #2c7a7b; /* tom de azul */
+  color: #4a90e2; /* tom de azul */
   box-shadow: 0 0 0 2px #2c7b7b;
   cursor: pointer;
   overflow: hidden;
@@ -54,8 +54,8 @@ body {
 
 .animated-button svg {
   position: absolute;
-  width: 20px;
-  fill: #2c7a7b;
+  width: 12px;
+  fill: #4a90e2;
   z-index: 9;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
