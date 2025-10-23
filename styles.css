@@ -277,7 +277,7 @@ body {
 
   /* Opcional: Coloca a imagem acima do texto no mobile */
   #li-root .li-hero-card {
-    order: -1 !important; 
+    order: initial !important; 
     max-width: 420px !important;
     margin: 0 auto !important;
   }
