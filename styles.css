@@ -260,7 +260,30 @@ body {
   margin-bottom: 14px !important;
   width: 100% !important;
 }
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 960px) {
+  /*
+   * Ajustes para telas menores no container principal (.li-wrap)
+   */
+  #li-root .li-wrap {
+    /* Layout e Posicionamento */
+    grid-template-columns: 1fr !important;
 
+    /* Tipografia */
+    text-align: center !important;
+  }
+
+  /*
+   * Ajustes para o Card do Hero (.li-hero-card)
+   */
+  #li-root .li-hero-card {
+    /* Layout e Posicionamento */
+    justify-self: center !important;
+
+    /* Modelo de Caixa */
+    max-width: 420px !important;
+  }
+}
 
 /* =========================================================
    SEÇÕES GENÉRICAS
