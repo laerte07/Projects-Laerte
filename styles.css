@@ -177,7 +177,12 @@ body {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 18px !important;
-  margin-top: 16px !important;
+}
+
+@media (max-width: 640px) {
+  #li-root .li-receber-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ===== Item individual ===== */
