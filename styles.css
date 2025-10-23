@@ -784,3 +784,7 @@ body {
 #li-root .li-show {
   display: block !important;
 }
+#li-root .li-hero-card {
+  width: 100% !important;
+}
+
