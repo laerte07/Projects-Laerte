@@ -262,50 +262,60 @@ body {
   width: 100% !important;
 }
 /* =========================================================
-   RESPONSIVIDADE AJUSTADA (Hero Section)
+   RESPONSIVIDADE: AJUSTE DO HERO (960px)
+   Força o empilhamento da seção principal do Hero
    ========================================================= */
-
-/* * PONTO DE CORTE PARA EMPILHAR O HERO: 960px
- * Garante que o layout de 2 colunas se torne 1 coluna 
- * antes de ficar muito espremido.
-*/
 @media (max-width: 960px) {
 
   /* ===== HERO: Empilhamento dos blocos ===== */
   #li-root .li-hero .li-wrap {
-    /* Força uma coluna e centraliza o texto */
+    /* Força uma coluna, corrigindo o problema de layout */
     grid-template-columns: 1fr !important;
     text-align: center !important;
-    gap: 30px !important; /* Reduz o espaço no mobile */
+    gap: 30px !important;
   }
 
-  /* Faz com que o Card da Imagem apareça primeiro (opcional, mas comum no mobile) */
-  #li-root .li-hero .li-hero-card {
+  /* Opcional: Coloca a imagem acima do texto no mobile */
+  #li-root .li-hero-card {
     order: -1 !important; 
     max-width: 420px !important;
-    margin: 0 auto !important; /* Centraliza a caixa no mobile */
+    margin: 0 auto !important;
   }
 
-  /* Centraliza o grupo de botões */
-  #li-root .li-cta-group {
+  /* Centraliza botões e features */
+  #li-root .li-cta-group,
+  #li-root .li-hero-feat {
     justify-content: center !important;
   }
 }
-
-/* * PONTO DE CORTE PARA AJUSTES FINOS EM CELULARES: 640px
- * Mantém os ajustes de tamanho de fonte e padding que você já tinha.
-*/
+/* =========================================================
+   RESPONSIVIDADE GERAL (640px)
+   ========================================================= */
 @media (max-width: 640px) {
-  /* ... (Mantenha seus ajustes existentes aqui) ... */
+
+  /* CORREÇÃO CRÍTICA: REDUZ O PADDING GLOBAL EM TELAS PEQUENAS */
+  #li-root .li-container {
+    padding: 0 16px !important; /* De 32px para 16px */
+  }
+  
+  /* CORREÇÃO CRÍTICA: REDUZ O PADDING DO HERO PARA CABER NA TELA */
+  #li-root .li-hero {
+    padding: 24px 20px 40px !important; /* De 36/40/56px para 24/20/40px */
+  }
+
+  /* ... Mantenha o restante das suas regras aqui ... */
+  
+  /* ===== HERO ===== */
+  #li-root .li-hero .li-wrap {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
   #li-root .li-hero h1 {
     font-size: 28px !important;
   }
-  #li-root .li-hero-card {
-    max-width: 100% !important;
-  }
-  #li-root .li-container {
-    padding: 0 16px !important; /* Diminui o padding lateral em telas muito pequenas */
-  }
+
+  /* ... (outras regras que você já tinha) ... */
 }
 
 /* =========================================================
