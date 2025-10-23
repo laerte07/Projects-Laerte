@@ -9,9 +9,11 @@ body {
 }
 
 #li-root .li-container {
-  max-width: 1100px !important;
+  max-width: 1240px !important;
+  width: 100% !important;
+  padding: 0 32px !important;
   margin: 0 auto !important;
-  padding: 0 20px !important;
+  box-sizing: border-box !important;
 }
 
 /* =========================================================
@@ -107,60 +109,156 @@ body {
    --- HERO SECTION AJUSTADA ---
    ========================================================= */
 
+/*
+ * Seção: Hero
+ * Contém o estilo principal do bloco "li-hero"
+ */
 #li-root .li-hero {
-  display: flex !important;
+  /* Layout e Posicionamento */
   justify-content: center !important;
-  background: #1e3a8a !important;
-  padding: 60px 0 !important;
+
+  /* Modelo de Caixa */
+  padding: 36px 40px 56px !important;
+
+  /* Visual e Cores */
+  background: #1e3a8a;
   color: #fff !important;
 }
 
-#li-root .li-container {
-  max-width: 1240px !important;
-  width: 100% !important;
-  padding: 0 32px !important;
-  margin: 0 auto !important;
-  box-sizing: border-box !important;
-}
-
-#li-root .li-wrap {
-  display: grid !important;
-  grid-template-columns: 1.1fr 0.9fr !important;
+/*
+ * Seção: Wrap do Hero
+ * Estilo para o container interno que usa Grid
+ */
+#li-root .li-hero .li-wrap {
+  /* Layout e Posicionamento */
   align-items: center !important;
-  gap: 48px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
+  display: grid !important;
+  gap: 44px !important;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr) !important;
+
+  /* Modelo de Caixa */
+  width: 80% !important;
 }
 
-#li-root .li-hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+/*
+ * Seção: Eyebrow (Selo/Etiqueta)
+ */
+#li-root .li-eyebrow {
+  /* Layout e Posicionamento */
+  display: inline-block !important;
+
+  /* Modelo de Caixa */
+  border-radius: 999px !important;
+  padding: 8px 12px !important;
+
+  /* Tipografia */
+  font-size: 13px !important;
+  font-weight: 600 !important;
+
+  /* Visual e Cores */
+  background: rgba(255, 255, 255, .14) !important;
 }
 
+/*
+ * Seção: Título Principal do Hero
+ */
+#li-root .li-hero h1 {
+  /* Tipografia */
+  font-size: 34px !important;
+  line-height: 1.3 !important;
+
+  /* Modelo de Caixa */
+  margin: 14px 0 !important;
+}
+
+/*
+ * Seção: Parágrafo do Hero
+ */
+#li-root .li-hero p {
+  /* Tipografia */
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+
+  /* Visual e Cores */
+  color: #e6eeff !important;
+
+  /* Modelo de Caixa */
+  margin: 0 0 24px !important;
+}
+
+/*
+ * Seção: Grupo de Ações (CTA Group)
+ */
+#li-root .li-cta-group {
+  /* Layout e Posicionamento */
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+/*
+ * Seção: CTA Secundário
+ */
+#li-root .li-cta-secondary {
+  /* Visual e Cores */
+  background: transparent !important;
+  border: 2px solid #fff !important;
+  color: #fff !important;
+}
+
+/*
+ * Seção: Destaques (Features) do Hero
+ */
+#li-root .li-hero-feat {
+  /* Layout e Posicionamento */
+  display: grid !important;
+  gap: 10px !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+
+  /* Modelo de Caixa */
+  margin-top: 18px !important;
+}
+
+/*
+ * Seção: Spans dos Destaques
+ */
+#li-root .li-hero-feat span {
+  /* Tipografia */
+  font-size: 14px !important;
+
+  /* Modelo de Caixa */
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+
+  /* Visual e Cores */
+  background: rgba(255, 255, 255, .1) !important;
+}
+
+/*
+ * Seção: Card do Hero
+ */
 #li-root .li-hero-card {
-  width: 100% !important;
-  max-width: 520px !important;
-  justify-self: end !important;
-}
-
-#li-root .li-hero-card img {
-  width: 100% !important;
+  /* Modelo de Caixa */
   border-radius: 14px !important;
-  display: block !important;
+  border: 1px solid rgba(255, 255, 255, .12) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .15) !important;
+  padding: 22px !important;
+
+  /* Visual e Cores */
+  background: #0b3a85 !important;
 }
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 960px) {
-  #li-root .li-wrap {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-  }
+/*
+ * Seção: Imagem dentro do Card do Hero
+ */
+#li-root .li-hero-card img {
+  /* Layout e Posicionamento */
+  display: block !important;
 
-  #li-root .li-hero-card {
-    justify-self: center !important;
-    max-width: 420px !important;
-  }
+  /* Modelo de Caixa */
+  border-radius: 14px !important;
+  margin-bottom: 14px !important;
+  width: 100% !important;
 }
 
 
