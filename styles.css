@@ -253,7 +253,7 @@ body{
 #li-root .li-benefits-box{
   background:var(--surface) !important; border:1px solid var(--border) !important;
   border-radius:16px !important; padding:26px !important; box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
-  max-width:1100px !important; margin:0 auto !important;
+  max-width:700px !important; margin:0 auto !important;
 }
 #li-root .li-benefits-box h3{
   text-align:center !important; margin-bottom:22px !important; font-size:22px !important; color:var(--text) !important;
