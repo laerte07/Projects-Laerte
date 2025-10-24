@@ -93,8 +93,8 @@ body {
   color: #fff;
   box-shadow: 0 0 0 4px #4a90e2;
 }
-.animated-button:hover .circle{
-  transform: translate(-50%, -50%) scale(14); /* cobre o botão inteiro */
+.animated-button:hover::before{
+  transform: scale(1.08); /* leve overshoot para garantir os cantos */
   opacity: 1;
 }
 .animated-button:hover .text{
