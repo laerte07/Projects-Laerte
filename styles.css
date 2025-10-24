@@ -2,7 +2,7 @@
    BASE GLOBAL — namespaces e estrutura geral
    ========================================================= */
 /* =========================================================
-   VARIÁVEIS DE TEMA
+                     VARIÁVEIS DE TEMA
    ========================================================= */
 :root {
   --bg: #ffffff;
@@ -26,26 +26,124 @@
   --success-2: #27ae60;         /* fica aqui, centralizado */
 }
 
+/* =========================================================
+               TEMA DARK REFINADO – LAERTE INVEST
+   ========================================================= */
+
 html[data-theme="dark"] {
-  --bg: #060913; /* fundo principal bem mais escuro */
-  --text: #e8ecf7; /* texto principal claro */
-  --muted: #8fa3d6; /* texto secundário */
-  --card: #0b1220; /* fundo dos cards */
-  --primary: #3b82f6; /* azul levemente mais vibrante */
+  --bg: #060913;
+  --text: #e8ecf7;
+  --muted: #8fa3d6;
+  --card: #0b1220;
+  --primary: #3b82f6;
   --primary-contrast: #ffffff;
-  --hero-bg: #0a1124; /* fundo da seção hero mais escuro */
-  --hero-card-bg: #0e1a33; /* fundo do card da hero */
+  --hero-bg: #0a1124;
+  --hero-card-bg: #0e1a33;
   --border: rgba(255, 255, 255, 0.1);
 
   --muted-text: #9da8c6;
-  --surface: #0c1324; /* superfícies */
-  --surface-2: #101a33; /* contraste leve */
+  --surface: #0c1324;
+  --surface-2: #101a33;
   --overlay: rgba(0, 0, 0, 0.65);
-  --success: #00b871; /* verde mais equilibrado */
-  --hero-grad-start: #102a72; /* azul escuro suave */
-  --hero-grad-end: #1a4b9b; /* tom de azul profundo */
+  --success: #00b871;
+  --hero-grad-start: #102a72;
+  --hero-grad-end: #1a4b9b;
   --success-2: #009e60;
 }
+
+/* Fundo com gradiente sutil e suave */
+body[data-theme="dark"] {
+  background: radial-gradient(circle at top left, #0a1124 0%, #060913 100%);
+  color: var(--text);
+}
+
+/* Cards com profundidade e brilho suave */
+.card, .section-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover, .section-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Botões */
+button, .btn, .cta-button {
+  background: linear-gradient(135deg, var(--primary), #2563eb);
+  color: var(--primary-contrast);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+}
+
+button:hover, .btn:hover, .cta-button:hover {
+  background: linear-gradient(135deg, #4f9eff, #1e40af);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Botões de contraste (ex: "Ver o que está incluso") */
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Seção hero */
+.hero-section {
+  background: linear-gradient(135deg, var(--hero-grad-start), var(--hero-grad-end));
+  color: var(--primary-contrast);
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Destaques e badges */
+.badge {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--primary);
+  border-radius: 30px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #60a5fa;
+}
+
+/* Chatbot flutuante */
+.chatbox {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  border-radius: 12px;
+  color: var(--text);
+}
+/* =========================================================
+                     BODY E CONTAINER
+   ========================================================= */
 body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
@@ -62,7 +160,7 @@ body {
 }
 
 /* =========================================================
-   BOTÕES — estilos gerais e variações
+               BOTÕES — estilos gerais e variações
    ========================================================= */
 #li-root .li-btn {
     display: inline-flex ;
@@ -154,7 +252,7 @@ body {
 }
 
 /* =========================================================
-   --- HERO SECTION AJUSTADA ---
+                 --- HERO SECTION AJUSTADA ---
    ========================================================= */
 
 /*
@@ -305,7 +403,7 @@ color: var(--muted) !important;
   width: 100% !important;
 }
 /* =========================================================
-   RESPONSIVIDADE: AJUSTE DO HERO (960px)
+            RESPONSIVIDADE: AJUSTE DO HERO (960px)
    ========================================================= */
 @media (max-width: 960px) {
   /* Empilha e centraliza TUDO no hero */
@@ -331,7 +429,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   RESPONSIVIDADE GERAL (640px)
+                  RESPONSIVIDADE GERAL (640px)
    ========================================================= */
 @media (max-width: 640px) {
   #li-root .li-container { padding: 0 16px !important; }
@@ -350,7 +448,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   SEÇÕES GENÉRICAS
+                        SEÇÕES GENÉRICAS
    ========================================================= */
 #li-root .li-section {
   padding: 72px 0 !important;
@@ -369,7 +467,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   BENEFÍCIOS - SEÇÃO "O QUE VOCÊ VAI RECEBER"
+         BENEFÍCIOS - SEÇÃO "O QUE VOCÊ VAI RECEBER"
    ========================================================= */
 
 #li-root .li-section-title {
@@ -470,7 +568,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   RESPONSIVIDADE
+                        RESPONSIVIDADE
    ========================================================= */
 /*
    🔧 PONTO DE CORTE PRINCIPAL: 640px
@@ -517,7 +615,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   AJUSTES ADICIONAIS PARA TABLETS (641px–900px)
+        AJUSTES ADICIONAIS PARA TABLETS (641px–900px)
    ========================================================= */
 @media (min-width: 641px) and (max-width: 900px) {
   #li-root .li-receber-grid {
@@ -531,7 +629,7 @@ color: var(--muted) !important;
 
 
 /* =========================================================
-   PRODUTO E CARDS
+                        PRODUTO E CARDS
    ========================================================= */
 #li-root .li-product {
   display: grid !important;
@@ -558,7 +656,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   TESTEMUNHOS
+                           TESTEMUNHOS
    ========================================================= */
 .li-testimonials {
   margin-top: 40px;
@@ -587,7 +685,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   FAQ SECTION
+                        FAQ SECTION
    ========================================================= */
 #li-root .li-faq {
   display: grid !important;
@@ -603,7 +701,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   CTA BAR E FOOTER
+                        CTA BAR E FOOTER
    ========================================================= */
 #li-root .li-cta-bar {
   background:var(--hero-grad-start) !important;
@@ -623,7 +721,7 @@ color: var(--muted) !important;
 }
 
 /* =========================================================
-   MODAL DE CHECKOUT
+                        MODAL DE CHECKOUT
    ========================================================= */
 #li-checkout-modal {
   display: none;
