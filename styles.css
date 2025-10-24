@@ -1133,27 +1133,6 @@ body,
   box-shadow: inset 15px -4px 0 15px #ffcf48; /* sol */
 }
 
-/* Diamante no modo dark-luxury */
-.switch[data-theme="dark-luxury"] .slider:before {
-  content: "💎";
-  font-size: 1.1em;
-  background: none;
-  box-shadow: none;
-  left: 0.45em;
-  bottom: 0.45em;
-  transform: rotate(0deg);
-  transition: transform .4s ease;
-}
-
-.switch[data-theme="dark-luxury"] .slider {
-  background: linear-gradient(135deg, #6c63ff, #3b2a82);
-  box-shadow: 0 0 12px rgba(108, 99, 255, 0.4);
-}
-
-.switch[data-theme="dark-luxury"] .slider:before:hover {
-  transform: rotate(15deg);
-}
-
 /* Estrelas */
 .star{
   background-color: #fff;
@@ -1180,6 +1159,26 @@ body,
 }
 .switch input:checked ~ .slider .cloud{ opacity: 1; }
 
+/* Diamante no modo dark-luxury */
+.switch[data-theme="dark-luxury"] .slider:before {
+  content: "💎";
+  font-size: 1.1em;
+  background: none;
+  box-shadow: none;
+  left: 0.45em;
+  bottom: 0.45em;
+  transform: rotate(0deg);
+  transition: transform .4s ease;
+}
+
+.switch[data-theme="dark-luxury"] .slider {
+  background: linear-gradient(135deg, #6c63ff, #3b2a82);
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.4);
+}
+
+.switch[data-theme="dark-luxury"] .slider:before:hover {
+  transform: rotate(15deg);
+}
 /* ================================================
    Textos que devem ser brancos no tema light
    ================================================ */
