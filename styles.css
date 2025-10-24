@@ -27,69 +27,68 @@
 }
 
 /* =========================================================
-               TEMA DARK REFINADO – LAERTE INVEST
+   TEMA DARK LUXURY – LAERTE INVEST
    ========================================================= */
-
-html[data-theme="dark"] {
-  --bg: #060913;
-  --text: #e8ecf7;
-  --muted: #8fa3d6;
-  --card: #0b1220;
-  --primary: #3b82f6;
+html[data-theme="dark-luxury"] {
+  --bg: #05070d; /* fundo principal bem profundo */
+  --text: #e6e8f1;
+  --muted: #9da4c7;
+  --card: #0b0f19;
+  --primary: #6c63ff; /* roxo premium */
   --primary-contrast: #ffffff;
-  --hero-bg: #0a1124;
-  --hero-card-bg: #0e1a33;
-  --border: rgba(255, 255, 255, 0.1);
+  --hero-bg: #0a0f1d;
+  --hero-card-bg: #10162a;
+  --border: rgba(255, 255, 255, 0.08);
 
-  --muted-text: #9da8c6;
-  --surface: #0c1324;
-  --surface-2: #101a33;
-  --overlay: rgba(0, 0, 0, 0.65);
-  --success: #00b871;
-  --hero-grad-start: #102a72;
-  --hero-grad-end: #1a4b9b;
-  --success-2: #009e60;
+  --muted-text: #9fa8c6;
+  --surface: #0d1320;
+  --surface-2: #10182a;
+  --overlay: rgba(0, 0, 0, 0.7);
+  --success: #22c55e;
+  --hero-grad-start: #1b1f3b;
+  --hero-grad-end: #3b2a82;
+  --success-2: #16a34a;
 }
 
-/* Fundo com gradiente sutil e suave */
-body[data-theme="dark"] {
-  background: radial-gradient(circle at top left, #0a1124 0%, #060913 100%);
+/* Fundo com gradiente petróleo + roxo */
+body[data-theme="dark-luxury"] {
+  background: linear-gradient(160deg, #060912 0%, #0e0f1e 50%, #161933 100%);
   color: var(--text);
 }
 
-/* Cards com profundidade e brilho suave */
+/* Cards e seções com contraste metálico */
 .card, .section-card {
   background: var(--card);
   border: 1px solid var(--border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
 
 .card:hover, .section-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(108, 99, 255, 0.2);
 }
 
-/* Botões */
+/* Botões principais */
 button, .btn, .cta-button {
-  background: linear-gradient(135deg, var(--primary), #2563eb);
+  background: linear-gradient(135deg, #6c63ff, #4f46e5);
   color: var(--primary-contrast);
   border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
+  border-radius: 10px;
+  padding: 12px 26px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.3);
 }
 
 button:hover, .btn:hover, .cta-button:hover {
-  background: linear-gradient(135deg, #4f9eff, #1e40af);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #7c73ff, #4338ca);
+  box-shadow: 0 0 18px rgba(108, 99, 255, 0.45);
+  transform: translateY(-2px);
 }
 
-/* Botões de contraste (ex: "Ver o que está incluso") */
+/* Botões de contorno */
 .btn-outline {
   background: transparent;
   border: 1px solid var(--primary);
@@ -99,25 +98,25 @@ button:hover, .btn:hover, .cta-button:hover {
 .btn-outline:hover {
   background: var(--primary);
   color: var(--primary-contrast);
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 14px rgba(108, 99, 255, 0.4);
 }
 
-/* Seção hero */
+/* Seção hero com gradiente roxo petróleo */
 .hero-section {
   background: linear-gradient(135deg, var(--hero-grad-start), var(--hero-grad-end));
   color: var(--primary-contrast);
-  padding: 60px 20px;
+  padding: 70px 20px;
   text-align: center;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(108, 99, 255, 0.25);
 }
 
-/* Destaques e badges */
+/* Badges e destaques */
 .badge {
-  background: rgba(59, 130, 246, 0.15);
+  background: rgba(108, 99, 255, 0.15);
   color: var(--primary);
-  border-radius: 30px;
-  padding: 4px 12px;
+  border-radius: 40px;
+  padding: 4px 14px;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -130,17 +129,18 @@ a {
 }
 
 a:hover {
-  color: #60a5fa;
+  color: #8b82ff;
 }
 
-/* Chatbot flutuante */
+/* Chatbox flutuante */
 .chatbox {
   background: var(--surface-2);
   border: 1px solid var(--border);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
-  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.25);
+  border-radius: 14px;
   color: var(--text);
 }
+
 /* =========================================================
                      BODY E CONTAINER
    ========================================================= */
