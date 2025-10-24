@@ -1094,7 +1094,7 @@ body,
 /* Esconde o checkbox nativo */
 .switch input[type="checkbox"]{
   position: absolute;
-  inset: 0;          /* ocupa toda a área da switch */
+  inset: 0;
   opacity: 0;
   pointer-events: none;
 }
@@ -1110,7 +1110,7 @@ body,
   overflow: hidden;
 }
 
-/* Botão (lua/sol) */
+/* Botão (lua/sol/diamante) */
 .slider:before{
   content: "";
   position: absolute;
@@ -1124,13 +1124,34 @@ body,
   box-shadow: inset 8px -4px 0 0 #fff; /* lua */
 }
 
-/* Ativo (claro) */
-.switch input:checked + .slider{
+/* Ativo (claro / sol) */
+.switch input[data-theme="light"]:checked + .slider{
   background-color: #00a6ff;
 }
-.switch input:checked + .slider:before{
+.switch input[data-theme="light"]:checked + .slider:before{
   transform: translateX(1.8em);
   box-shadow: inset 15px -4px 0 15px #ffcf48; /* sol */
+}
+
+/* Diamante no modo dark-luxury */
+.switch[data-theme="dark-luxury"] .slider:before {
+  content: "💎";
+  font-size: 1.1em;
+  background: none;
+  box-shadow: none;
+  left: 0.45em;
+  bottom: 0.45em;
+  transform: rotate(0deg);
+  transition: transform .4s ease;
+}
+
+.switch[data-theme="dark-luxury"] .slider {
+  background: linear-gradient(135deg, #6c63ff, #3b2a82);
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.4);
+}
+
+.switch[data-theme="dark-luxury"] .slider:before:hover {
+  transform: rotate(15deg);
 }
 
 /* Estrelas */
@@ -1147,7 +1168,7 @@ body,
 .star_3{ left: 3em;   top: .9em;  }
 .switch input:checked ~ .slider .star{ opacity: 0; }
 
-/* Nuvem (só aparece no modo claro) */
+/* Nuvem (modo claro) */
 .cloud{
   width: 3.5em;
   position: absolute;
