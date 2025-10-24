@@ -263,65 +263,47 @@ body {
 }
 /* =========================================================
    RESPONSIVIDADE: AJUSTE DO HERO (960px)
-   Força o empilhamento da seção principal do Hero
    ========================================================= */
 @media (max-width: 960px) {
-
-  /* ===== HERO: Empilhamento e centralização do TEXTO ===== */
+  /* Empilha e centraliza TUDO no hero */
   #li-root .li-hero .li-wrap {
-    grid-template-columns: 1fr !important;
-    text-align: center !important; /* <--- GARANTE QUE H1, P, ETC. ESTEJAM CENTRALIZADOS */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;   /* centraliza horizontalmente os filhos */
     gap: 30px !important;
-
-     /* CRÍTICO: centraliza qualquer item do grid */
-     place-items: center !important; 
+    text-align: center !important;
   }
 
-  /* **CRÍTICO:** Centraliza o grupo de botões (que é flex) */
-  #li-root .li-cta-group {
-    justify-content: center !important;
+  /* Cada item fica bem dimensionado */
+  #li-root .li-hero .li-hero-content,
+  #li-root .li-hero .li-hero-card {
+    /* align-self funciona em flex (substitui justify-self do grid) */
+    align-self: center !important;
+    width: min(100%, 420px) !important; /* card não estoura nem fica magro */
   }
 
-  /* **CRÍTICO:** Centraliza o grupo de features/benefícios (que é grid/flex) */
-  #li-root .li-hero-feat {
-    justify-content: center !important;
-  }
-  
-  /* Remove o 'order: -1' para o card, mantendo o card na ordem original (embaixo do texto) */
-  #li-root .li-hero-card {
-    /* order: initial !important; ou remover a linha de order completamente */ 
-    max-width: 420px !important;
-    margin: 0 auto !important;
-  }
+  /* Grupos internos centralizados */
+  #li-root .li-cta-group { justify-content: center !important; }
+  #li-root .li-hero-feat  { justify-content: center !important; }
 }
+
 /* =========================================================
    RESPONSIVIDADE GERAL (640px)
    ========================================================= */
 @media (max-width: 640px) {
+  #li-root .li-container { padding: 0 16px !important; }
 
-  /* CORREÇÃO CRÍTICA: REDUZ O PADDING GLOBAL EM TELAS PEQUENAS */
-  #li-root .li-container {
-    padding: 0 16px !important; /* De 32px para 16px */
-  }
-  
-  /* CORREÇÃO CRÍTICA: REDUZ O PADDING DO HERO PARA CABER NA TELA */
-  #li-root .li-hero {
-    padding: 24px 30px 40px !important; /* De 36/40/56px para 24/20/40px */
-  }
+  #li-root .li-hero { padding: 24px 30px 40px !important; }
 
-  /* ... Mantenha o restante das suas regras aqui ... */
-  
-  /* ===== HERO ===== */
+  /* Mantém FLEX no mobile pequeno (não volte pro grid) */
   #li-root .li-hero .li-wrap {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     text-align: center !important;
   }
 
-  #li-root .li-hero h1 {
-    font-size: 28px !important;
-  }
-
-  /* ... (outras regras que você já tinha) ... */
+  #li-root .li-hero h1 { font-size: 28px !important; }
 }
 
 /* =========================================================
