@@ -54,3 +54,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// === THEME TOGGLE ===
+(function () {
+  const html = document.documentElement;
+  const chk  = document.getElementById('theme-checkbox');
+  if (!chk) return;
+
+  // tema preferido: localStorage -> sistema -> 'light'
+  const prefersDark = window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('theme'); // 'light' | 'dark' | null
+  const current = saved || (prefersDark ? 'dark' : 'light');
+  html.setAttribute('data-theme', current);
+  chk.checked = (current === 'light'); // switch azul = tema claro
+
+  chk.addEventListener('change', () => {
+    const next = chk.checked ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+})();
