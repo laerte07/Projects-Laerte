@@ -27,25 +27,24 @@
 }
 
 html[data-theme="dark"] {
-  --bg: #0f1420;
-  --text: #e7eaf3;
-  --muted: #b9c6ff;
-  --card: #121a2a;
-  --primary: #4a90e2;
+  --bg: #060913; /* fundo principal bem mais escuro */
+  --text: #e8ecf7; /* texto principal claro */
+  --muted: #8fa3d6; /* texto secundário */
+  --card: #0b1220; /* fundo dos cards */
+  --primary: #3b82f6; /* azul levemente mais vibrante */
   --primary-contrast: #ffffff;
-  --hero-bg: #0b1f4a;
-  --hero-card-bg: #0a1c3f;
-  --border: rgba(255,255,255,.12);
+  --hero-bg: #0a1124; /* fundo da seção hero mais escuro */
+  --hero-card-bg: #0e1a33; /* fundo do card da hero */
+  --border: rgba(255, 255, 255, 0.1);
 
-  /* espelhos em dark */
-  --muted-text: #b7c0d9;
-  --surface: #121a2a;
-  --surface-2: #0e1524;
-  --overlay: rgba(0,0,0,.55);
-  --success: #2ecc71;
-  --hero-grad-start: #0b3d91;
-  --hero-grad-end: #1e5ee0;
-  --success-2: #27ae60;         /* opcional: pode trocar por um tom mais escuro */
+  --muted-text: #9da8c6;
+  --surface: #0c1324; /* superfícies */
+  --surface-2: #101a33; /* contraste leve */
+  --overlay: rgba(0, 0, 0, 0.65);
+  --success: #00b871; /* verde mais equilibrado */
+  --hero-grad-start: #102a72; /* azul escuro suave */
+  --hero-grad-end: #1a4b9b; /* tom de azul profundo */
+  --success-2: #009e60;
 }
 body {
   margin: 0;
