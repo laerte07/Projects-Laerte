@@ -1213,7 +1213,9 @@ body,
   transition: 0.4s ease;
 }
 
-/* Botão animado (lua → sol → nuvem) */
+/* === Ícones animados do switch de tema === */
+
+/* Base do botão */
 .slider::before {
   content: "";
   position: absolute;
@@ -1223,9 +1225,42 @@ body,
   bottom: 0.5em;
   border-radius: 50%;
   background: #fff;
-  box-shadow: inset 8px -4px 0 0 #fff; /* lua padrão */
-  transition: 0.4s;
-  transition-timing-function: cubic-bezier(0.81,-0.04,0.38,1.5);
+  transition: all .4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+}
+
+/* 🌙 Lua no modo escuro */
+html[data-theme="dark"] .slider::before {
+  content: "🌙";
+  font-size: 1.05em;
+  background: transparent;
+  box-shadow: none;
+  transform: translateX(0) rotate(0deg);
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.4));
+}
+
+/* ☀️ Sol no modo claro */
+html[data-theme="light"] .slider::before {
+  content: "☀️";
+  font-size: 1.05em;
+  background: transparent;
+  box-shadow: none;
+  transform: translateX(1.8em) rotate(20deg);
+  filter: drop-shadow(0 0 6px #ffcf48);
+}
+
+/* 💎 Diamante no modo dark-luxury */
+html[data-theme="dark-luxury"] .slider::before {
+  content: "💎";
+  font-size: 1.1em;
+  background: none;
+  box-shadow: none;
+  transform: translateX(1.8em) rotate(0deg);
+  filter: drop-shadow(0 0 6px rgba(179,68,255,0.9));
+  transition: transform .4s ease, filter .4s ease;
 }
 
 /* === Elementos decorativos === */
@@ -1303,6 +1338,7 @@ html[data-theme="dark-luxury"] .cloud {
   opacity: 0.2;
   filter: drop-shadow(0 0 8px #b344ff);
 }
+
 
 /* ================================================
    Textos que devem ser brancos no tema light
