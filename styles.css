@@ -267,18 +267,18 @@ body {
 @media (max-width: 960px) {
   /* Empilha e centraliza TUDO no hero */
   #li-root .li-hero .li-wrap {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;   /* centraliza horizontalmente os filhos */
-    gap: 30px !important;
-    text-align: center !important;
-  }
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  place-items: center !important;  /* centraliza horizontal e vertical */
+  gap: 30px !important;
+  text-align: center !important;
+}
 
   /* Cada item fica bem dimensionado */
   #li-root .li-hero .li-hero-content,
   #li-root .li-hero .li-hero-card {
     /* align-self funciona em flex (substitui justify-self do grid) */
-    align-self: center !important;
+    justify-self: center !important;
     width: min(100%, 420px) !important; /* card não estoura nem fica magro */
   }
 
