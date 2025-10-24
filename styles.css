@@ -1,11 +1,57 @@
 /* =========================================================
    BASE GLOBAL — namespaces e estrutura geral
    ========================================================= */
+/* =========================================================
+   VARIÁVEIS DE TEMA
+   ========================================================= */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #e6eeff;
+  --card: #f7f8fc;
+  --primary: #4a90e2;
+  --primary-contrast: #ffffff;
+  --hero-bg: #1e3a8a;
+  --hero-card-bg: #0b3a85;
+  --border: rgba(0,0,0,.08);
+
+  /* extras usados no arquivo */
+  --muted-text: #475569;
+  --surface: #f8fafc;
+  --surface-2: #f1f5f9;
+  --overlay: rgba(0,0,0,.45);
+  --success: #2ecc71;
+  --hero-grad-start: #0b3d91;
+  --hero-grad-end: #1e5ee0;
+  --success-2: #27ae60;         /* fica aqui, centralizado */
+}
+
+html[data-theme="dark"] {
+  --bg: #0f1420;
+  --text: #e7eaf3;
+  --muted: #b9c6ff;
+  --card: #121a2a;
+  --primary: #4a90e2;
+  --primary-contrast: #ffffff;
+  --hero-bg: #0b1f4a;
+  --hero-card-bg: #0a1c3f;
+  --border: rgba(255,255,255,.12);
+
+  /* espelhos em dark */
+  --muted-text: #b7c0d9;
+  --surface: #121a2a;
+  --surface-2: #0e1524;
+  --overlay: rgba(0,0,0,.55);
+  --success: #2ecc71;
+  --hero-grad-start: #0b3d91;
+  --hero-grad-end: #1e5ee0;
+  --success-2: #27ae60;         /* opcional: pode trocar por um tom mais escuro */
+}
 body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
-  background: #fff;
-  color: #0f172a;
+  background: var(--bg);
+  color: var(--text);
 }
 
 #li-root .li-container {
@@ -21,8 +67,8 @@ body {
    ========================================================= */
 #li-root .li-btn {
     display: inline-flex ;
-    background: #4a90e2 ;
-    color: #f5f7fa ;
+    background:var(--primary);
+    color:var(--primary-contrast);
     font-weight: 800 ;
     text-decoration: none ;
     border-radius: 8px ;
@@ -45,9 +91,9 @@ body {
   border-radius: 8px;
   font-weight: 700;
   font-size: 16px;
-  color: #f5f7fa;
+  color:var(--primary-contrast);
   background: transparent;
-  box-shadow: 0 0 0 2px #4a90e2;
+  box-shadow:0 0 0 2px var(--primary);
   cursor: pointer;
   overflow: hidden;
   text-decoration: none;
@@ -60,7 +106,7 @@ body {
   position: absolute;
   top: 50%; left: 50%;
   width: 12px; height: 12px;
-  background: #4a90e2;
+  background:var(--primary);
   border-radius: 999px;
   transform: translate(-50%, -50%) scale(0);
   opacity: 0;
@@ -90,8 +136,8 @@ body {
 
 /* Hover: ripple cobre todo o botão, texto desliza e ícone aparece */
 .animated-button:hover{
-  color: #fff;
-  box-shadow: 0 0 0 4px #4a90e2;
+   color: var(--primary-contrast);
+  box-shadow: 0 0 0 4px var(--primary);
 }
 .animated-button:hover .circle{
   transform: translate(-50%, -50%) scale(26);
@@ -124,24 +170,22 @@ body {
   padding: 36px 40px 56px !important;
 
   /* Visual e Cores */
-  background: #1e3a8a;
-  color: #fff !important;
+  background:var(--hero-bg);
+  color:var(--text) !important;
 }
 
 /*
  * Seção: Wrap do Hero
  * Estilo para o container interno que usa Grid
  */
+/* <<< bloco correto do wrap >>> */
 #li-root .li-hero .li-wrap {
-  /* ... outras propriedades ... */
   display: grid !important;
   grid-template-columns: 1.1fr 0.9fr !important;
   align-items: center !important;
   gap: 48px !important;
-
-  /* CORREÇÃO: Usar 100% de largura, mas limitar o tamanho MÁXIMO (desktop) */
   width: 100% !important;
-  max-width: 1000px !important; /* Exemplo de limite para desktop */
+  max-width: 1000px !important;
 }
 
 /*
@@ -184,8 +228,8 @@ body {
   line-height: 1.5 !important;
 
   /* Visual e Cores */
-  color: #e6eeff !important;
-
+color: var(--muted) !important;
+   
   /* Modelo de Caixa */
   margin: 0 0 24px !important;
 }
@@ -206,8 +250,8 @@ body {
 #li-root .li-cta-secondary {
   /* Visual e Cores */
   background: transparent !important;
-  border: 2px solid #fff !important;
-  color: #fff !important;
+  border: 2px solid var(--primary-contrast) !important;
+  color: var(--primary-contrast) !important;
 }
 
 /*
@@ -235,21 +279,18 @@ body {
   padding: 6px 10px !important;
 
   /* Visual e Cores */
-  background: rgba(255, 255, 255, .1) !important;
+  background:rgba(255,255,255,.1) !important;
 }
 
 /*
  * Seção: Card do Hero
  */
-#li-root .li-hero-card {
-  /* Modelo de Caixa */
-  border-radius: 14px !important;
-  border: 1px solid rgba(255, 255, 255, .12) !important;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, .15) !important;
+#li-root .li-hero-card{
+  border:1px solid var(--border) !important;
+  box-shadow:0 10px 24px rgba(0,0,0,.15) !important; /* ok manter sombra */
+  background:var(--hero-card-bg) !important;
   padding: 22px !important;
-
   /* Visual e Cores */
-  background: #0b3a85 !important;
 }
 
 /*
@@ -322,18 +363,15 @@ body {
 }
 
 #li-root .li-section-sub {
-  color: #475569 !important;
-  margin: 0 0 30px !important;
+   color: var(--muted-text) !important;
   font-size: 16px !important;
+  margin: 0 0 30px !important;
+  text-align: center !important; /* se quiser manter centralizado */
 }
 
 /* =========================================================
    BENEFÍCIOS - SEÇÃO "O QUE VOCÊ VAI RECEBER"
    ========================================================= */
-
-#li-root .li-section {
-  padding: 72px 0 !important;
-}
 
 #li-root .li-section-title {
   font-size: 28px !important;
@@ -341,20 +379,13 @@ body {
   text-align: center !important;
 }
 
-#li-root .li-section-sub {
-  color: #475569 !important;
-  font-size: 16px !important;
-  margin-bottom: 30px !important;
-  text-align: center !important;
-}
-
 /* ===== Caixa principal ===== */
 #li-root .li-benefits-box {
-  background: #f8fafc !important;
-  border: 1px solid #e6eaf2 !important;
+  background: var(--surface) !important;
+  border:1px solid var(--border) !important;
   border-radius: 16px !important;
   padding: 26px !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .05) !important;
+  box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
   max-width: 1100px !important;
   margin: 0 auto !important;
 }
@@ -363,7 +394,7 @@ body {
   text-align: center !important;
   margin-bottom: 22px !important;
   font-size: 22px !important;
-  color: #0f172a !important;
+  color:var(--text) !important;
 }
 
 /* ===== Grid dos itens ===== */
@@ -373,21 +404,14 @@ body {
   gap: 18px !important;
 }
 
-@media (max-width: 640px) {
-  #li-root .li-receber-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
 /* ===== Item individual ===== */
 #li-root .li-receber-item {
   display: flex !important;
   align-items: flex-start !important;
   gap: 12px !important;
   padding: 16px !important;
-  border: 1px solid #e6eaf2 !important;
-  border-radius: 12px !important;
-  background: #fff !important;
+  border:1px solid var(--border) !important;
+  background: var(--bg) !important;
   transition: transform .2s ease, box-shadow .2s ease !important;
 }
 
@@ -416,21 +440,21 @@ body {
   margin: 0 0 4px !important;
   font-size: 16px !important;
   font-weight: 700 !important;
-  color: #0f172a !important;
+  color: var(--text) !important;
 }
 
 #li-root .li-receber-item p {
   margin: 0 !important;
   font-size: 14px !important;
-  color: #475569 !important;
+  color: var(--muted-text) !important;
   line-height: 1.5 !important;
 }
 
 /* ===== Botão ===== */
 #li-root .li-benefits-box .li-btn {
   display: inline-block !important;
-  background: #1e3a8a !important;
-  color: #fff !important;
+  background:var(--hero-bg) !important;
+  color:var(--primary-contrast) !important;
   font-weight: 800 !important;
   text-decoration: none !important;
   border-radius: 8px !important;
@@ -438,7 +462,7 @@ body {
   padding: 14px 22px !important;
   transition: .2s !important;
   margin-top: 24px !important;
-  box-shadow: 0 0 10px rgba(46, 204, 113, 0.4) !important;
+  box-shadow:0 0 10px rgba(46,204,113,.4) !important; /* opcional manter */
 }
 
 #li-root .li-benefits-box .li-btn:hover {
@@ -518,8 +542,8 @@ body {
 }
 
 #li-root .li-card {
-  background: #f8fafc !important;
-  border: 1px solid #e6eaf2 !important;
+  background:var(--surface) !important;
+  border:1px solid var(--border) !important;
   border-radius: 16px !important;
   padding: 26px !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, .05) !important;
@@ -548,11 +572,11 @@ body {
 }
 
 .li-testimonial {
-  background: #0b3d91;
-  color: #fff;
+  background:var(--hero-card-bg);
+  color:var(--primary-contrast);
+  border:1px solid var(--border);
   border-radius: 10px;
   padding: 18px;
-  border: 2px solid black;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -573,8 +597,8 @@ body {
 }
 
 #li-root .li-q {
-  background: #f8fafc !important;
-  border: 1px solid #e6eaf2 !important;
+  background:var(--surface) !important;
+  border:1px solid var(--border) !important;
   border-radius: 14px !important;
   padding: 16px !important;
 }
@@ -583,8 +607,8 @@ body {
    CTA BAR E FOOTER
    ========================================================= */
 #li-root .li-cta-bar {
-  background: #0b3d91 !important;
-  color: #fff !important;
+  background:var(--hero-grad-start) !important;
+  color:var(--primary-contrast) !important;
   padding: 28px 0 !important;
 }
 
@@ -595,7 +619,7 @@ body {
 #li-root .li-footer {
   padding: 28px 0 !important;
   text-align: center !important;
-  color: #475569 !important;
+  color:var(--muted-text) !important;
   font-size: 14px !important;
 }
 
@@ -606,7 +630,7 @@ body {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .45);
+  background:var(--overlay);
   z-index: 1000;
   align-items: center;
   justify-content: center;
@@ -615,11 +639,11 @@ body {
 }
 
 #li-checkout-modal .li-modal-box {
-  background: #fff;
+  background:var(--bg);
   border-radius: 16px;
   max-width: 680px;
   width: 100%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
   overflow: hidden;
   position: relative;
   animation: li-pop .15s ease;
@@ -642,7 +666,7 @@ body {
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
-  color: #334155;
+  color:var(--muted-text);
 }
 
 #li-checkout-modal .li-modal-footer {
@@ -655,7 +679,7 @@ body {
 
 #li-checkout-modal .li-price {
   font-weight: 700;
-  color: #0b3d91;
+  color:var(--hero-grad-start);
 }
 
 #li-checkout-modal .li-price span {
@@ -683,7 +707,7 @@ body {
    RECEBER SECTION
    ========================================================= */
 #li-root .li-receber {
-  background: #f1f5f9 !important;
+  background:var(--surface-2) !important;
   padding: 72px 0 !important;
 }
 
@@ -694,10 +718,10 @@ body {
 }
 
 #li-root .li-receber-item {
-  background: #fff !important;
+  background:var(--bg) !important;
   border-radius: 14px !important;
   padding: 24px !important;
-  border: 1px solid #e6eaf2 !important;
+  border:1px solid var(--border) !important;
   text-align: center !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, .05) !important;
 }
@@ -711,11 +735,11 @@ body {
    ÚLTIMA CHANCE / CTA FINAL
    ========================================================= */
 #li-root .li-last-chance {
-  background: linear-gradient(135deg, #0b3d91, #1e5ee0) !important;
-  color: #fff !important;
+  background:linear-gradient(135deg,var(--hero-grad-start),var(--hero-grad-end)) !important;
+  color:var(--primary-contrast) !important;
   text-align: center !important;
   padding: 64px 18px !important;
-  border-top: 6px solid #2ecc71 !important;
+  border-top:6px solid var(--success) !important;
 }
 
 #li-root .li-last-chance h2 {
@@ -729,7 +753,7 @@ body {
 }
 
 #li-root .li-last-chance .li-btn {
-  background: #2ecc71 !important;
+  background:var(--success) !important;
   border-radius: 10px !important;
   font-size: 18px !important;
   padding: 14px 28px !important;
@@ -739,17 +763,17 @@ body {
    BOTÕES ESPECIAIS E EFEITOS
    ========================================================= */
 #li-root .li-btn.neon {
-  background: #2ecc71 !important;
-  box-shadow: 0 0 12px #2ecc71, 0 0 24px #2ecc71 !important;
+  background:var(--success) !important;
+  box-shadow:0 0 12px var(--success),0 0 24px var(--success) !important;
 }
 
 #li-root .li-btn.neon:hover {
-  box-shadow: 0 0 18px #2ecc71, 0 0 36px #2ecc71 !important;
+  box-shadow:0 0 18px var(--success),0 0 36px var(--success) !important;
   transform: translateY(-2px) !important;
 }
 
 #li-root .li-btn-gradient {
-  background: linear-gradient(90deg, #2ecc71, #27ae60) !important;
+  background: linear-gradient(90deg, var(--success), var(--success-2)) !important;
   color: #fff !important;
   font-weight: 800 !important;
 }
@@ -792,7 +816,6 @@ body {
 
   /* ===== HERO ===== */
   #li-root .li-hero .li-wrap {
-    grid-template-columns: 1fr !important;
     text-align: center !important;
   }
 
@@ -919,16 +942,36 @@ body {
 }
 
 /* Correção visual da seção hero */
-#li-root .li-hero .li-wrap {
-  display: grid !important;
-  /* REMOVA ESTA LINHA ABAIXO, POIS ELA ESTÁ SOBRESCREVENDO O MEDIA QUERY */
-  /* grid-template-columns: 1.1fr 0.9fr !important; */ 
-  align-items: center !important;
-  gap: 48px !important;
-}
 .theme-toggle{
   position: fixed;
   top: 14px;
   right: 14px;
   z-index: 9999;
+}
+/* =========================================================
+   ACESSIBILIDADE & TRANSIÇÕES DE TEMA
+   ========================================================= */
+
+/* Foco visível para navegação por teclado */
+#li-root .li-btn:focus-visible,
+#li-root .animated-button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Sugere ao navegador que a página tem versão light/dark */
+html { 
+  color-scheme: light dark; 
+}
+
+/* Transição suave ao alternar temas */
+body, 
+#li-root .li-card, 
+#li-root .li-hero, 
+#li-root .li-benefits-box, 
+#li-root .li-hero-card, 
+#li-root .li-q {
+  transition: background-color .25s ease, 
+              color .25s ease, 
+              border-color .25s ease;
 }
