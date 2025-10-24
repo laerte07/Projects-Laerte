@@ -55,23 +55,35 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// === THEME TOGGLE ===
+// === THEME TOGGLE (light | dark | dark-luxury) ===
 (function () {
   const html = document.documentElement;
   const chk  = document.getElementById('theme-checkbox');
   if (!chk) return;
 
-  // tema preferido: localStorage -> sistema -> 'light'
+  const themes = ['light', 'dark', 'dark-luxury'];
+
+  // Pega o tema salvo ou detecta preferência do sistema
   const prefersDark = window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const saved = localStorage.getItem('theme'); // 'light' | 'dark' | null
+
+  const saved = localStorage.getItem('theme');
   const current = saved || (prefersDark ? 'dark' : 'light');
   html.setAttribute('data-theme', current);
-  chk.checked = (current === 'light'); // switch azul = tema claro
 
-  chk.addEventListener('change', () => {
-    const next = chk.checked ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+  // Marca o checkbox conforme o tema atual
+  chk.checked = (current === 'light');
+
+  chk.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const currentIndex = themes.indexOf(currentTheme);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const nextTheme = themes[nextIndex];
+
+    html.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('theme', nextTheme);
+
+    // feedback visual opcional
+    console.log(`🎨 Tema alterado para: ${nextTheme}`);
   });
 })();
