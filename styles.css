@@ -306,7 +306,7 @@ body {
   
   /* CORREÇÃO CRÍTICA: REDUZ O PADDING DO HERO PARA CABER NA TELA */
   #li-root .li-hero {
-    padding: 24px 20px 40px !important; /* De 36/40/56px para 24/20/40px */
+    padding: 24px 30px 40px !important; /* De 36/40/56px para 24/20/40px */
   }
 
   /* ... Mantenha o restante das suas regras aqui ... */
