@@ -805,7 +805,7 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
    ========================================================= */
 #li-root .li-faq {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  grid-template-columns: 3fr 3fr !important;
   gap: 18px !important;
 }
 
@@ -1066,10 +1066,6 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
   }
 
   /* ===== FAQ ===== */
-  #li-root .li-faq {
-    grid-template-columns: 1fr !important;
-  }
-
   #li-root .li-q {
     padding: 14px !important;
     text-align: left !important;
