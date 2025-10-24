@@ -272,6 +272,9 @@ body {
     grid-template-columns: 1fr !important;
     text-align: center !important; /* <--- GARANTE QUE H1, P, ETC. ESTEJAM CENTRALIZADOS */
     gap: 30px !important;
+
+     /* CRÍTICO: centraliza qualquer item do grid */
+    justify-items: center !important; 
   }
 
   /* **CRÍTICO:** Centraliza o grupo de botões (que é flex) */
