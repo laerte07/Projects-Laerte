@@ -29,32 +29,6 @@ document.addEventListener("click", function (e) {
   if (e.target && e.target.id === "li-checkout-modal") liCloseModal();
 });
 
-// =========================================================
-// Toggle de Tema Claro/Escuro
-// =========================================================
-document.addEventListener("DOMContentLoaded", () => {
-  const checkbox = document.getElementById("checkbox");
-
-  if (!checkbox) return; // segurança: se não houver switch, não faz nada
-
-  // Carregar preferência salva
-  if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.setAttribute("data-theme", "dark");
-    checkbox.checked = true;
-  }
-
-  // Listener para alternar tema
-  checkbox.addEventListener("change", () => {
-    if (checkbox.checked) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-    }
-  });
-});
-
 // === THEME TOGGLE 3 MODOS (light | dark | dark-luxury) ===
 (function () {
   const html = document.documentElement;
