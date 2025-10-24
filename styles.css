@@ -926,3 +926,9 @@ body {
   align-items: center !important;
   gap: 48px !important;
 }
+.theme-toggle{
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+}
