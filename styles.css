@@ -6,24 +6,22 @@
    ========================================================= */
 :root {
   --bg: #ffffff;
-  --text: #0f172a;
-  --muted: #e6eeff;
-  --card: #f7f8fc;
-  --primary: #4a90e2;
+  --text: #0c4a6e;
+  --muted: #e0f2fe;
+  --card: #f0f9ff;
+  --primary: #06b6d4;
   --primary-contrast: #ffffff;
-  --hero-bg: #1e3a8a;
-  --hero-card-bg: #0b3a85;
+  --hero-bg: #0ea5e9;
+  --hero-card-bg: #0284c7;
   --border: rgba(0,0,0,.08);
-
-  /* extras usados no arquivo */
-  --muted-text: #475569;
+  --muted-text: #64748b;
   --surface: #f8fafc;
   --surface-2: #f1f5f9;
   --overlay: rgba(0,0,0,.45);
-  --success: #2ecc71;
-  --hero-grad-start: #0b3d91;
-  --hero-grad-end: #1e5ee0;
-  --success-2: #27ae60;         /* fica aqui, centralizado */
+  --success: #10b981;
+  --hero-grad-start: #0ea5e9;
+  --hero-grad-end: #10b981;
+  --success-2: #059669;
 }
 
 /* =========================================================
@@ -31,24 +29,23 @@
    ========================================================= */
 
 html[data-theme="dark"] {
-  --bg: #060913;
-  --text: #e8ecf7;
-  --muted: #8fa3d6;
-  --card: #0b1220;
-  --primary: #3b82f6;
+  --bg: #00000b;
+  --text: #f1f5f9;
+  --muted: #64748b;
+  --card: #1e293b;
+  --primary: #005860;
   --primary-contrast: #ffffff;
-  --hero-bg: #0a1124;
-  --hero-card-bg: #0e1a33;
+  --hero-bg: #000a19;
+  --hero-card-bg: #334155;
   --border: rgba(255, 255, 255, 0.1);
-
-  --muted-text: #9da8c6;
-  --surface: #0c1324;
-  --surface-2: #101a33;
+  --muted-text: #94a3b8;
+  --surface: #1e293b;
+  --surface-2: #334155;
   --overlay: rgba(0, 0, 0, 0.65);
-  --success: #00b871;
-  --hero-grad-start: #102a72;
-  --hero-grad-end: #1a4b9b;
-  --success-2: #009e60;
+  --success: #10b981;
+  --hero-grad-start: #1e293b;
+  --hero-grad-end: #f97316;
+  --success-2: #059669;
 }
 
 /* Fundo com gradiente sutil e suave */
@@ -146,24 +143,23 @@ a:hover {
    TEMA DARK LUXURY – LAERTE INVEST
    ========================================================= */
 html[data-theme="dark-luxury"] {
-  --bg: #05070d; /* fundo principal bem profundo */
-  --text: #e6e8f1;
-  --muted: #9da4c7;
-  --card: #0b0f19;
-  --primary: #6c63ff; /* roxo premium */
+  --bg: #0a0a0f;
+  --text: #f8fafc;
+  --muted: #64748b;
+  --card: #1e1b4b;
+  --primary: #2C4BFF;
   --primary-contrast: #ffffff;
-  --hero-bg: #0a0f1d;
-  --hero-card-bg: #10162a;
+  --hero-bg: #1e1b4b;
+  --hero-card-bg: #312e81;
   --border: rgba(255, 255, 255, 0.08);
-
-  --muted-text: #9fa8c6;
-  --surface: #0d1320;
-  --surface-2: #10182a;
+  --muted-text: #94a3b8;
+  --surface: #000000;
+  --surface-2: #ffffff;
   --overlay: rgba(0, 0, 0, 0.7);
-  --success: #22c55e;
-  --hero-grad-start: #1b1f3b;
-  --hero-grad-end: #3b2a82;
-  --success-2: #16a34a;
+  --success: #059669;
+  --hero-grad-start: #1e1b4b;
+  --hero-grad-end: #fbbf24;
+  --success-2: #047857;
 }
 
 /* Fundo com gradiente petróleo + roxo */
@@ -548,10 +544,13 @@ color: var(--muted) !important;
                   RESPONSIVIDADE GERAL (640px)
    ========================================================= */
 @media (max-width: 640px) {
-  #li-root .li-container { padding: 0 16px !important; }
+  #li-root .li-container {padding: 3px 1px 0px !important;}
 
-  #li-root .li-hero { padding: 24px 30px 40px !important; }
-
+      #li-root .li-hero {
+        padding: 24px 40px !important;
+        width: 100vw !important;
+    }
+   
   /* Mantém FLEX no mobile pequeno (não volte pro grid) */
   #li-root .li-hero .li-wrap {
     display: flex !important;
@@ -750,7 +749,7 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 #li-root .li-product {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  gap: 28px !important;
+  gap: 20px !important;
   align-items: center !important;
 }
 
@@ -789,13 +788,13 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
   color:var(--primary-contrast);
   border:1px solid var(--border);
   border-radius: 10px;
-  padding: 18px;
+  padding: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .li-testimonial p {
   margin: 0 0 10px;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.5;
   font-weight: 500;
 }
@@ -806,14 +805,15 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 #li-root .li-faq {
   display: grid !important;
   grid-template-columns: 3fr 3fr !important;
-  gap: 18px !important;
+  gap: 4px !important;
+  font-size: 15px !important;
 }
 
 #li-root .li-q {
   background:var(--surface) !important;
   border:1px solid var(--border) !important;
   border-radius: 14px !important;
-  padding: 16px !important;
+  padding: 10px !important;
 }
 
 /* =========================================================
@@ -1067,8 +1067,8 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 
   /* ===== FAQ ===== */
   #li-root .li-q {
-    padding: 14px !important;
-    text-align: left !important;
+    padding: 6px !important;
+    text-align: justify !important;
   }
 
   /* ===== ÚLTIMA CHANCE ===== */
@@ -1145,6 +1145,7 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 
 #li-root .li-hero-card {
   width: 100% !important;
+  border-radius: 30px;
 }
 
 /* =========================================================
