@@ -462,7 +462,7 @@ color: var(--muted) !important;
   padding: 14px 22px !important;
   transition: .2s !important;
   margin-top: 24px !important;
-  box-shadow:0 0 10px rgba(46,204,113,.4) !important; /* opcional manter */
+  box-shadow:0 0 10px rgbargb(255 255 255 / 40%) !important; /* opcional manter */
 }
 
 #li-root .li-benefits-box .li-btn:hover {
