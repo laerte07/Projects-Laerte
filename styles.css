@@ -675,7 +675,7 @@ color: var(--muted) !important;
   padding: 14px 22px !important;
   transition: .2s !important;
   margin-top: 24px !important;
-  box-shadow:0 0 10px rgbargb(255 255 255 / 40%) !important; /* opcional manter */
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 }
 
 #li-root .li-benefits-box .li-btn:hover {
@@ -1025,8 +1025,6 @@ color: var(--muted) !important;
    altere o valor abaixo. Exemplo:
    @media (max-width: 768px) { ... }
 */
-@media (max-width: 640px) {
-
   /* ===== HERO ===== */
   #li-root .li-hero .li-wrap {
     text-align: center !important;
@@ -1154,13 +1152,6 @@ color: var(--muted) !important;
   width: 100% !important;
 }
 
-/* Correção visual da seção hero */
-.theme-toggle{
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 9999;
-}
 /* =========================================================
    ACESSIBILIDADE & TRANSIÇÕES DE TEMA
    ========================================================= */
