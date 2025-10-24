@@ -1077,12 +1077,17 @@ html[data-theme="light"] #li-root .li-receber-item span,
 html[data-theme="light"] #li-root .li-receber-item p {
   color: #ffffff !important;
 }
-/* Valor em branco */
-html[data-theme="light"] #li-root .li-price {
-  color: #ffffff !important;
+
+/* --- Forçar preço branco no tema claro --- */
+html[data-theme="light"] #li-root .li-price,
+html[data-theme="light"] #li-root .li-hero .li-price,
+html[data-theme="light"] #li-root .li-hero-card .li-price {
+  color: #fff !important;
 }
 
-/* Texto auxiliar do preço */
-html[data-theme="light"] #li-root .li-price span {
-  color: #e0e0e0 !important; /* cinza clarinho, pode ajustar */
+/* Texto auxiliar do preço (ex.: "preço de relançamento") */
+html[data-theme="light"] #li-root .li-price span,
+html[data-theme="light"] #li-root .li-hero .li-price span,
+html[data-theme="light"] #li-root .li-hero-card .li-price span {
+  color: rgba(255,255,255,.85) !important;
 }
