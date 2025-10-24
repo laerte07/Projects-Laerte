@@ -1078,11 +1078,11 @@ html[data-theme="light"] #li-root .li-receber-item p {
   color: #ffffff !important;
 }
 /* Valor em branco */
-#li-root .li-price {
+html[data-theme="light"] #li-root .li-price {
   color: #ffffff !important;
 }
 
 /* Texto auxiliar do preço */
-#li-root .li-price span {
+html[data-theme="light"] #li-root .li-price span {
   color: #e0e0e0 !important; /* cinza clarinho, pode ajustar */
 }
