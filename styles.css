@@ -261,12 +261,13 @@ body {
   font-family: Inter, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  width: 100vw;
 }
 
 #li-root .li-container {
-  max-width: 1240px !important;
+  max-width: 1000px !important;
   width: 100% !important;
-  padding: 0 32px !important;
+  padding: 0px 32px !important;
   margin: 0 auto !important;
   box-sizing: border-box !important;
 }
@@ -376,11 +377,12 @@ body {
   justify-content: center !important;
 
   /* Modelo de Caixa */
-  padding: 36px 40px 56px !important;
+  padding: 36px 56px !important;
 
   /* Visual e Cores */
   background:var(--hero-bg);
   color:var(--text) !important;
+  width: 100vw;
 }
 
 /*
@@ -544,13 +546,10 @@ color: var(--muted) !important;
                   RESPONSIVIDADE GERAL (640px)
    ========================================================= */
 @media (max-width: 640px) {
-  #li-root .li-container {padding: 3px 1px 0px !important;}
+  #li-root .li-container {padding: 10px 0px 10px !important;width: 100% !important;}
 
-      #li-root .li-hero {
-        padding: 24px 40px !important;
-        width: 100vw !important;
-    }
-   
+  #li-root .li-hero {width: 100vw !important;  /* opcional: ajusta espaçamento interno */ /* remove possíveis margens laterais do container */}
+
   /* Mantém FLEX no mobile pequeno (não volte pro grid) */
   #li-root .li-hero .li-wrap {
     display: flex !important;
@@ -759,6 +758,8 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
   border-radius: 16px !important;
   padding: 26px !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, .05) !important;
+  justify-items: center;
+  width: 100%;
 }
 
 #li-root .li-bullets {
@@ -1058,7 +1059,8 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 
   /* ===== RECEBER ===== */
   #li-root .li-receber-grid {
-   grid-template-columns: repeat(2, 1fr) !important;  }
+   grid-template-columns: repeat(2, 1fr) !important;
+   }
 
   /* ===== TESTEMUNHOS ===== */
   .li-testimonials-grid {
