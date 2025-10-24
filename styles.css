@@ -1234,7 +1234,7 @@ body,
 
 /* 🌙 Lua no modo escuro */
 html[data-theme="dark"] .slider::before {
-  content: "🌙";
+  content: "☽";
   font-size: 1.05em;
   background: transparent;
   box-shadow: none;
@@ -1244,7 +1244,7 @@ html[data-theme="dark"] .slider::before {
 
 /* ☀️ Sol no modo claro */
 html[data-theme="light"] .slider::before {
-  content: "☀️";
+  content: "";
   font-size: 1.05em;
   background: transparent;
   box-shadow: none;
