@@ -1175,15 +1175,16 @@ body,
               border-color .25s ease;
 }
 
-/* === THEME SWITCH (visual do botão animado) === */
-.theme-toggle{
+/* === THEME TOGGLE REESTRUTURADO (3 temas) === */
+.theme-toggle {
   position: fixed;
   top: 14px;
   right: 14px;
   z-index: 9999;
 }
 
-.switch{
+/* Base */
+.switch {
   font-size: 17px;
   position: relative;
   display: inline-block;
@@ -1191,10 +1192,12 @@ body,
   height: 2.2em;
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  cursor: pointer;
 }
 
-/* Esconde o checkbox nativo */
-.switch input[type="checkbox"]{
+/* Checkbox oculto */
+.switch input[type="checkbox"] {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -1202,85 +1205,105 @@ body,
 }
 
 /* Trilha */
-.slider{
+.slider {
   position: absolute;
-  cursor: pointer;
   inset: 0;
-  background-color: #2a2a2a;
-  transition: 0.4s;
   border-radius: 30px;
-  overflow: hidden;
+  background-color: #2a2a2a;
+  transition: 0.4s ease;
 }
 
-/* Botão (lua/sol/diamante) */
-.slider:before{
+/* Botão animado (lua → sol → nuvem) */
+.slider::before {
   content: "";
   position: absolute;
   height: 1.2em;
   width: 1.2em;
-  border-radius: 20px;
   left: 0.5em;
   bottom: 0.5em;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: inset 8px -4px 0 0 #fff; /* lua padrão */
   transition: 0.4s;
   transition-timing-function: cubic-bezier(0.81,-0.04,0.38,1.5);
-  box-shadow: inset 8px -4px 0 0 #fff; /* lua */
 }
 
-/* Ativo (claro / sol) */
-.switch input[data-theme="light"]:checked + .slider{
-  background-color: #00a6ff;
-}
-.switch input[data-theme="light"]:checked + .slider:before{
-  transform: translateX(1.8em);
-  box-shadow: inset 15px -4px 0 15px #ffcf48; /* sol */
-}
-
-/* Estrelas */
-.star{
+/* === Elementos decorativos === */
+.star {
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
   width: 5px;
   height: 5px;
-  transition: all .4s;
+  opacity: 1;
+  transition: all .4s ease;
 }
-.star_1{ left: 2.5em; top: .5em; }
-.star_2{ left: 2.2em; top: 1.2em; }
-.star_3{ left: 3em;   top: .9em;  }
-.switch input:checked ~ .slider .star{ opacity: 0; }
+.star_1 { left: 2.5em; top: .5em; }
+.star_2 { left: 2.2em; top: 1.2em; }
+.star_3 { left: 3em;   top: .9em;  }
 
-/* Nuvem (modo claro) */
-.cloud{
+.cloud {
   width: 3.5em;
   position: absolute;
   bottom: -1.4em;
   left: -1.1em;
   opacity: 0;
-  transition: all .4s;
   fill: #fff;
-}
-.switch input:checked ~ .slider .cloud{ opacity: 1; }
-
-/* Diamante no modo dark-luxury */
-.switch[data-theme="dark-luxury"] .slider:before {
-  content: "💎";
-  font-size: 1.1em;
-  background: none;
-  box-shadow: none;
-  left: 0.45em;
-  bottom: 0.45em;
-  transform: rotate(0deg);
-  transition: transform .4s ease;
+  transition: all .4s ease;
 }
 
-.switch[data-theme="dark-luxury"] .slider {
-  background: linear-gradient(135deg, #6c63ff, #3b2a82);
-  box-shadow: 0 0 12px rgba(108, 99, 255, 0.4);
+/* === Estados por tema === */
+
+/* ☀️ Tema Claro */
+html[data-theme="light"] .slider {
+  background-color: #00a6ff;
+}
+html[data-theme="light"] .slider::before {
+  transform: translateX(1.8em);
+  background: #ffcf48;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+html[data-theme="light"] .star {
+  opacity: 0;
+}
+html[data-theme="light"] .cloud {
+  opacity: 1;
 }
 
-.switch[data-theme="dark-luxury"] .slider:before:hover {
-  transform: rotate(15deg);
+/* 🌙 Tema Escuro */
+html[data-theme="dark"] .slider {
+  background-color: #2a2a2a;
 }
+html[data-theme="dark"] .slider::before {
+  transform: translateX(0);
+  box-shadow: inset 8px -4px 0 0 #fff; /* lua */
+  background: #fff;
+}
+html[data-theme="dark"] .star {
+  opacity: 1;
+}
+html[data-theme="dark"] .cloud {
+  opacity: 0;
+}
+
+/* 💎 Tema Dark Luxury */
+html[data-theme="dark-luxury"] .slider {
+  background-color: #6c2cf9;
+  box-shadow: 0 0 10px rgba(108,44,249,0.6);
+}
+html[data-theme="dark-luxury"] .slider::before {
+  transform: translateX(1.8em);
+  background: linear-gradient(45deg, #ffb6ff, #b344ff);
+  box-shadow: 0 0 8px #b344ff;
+}
+html[data-theme="dark-luxury"] .star {
+  opacity: 0;
+}
+html[data-theme="dark-luxury"] .cloud {
+  opacity: 0.2;
+  filter: drop-shadow(0 0 8px #b344ff);
+}
+
 /* ================================================
    Textos que devem ser brancos no tema light
    ================================================ */
