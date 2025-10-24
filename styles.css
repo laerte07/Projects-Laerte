@@ -274,7 +274,7 @@ body {
     gap: 30px !important;
 
      /* CRÍTICO: centraliza qualquer item do grid */
-    justify-items: center !important; 
+     place-items: center !important; 
   }
 
   /* **CRÍTICO:** Centraliza o grupo de botões (que é flex) */
