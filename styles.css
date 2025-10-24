@@ -1061,3 +1061,19 @@ body,
   fill: #fff;
 }
 .switch input:checked ~ .slider .cloud{ opacity: 1; }
+
+/* ================================================
+   Textos que devem ser brancos no tema light
+   ================================================ */
+html[data-theme="light"] #li-root .li-eyebrow,
+html[data-theme="light"] #li-root .li-hero-feat span,
+html[data-theme="light"] #li-root .li-hero-card .li-price {
+  color: #ffffff !important;
+}
+
+/* Garante branco para ícones + textos específicos */
+html[data-theme="light"] #li-root .li-receber-item h4,
+html[data-theme="light"] #li-root .li-receber-item span,
+html[data-theme="light"] #li-root .li-receber-item p {
+  color: #ffffff !important;
+}
