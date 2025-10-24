@@ -58,12 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // === THEME TOGGLE (light | dark | dark-luxury) ===
 (function () {
   const html = document.documentElement;
-  const chk  = document.getElementById('theme-checkbox');
-  if (!chk) return;
-
+  const btn = document.getElementById('theme-toggle');
+  const icon = btn.querySelector('.icon');
   const themes = ['light', 'dark', 'dark-luxury'];
 
-  // Pega o tema salvo ou detecta preferência do sistema
+  // Detecta tema preferido
   const prefersDark = window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -71,19 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const current = saved || (prefersDark ? 'dark' : 'light');
   html.setAttribute('data-theme', current);
 
-  // Marca o checkbox conforme o tema atual
-  chk.checked = (current === 'light');
+  // Define ícone inicial
+  const icons = {
+    light: '☀️',
+    dark: '🌙',
+    'dark-luxury': '💎'
+  };
+  icon.textContent = icons[current];
 
-  chk.addEventListener('click', () => {
+  btn.addEventListener('click', () => {
+    // Animação de rotação
+    btn.classList.add('rotate');
+    setTimeout(() => btn.classList.remove('rotate'), 400);
+
+    // Define próximo tema
     const currentTheme = html.getAttribute('data-theme');
-    const currentIndex = themes.indexOf(currentTheme);
-    const nextIndex = (currentIndex + 1) % themes.length;
-    const nextTheme = themes[nextIndex];
-
+    const nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
     html.setAttribute('data-theme', nextTheme);
     localStorage.setItem('theme', nextTheme);
 
-    // feedback visual opcional
+    // Atualiza ícone
+    icon.textContent = icons[nextTheme];
+
     console.log(`🎨 Tema alterado para: ${nextTheme}`);
   });
 })();
