@@ -246,6 +246,68 @@ body{
 #li-root .li-section-sub{
   color:var(--muted-text) !important; font-size:16px !important; margin:0 0 30px !important; text-align:center !important;
 }
+/* =========================================================
+   SEÇÃO COMPARATIVO — LAERTE INVEST
+   ========================================================= */
+#li-comparativo {
+  background: var(--surface-2);
+}
+
+#li-root .li-compare-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+/* Cabeçalho */
+#li-root .li-compare-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(90deg, var(--hero-grad-start), var(--hero-grad-end));
+  color: var(--primary-contrast);
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.1rem;
+}
+#li-root .li-col-title {
+  padding: 14px 10px;
+}
+
+/* Linhas */
+#li-root .li-compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+#li-root .li-col {
+  padding: 16px 18px;
+  line-height: 1.5;
+  font-size: 15px;
+}
+#li-root .li-col.sem {
+  background: var(--surface);
+  color: var(--muted-text);
+}
+#li-root .li-col.com {
+  background: var(--card);
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  #li-root .li-compare-header, 
+  #li-root .li-compare-row {
+    grid-template-columns: 1fr;
+  }
+  #li-root .li-col-title {
+    font-size: 1rem;
+  }
+}
 
 /* =========================================================
    “O QUE VOCÊ VAI RECEBER”
