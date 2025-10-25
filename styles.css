@@ -409,13 +409,20 @@ html[data-theme="dark-luxury"] {
 #li-root .li-benefits-box h3{
   text-align:center !important; margin-bottom:22px !important; font-size:22px !important; color:var(--text) !important;
 }
-
-/* GRID unificado e fluido */
+/* O que você vai receber — grid responsiva */
 #li-root .li-receber-grid{
-  display:grid !important;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: grid !important;
+  gap: 22px !important;
+  grid-template-columns: 1fr !important;            /* mobile */
 }
+
+@media (min-width: 641px){
+  #li-root .li-receber-grid{ grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (min-width: 980px){
+  #li-root .li-receber-grid{ grid-template-columns: repeat(3, 1fr) !important; }
+}
+
 #li-root .li-receber-item{
   display:flex !important; align-items:flex-start !important; gap:12px !important; padding:16px !important;
   border:1px solid var(--border) !important; background:var(--bg) !important;
@@ -651,3 +658,24 @@ html[data-theme="dark-luxury"]{
 #li-comparativo .li-col.sem { background: var(--surface); }
 #li-comparativo .li-col.com { background: var(--card); }
 /* sua linha com color-mix vem depois (e sobrescreve nos browsers suportados) */
+
+/* Pastilha do ícone: tamanho/cores */
+#li-root .li-receber-item .icon{
+  width: 42px !important; height: 42px !important;
+  border-radius: 12px !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  background: rgba(255,255,255,.08);    /* base; sobrescrevemos por tipo */
+  color: #9ecbff;                       /* cor do desenho (SVG usa currentColor) */
+}
+
+/* Cores por tipo (ajuste fino por tema se quiser) */
+#li-root .icon-pdf        { background: rgba(37,99,235,.15) !important; color:#60a5fa !important; }
+#li-root .icon-video      { background: rgba(239,68,68,.15) !important; color:#f87171 !important; }
+#li-root .icon-planilha   { background: rgba(34,197,94,.15) !important; color:#34d399 !important; }
+#li-root .icon-bot        { background: rgba(59,130,246,.15) !important; color:#93c5fd !important; }
+#li-root .icon-simulador  { background: rgba(108,92,231,.18) !important; color:#b3a8ff !important; }
+#li-root .icon-comunidade { background: rgba(251,191,36,.18) !important; color:#facc15 !important; }
+
+/* Garanta que os SVGs herdem a cor */
+#li-root .li-receber-item .icon svg { width: 22px !important; height: 22px !important; }
+#li-root .li-receber-item .icon svg * { fill: currentColor !important; }
