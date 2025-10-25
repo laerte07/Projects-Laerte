@@ -249,64 +249,100 @@ body{
 /* =========================================================
    SEÇÃO COMPARATIVO — LAERTE INVEST
    ========================================================= */
-#li-comparativo {
-  background: var(--surface-2);
+/* =========================================================
+   COMPARATIVO — fundo integrado + gradiente que respeita o tema
+   (cole este bloco abaixo das variáveis dos temas)
+   ========================================================= */
+
+/* Tons derivados do tema para um gradiente mais suave */
+:root {
+  /* mistura leve com o bg para o gradiente não “gritar” no light */
+  --cmp-grad-start: color-mix(in lch, var(--hero-grad-start) 82%, var(--bg) 18%);
+  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-end)   82%, var(--bg) 18%);
+  /* superfícies internas ligeiramente elevadas */
+  --cmp-row-left:  color-mix(in lch, var(--surface) 92%, var(--bg) 8%);
+  --cmp-row-right: color-mix(in lch, var(--card)    92%, var(--bg) 8%);
 }
 
+/* ajuste de saturação no dark para não ficar “neon” */
+html[data-theme="dark"] {
+  --cmp-grad-start: color-mix(in lch, var(--hero-grad-start) 75%, var(--bg) 25%);
+  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-end)   75%, var(--bg) 25%);
+}
+
+/* luxury: gradiente intenso, mas ainda misturado ao bg pra harmonizar */
+html[data-theme="dark-luxury"] {
+  --cmp-grad-start: color-mix(in lch, var(--hero-grad-start) 70%, var(--bg) 30%);
+  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-end)   70%, var(--bg) 30%);
+}
+
+/* === Seção mantém o MESMO fundo do site (sem faixa) === */
+#li-comparativo { 
+  background: var(--bg);              /* igual ao restante da página */
+}
+
+/* === Container da tabela === */
 #li-root .li-compare-table {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  background: transparent;            /* não cria “tapete” diferente */
 }
 
-/* Cabeçalho */
+/* Cabeçalho com gradiente do tema (harmonizado) */
 #li-root .li-compare-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: linear-gradient(90deg, var(--hero-grad-start), var(--hero-grad-end));
+  background: linear-gradient(90deg, var(--cmp-grad-start), var(--cmp-grad-end));
   color: var(--primary-contrast);
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
-#li-root .li-col-title {
-  padding: 14px 10px;
-}
+#li-root .li-col-title { padding: 14px 10px; }
 
 /* Linhas */
 #li-root .li-compare-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--border);
-  background: var(--bg);
+  background: transparent;
 }
+
 #li-root .li-col {
   padding: 16px 18px;
-  line-height: 1.5;
+  line-height: 1.55;
   font-size: 15px;
 }
+
+/* Lado “Sem método” levemente mais neutro */
 #li-root .li-col.sem {
-  background: var(--surface);
+  background: var(--cmp-row-left);
   color: var(--muted-text);
 }
+
+/* Lado “Com IA” com leve ênfase e texto bem legível */
 #li-root .li-col.com {
-  background: var(--card);
+  background: var(--cmp-row-right);
   color: var(--text);
   font-weight: 600;
+}
+
+/* Bordas e raio do container ficam visíveis em qualquer tema */
+#li-root .li-compare-table,
+#li-root .li-compare-row,
+#li-root .li-compare-header {
+  backdrop-filter: saturate(110%); /* sutil */
 }
 
 /* Responsivo */
 @media (max-width: 640px) {
   #li-root .li-compare-header, 
-  #li-root .li-compare-row {
-    grid-template-columns: 1fr;
-  }
-  #li-root .li-col-title {
-    font-size: 1rem;
-  }
+  #li-root .li-compare-row { grid-template-columns: 1fr; }
+  #li-root .li-col-title { font-size: 1rem; }
 }
 
 /* =========================================================
