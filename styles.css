@@ -118,11 +118,12 @@ body{
   color:var(--primary-contrast);
   font-weight:800;
   text-decoration:none;
-  border-radius:8px;
+  border-radius:18px;
   font-size:16px;
   padding:12px 20px;
   transition:.2s;
   box-shadow:none;
+  text-align:center;
 }
 #li-root .li-btn:hover{ opacity:.9; }
 
@@ -249,11 +250,6 @@ body{
 /* =========================================================
    SEÇÃO COMPARATIVO — LAERTE INVEST
    ========================================================= */
-/* =========================================================
-   COMPARATIVO — fundo integrado + gradiente que respeita o tema
-   (cole este bloco abaixo das variáveis dos temas)
-   ========================================================= */
-
 /* Tons derivados do tema para um gradiente mais suave */
 :root {
   /* mistura leve com o bg para o gradiente não “gritar” no light */
@@ -266,14 +262,15 @@ body{
 
 /* ajuste de saturação no dark para não ficar “neon” */
 html[data-theme="dark"] {
-  --cmp-grad-start: color-mix(in lch, var(--hero-grad-start) 75%, var(--bg) 25%);
-  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-end)   75%, var(--bg) 25%);
-}
+  /* substitui vermelho por #005860 e harmoniza */
+  --cmp-grad-start: color-mix(in lch, #005860 80%, var(--bg) 20%);
+  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-start) 80%, var(--bg) 20%);
 
 /* luxury: gradiente intenso, mas ainda misturado ao bg pra harmonizar */
 html[data-theme="dark-luxury"] {
-  --cmp-grad-start: color-mix(in lch, var(--hero-grad-start) 70%, var(--bg) 30%);
-  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-end)   70%, var(--bg) 30%);
+  /* usa #2C4BFF com leve mistura para não ficar neon */
+  --cmp-grad-start: color-mix(in lch, #2C4BFF 80%, var(--bg) 20%);
+  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-start) 75%, var(--bg) 25%);
 }
 
 /* === Seção mantém o MESMO fundo do site (sem faixa) === */
