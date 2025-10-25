@@ -248,33 +248,35 @@ body{
   color:var(--muted-text) !important; font-size:16px !important; margin:0 0 30px !important; text-align:center !important;
 }
 /* =========================================================
-   COMPARATIVO — gradiente ajustado por tema
+   COMPARATIVO — versão final 100% responsiva
    ========================================================= */
 
-/* tons padrão derivados do tema */
+/* base (light) */
 :root {
   --cmp-grad-start: color-mix(in lch, var(--hero-grad-start) 82%, var(--bg) 18%);
   --cmp-grad-end:   color-mix(in lch, var(--hero-grad-end)   82%, var(--bg) 18%);
-  --cmp-row-left:  color-mix(in lch, var(--surface) 92%, var(--bg) 8%);
-  --cmp-row-right: color-mix(in lch, var(--card)    92%, var(--bg) 8%);
+  --cmp-row-left:   color-mix(in lch, var(--surface) 95%, var(--bg) 5%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    95%, var(--bg) 5%);
 }
 
-/* === tema dark refinado === */
+/* dark */
 html[data-theme="dark"] {
-  /* substitui vermelho por #005860 e harmoniza */
-  --cmp-grad-start: color-mix(in lch, #005860 80%, var(--bg) 20%);
-  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-start) 80%, var(--bg) 20%);
+  --cmp-grad-start: #005860;
+  --cmp-grad-end:   var(--hero-grad-start);
+  --cmp-row-left:   color-mix(in lch, var(--surface) 85%, #ffffff 15%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    85%, #ffffff 15%);
 }
 
-/* === tema dark-luxury === */
+/* dark-luxury */
 html[data-theme="dark-luxury"] {
-  /* usa #2C4BFF com leve mistura para não ficar neon */
-  --cmp-grad-start: color-mix(in lch, #2C4BFF 80%, var(--bg) 20%);
-  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-start) 75%, var(--bg) 25%);
+  --cmp-grad-start: #2C4BFF;
+  --cmp-grad-end:   var(--hero-grad-start);
+  --cmp-row-left:   color-mix(in lch, var(--surface) 80%, #ffffff 20%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    80%, #ffffff 20%);
 }
 
-/* === seção integrada === */
-#li-comparativo { 
+/* container da seção */
+#li-comparativo {
   background: var(--bg);
 }
 
@@ -285,10 +287,9 @@ html[data-theme="dark-luxury"] {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0,0,0,.06);
-  background: transparent;
 }
 
-/* cabeçalho com gradiente harmonizado */
+/* cabeçalho */
 #li-root .li-compare-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -298,35 +299,68 @@ html[data-theme="dark-luxury"] {
   text-align: center;
   font-size: 1.05rem;
 }
-#li-root .li-col-title { padding: 14px 10px; }
+#li-root .li-col-title {
+  padding: 14px 10px;
+}
 
-/* linhas e colunas */
+/* linhas */
 #li-root .li-compare-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--border);
-  background: transparent;
 }
+
+/* colunas */
 #li-root .li-col {
   padding: 16px 18px;
   line-height: 1.55;
   font-size: 15px;
 }
+
+/* coloração */
 #li-root .li-col.sem {
   background: var(--cmp-row-left);
   color: var(--muted-text);
 }
+
 #li-root .li-col.com {
   background: var(--cmp-row-right);
   color: var(--text);
   font-weight: 600;
 }
 
-/* responsivo */
+/* divisória vertical desktop */
+#li-root .li-compare-row .li-col + .li-col {
+  border-left: 1px solid var(--border);
+}
+
+/* ===========================
+   MOBILE
+   =========================== */
 @media (max-width: 640px) {
-  #li-root .li-compare-header, 
-  #li-root .li-compare-row { grid-template-columns: 1fr; }
-  #li-root .li-col-title { font-size: 1rem; }
+  #li-root .li-compare-header,
+  #li-root .li-compare-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* cada célula pinta seu fundo */
+  #li-root .li-compare-row .li-col.sem {
+    background: var(--cmp-row-left);
+    border-bottom: 1px dashed var(--border);
+  }
+
+  #li-root .li-compare-row .li-col.com {
+    background: var(--cmp-row-right);
+  }
+
+  /* remove divisórias verticais */
+  #li-root .li-compare-row .li-col + .li-col {
+    border-left: none;
+  }
+
+  #li-root .li-col {
+    padding: 14px 16px;
+  }
 }
 
 /* =========================================================
@@ -520,3 +554,4 @@ html[data-theme="light"] #li-root .li-hero-card .li-price span{ color:rgba(255,2
 /* ícones da seção receber */
 #li-root .li-receber-item .icon{ width:42px !important; height:42px !important; display:flex !important; align-items:center !important; justify-content:center !important; flex-shrink:0 !important; }
 #li-root .li-receber-item .icon svg{ width:22px !important; height:22px !important; }
+
