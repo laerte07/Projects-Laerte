@@ -413,8 +413,8 @@ html[data-theme="dark-luxury"] {
 /* GRID unificado e fluido */
 #li-root .li-receber-grid{
   display:grid !important;
-  gap:18px !important;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 #li-root .li-receber-item{
   display:flex !important; align-items:flex-start !important; gap:12px !important; padding:16px !important;
