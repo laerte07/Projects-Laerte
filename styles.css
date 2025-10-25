@@ -248,49 +248,47 @@ body{
   color:var(--muted-text) !important; font-size:16px !important; margin:0 0 30px !important; text-align:center !important;
 }
 /* =========================================================
-   COMPARATIVO — versão final 100% responsiva
+   COMPARATIVO — FIX FINAL MOBILE + TEMAS
    ========================================================= */
 
-/* base (light) */
+/* ======= VARIAÇÕES DE COR POR TEMA ======= */
 :root {
   --cmp-grad-start: color-mix(in lch, var(--hero-grad-start) 82%, var(--bg) 18%);
   --cmp-grad-end:   color-mix(in lch, var(--hero-grad-end)   82%, var(--bg) 18%);
-  --cmp-row-left:   color-mix(in lch, var(--surface) 95%, var(--bg) 5%);
-  --cmp-row-right:  color-mix(in lch, var(--card)    95%, var(--bg) 5%);
+  --cmp-row-left:   color-mix(in lch, var(--surface) 96%, var(--bg) 4%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    96%, var(--bg) 4%);
 }
 
-/* dark */
 html[data-theme="dark"] {
   --cmp-grad-start: #005860;
   --cmp-grad-end:   var(--hero-grad-start);
-  --cmp-row-left:   color-mix(in lch, var(--surface) 85%, #ffffff 15%);
-  --cmp-row-right:  color-mix(in lch, var(--card)    85%, #ffffff 15%);
+  --cmp-row-left:   color-mix(in lch, var(--surface) 88%, #ffffff 12%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    88%, #ffffff 12%);
 }
 
-/* dark-luxury */
 html[data-theme="dark-luxury"] {
   --cmp-grad-start: #2C4BFF;
   --cmp-grad-end:   var(--hero-grad-start);
-  --cmp-row-left:   color-mix(in lch, var(--surface) 80%, #ffffff 20%);
-  --cmp-row-right:  color-mix(in lch, var(--card)    80%, #ffffff 20%);
+  --cmp-row-left:   color-mix(in lch, var(--surface) 82%, #ffffff 18%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    82%, #ffffff 18%);
 }
 
-/* container da seção */
+/* ======= SEÇÃO E ESTRUTURA ======= */
 #li-comparativo {
   background: var(--bg);
 }
 
-#li-root .li-compare-table {
+#li-comparativo .li-compare-table {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* cabeçalho */
-#li-root .li-compare-header {
+/* ======= CABEÇALHO ======= */
+#li-comparativo .li-compare-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: linear-gradient(90deg, var(--cmp-grad-start), var(--cmp-grad-end));
@@ -299,66 +297,70 @@ html[data-theme="dark-luxury"] {
   text-align: center;
   font-size: 1.05rem;
 }
-#li-root .li-col-title {
+#li-comparativo .li-col-title {
   padding: 14px 10px;
 }
 
-/* linhas */
-#li-root .li-compare-row {
+/* ======= LINHAS ======= */
+#li-comparativo .li-compare-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--border);
 }
 
-/* colunas */
-#li-root .li-col {
+/* ======= CÉLULAS ======= */
+#li-comparativo .li-col {
   padding: 16px 18px;
   line-height: 1.55;
   font-size: 15px;
 }
 
-/* coloração */
-#li-root .li-col.sem {
+#li-comparativo .li-col.sem {
   background: var(--cmp-row-left);
   color: var(--muted-text);
 }
 
-#li-root .li-col.com {
+#li-comparativo .li-col.com {
   background: var(--cmp-row-right);
   color: var(--text);
   font-weight: 600;
 }
 
-/* divisória vertical desktop */
-#li-root .li-compare-row .li-col + .li-col {
+/* ======= DIVISÓRIA VERTICAL (DESKTOP) ======= */
+#li-comparativo .li-compare-row .li-col + .li-col {
   border-left: 1px solid var(--border);
 }
 
-/* ===========================
-   MOBILE
-   =========================== */
+/* ======= MOBILE FIX ======= */
 @media (max-width: 640px) {
-  #li-root .li-compare-header,
-  #li-root .li-compare-row {
+  /* empilha as colunas */
+  #li-comparativo .li-compare-header,
+  #li-comparativo .li-compare-row {
     grid-template-columns: 1fr;
   }
 
-  /* cada célula pinta seu fundo */
-  #li-root .li-compare-row .li-col.sem {
-    background: var(--cmp-row-left);
+  /* cada célula pinta seu próprio fundo */
+  #li-comparativo .li-compare-row .li-col.sem {
+    background: var(--cmp-row-left) !important;
+    color: var(--muted-text);
     border-bottom: 1px dashed var(--border);
   }
 
-  #li-root .li-compare-row .li-col.com {
-    background: var(--cmp-row-right);
+  #li-comparativo .li-compare-row .li-col.com {
+    background: var(--cmp-row-right) !important;
+    color: var(--text);
   }
 
-  /* remove divisórias verticais */
-  #li-root .li-compare-row .li-col + .li-col {
+  /* remove bordas verticais e gaps escuros */
+  #li-comparativo .li-compare-row,
+  #li-comparativo .li-compare-table {
+    background: var(--bg) !important;
+  }
+  #li-comparativo .li-compare-row .li-col + .li-col {
     border-left: none;
   }
 
-  #li-root .li-col {
+  #li-comparativo .li-col {
     padding: 14px 16px;
   }
 }
@@ -555,3 +557,57 @@ html[data-theme="light"] #li-root .li-hero-card .li-price span{ color:rgba(255,2
 #li-root .li-receber-item .icon{ width:42px !important; height:42px !important; display:flex !important; align-items:center !important; justify-content:center !important; flex-shrink:0 !important; }
 #li-root .li-receber-item .icon svg{ width:22px !important; height:22px !important; }
 
+/* =========================================================
+   COMPARATIVO — RÓTULOS AUTOMÁTICOS (mobile)
+   ========================================================= */
+:root{
+  /* cores das pílulas */
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 35%, var(--bg) 65%);
+  --cmp-badge-com-bg: var(--cmp-grad-start);
+  --cmp-badge-text:    var(--primary-contrast);
+}
+html[data-theme="dark"]{
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 45%, var(--bg) 55%);
+  --cmp-badge-com-bg: #005860;
+}
+html[data-theme="dark-luxury"]{
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 40%, var(--bg) 60%);
+  --cmp-badge-com-bg: #2C4BFF;
+}
+
+@media (max-width:640px){
+  /* espaço extra para a pílula */
+  #li-comparativo .li-compare-row .li-col{
+    position: relative;
+    padding-top: 40px !important; /* altura da pílula + respiro */
+  }
+
+  /* pílulas */
+  #li-comparativo .li-compare-row .li-col.sem::before,
+  #li-comparativo .li-compare-row .li-col.com::before{
+    content: "";
+    position: absolute;
+    top: 10px; left: 12px;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--cmp-badge-text);
+    background: var(--cmp-badge-sem-bg);
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* textos específicos */
+  #li-comparativo .li-compare-row .li-col.sem::before{
+    content: "😩 Sem método";
+    background: var(--cmp-badge-sem-bg);
+  }
+  #li-comparativo .li-compare-row .li-col.com::before{
+    content: "🚀 Com IA Laerte Invest";
+    background: var(--cmp-badge-com-bg);
+  }
+}
