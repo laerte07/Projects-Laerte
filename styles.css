@@ -404,7 +404,7 @@ html[data-theme="dark-luxury"] {
 #li-root .li-benefits-box{
   background:var(--surface) !important; border:1px solid var(--border) !important;
   border-radius:16px !important; padding:26px !important; box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
-  max-width:700px !important; margin:0 auto !important;
+  max-width:7000px !important; margin:0 auto !important;
 }
 #li-root .li-benefits-box h3{
   text-align:center !important; margin-bottom:22px !important; font-size:22px !important; color:var(--text) !important;
@@ -412,7 +412,7 @@ html[data-theme="dark-luxury"] {
 /* O que você vai receber — grid responsiva */
 #li-root .li-receber-grid{
   display: grid !important;
-  gap: 22px !important;
+  gap: 6px !important;
   grid-template-columns: 1fr !important;            /* mobile */
 }
 
@@ -464,7 +464,7 @@ html[data-theme="dark-luxury"] {
    PRODUTO / CARDS GENÉRICOS
    ========================================================= */
 #li-root .li-product{
-  display:grid !important; grid-template-columns:1fr 1fr !important; gap:20px !important; align-items:center !important;
+  display:grid !important; grid-template-columns:1fr 1fr !important; gap:6px !important; align-items:center !important;
 }
 #li-root .li-card{
   background:var(--surface) !important; border:1px solid var(--border) !important; border-radius:16px !important;
