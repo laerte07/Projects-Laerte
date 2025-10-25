@@ -242,7 +242,7 @@ body{
 /* =========================================================
    SEÇÕES GENÉRICAS
    ========================================================= */
-#li-root .li-section{ padding:72px 0 !important; }
+#li-root .li-section{ padding:36px 0 !important; }
 #li-root .li-section-title{ font-size:28px !important; margin:0 0 10px !important; }
 #li-root .li-section-sub{
   color:var(--muted-text) !important; font-size:16px !important; margin:0 0 30px !important; text-align:center !important;
