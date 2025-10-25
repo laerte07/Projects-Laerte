@@ -366,6 +366,39 @@ html[data-theme="dark-luxury"] {
 }
 
 /* =========================================================
+   COMPARATIVO — AJUSTES VISUAIS E FINESSE
+   ========================================================= */
+
+/* cantos arredondados no topo */
+#li-comparativo .li-compare-table { border-radius: 18px; }
+#li-comparativo .li-compare-header { border-radius: 18px 18px 0 0; }
+
+/* zebra suave nas linhas do lado "com IA" */
+#li-comparativo .li-compare-row:nth-child(even) .li-col.com {
+  filter: saturate(1.02) brightness(1.02);
+}
+
+/* divisor mais leve no mobile */
+@media (max-width:640px){
+  #li-comparativo .li-col.sem { border-bottom-style: dotted; }
+}
+
+/* micro contorno nas pílulas mobile (melhor contraste) */
+@media (max-width:640px){
+  #li-comparativo .li-compare-row .li-col::before{
+    outline: 1px solid color-mix(in lch, #000 15%, transparent 85%);
+    outline-offset: 0;
+  }
+}
+
+/* leve aumento do padding no mobile */
+@media (max-width:640px){
+  #li-comparativo .li-col { padding: 16px 18px; }
+}
+
+
+
+/* =========================================================
    “O QUE VOCÊ VAI RECEBER”
    ========================================================= */
 #li-root .li-benefits-box{
@@ -611,3 +644,10 @@ html[data-theme="dark-luxury"]{
     background: var(--cmp-badge-com-bg);
   }
 }
+#li-comparativo .li-compare-table { border-radius: 18px; }
+#li-comparativo .li-compare-header { border-radius: 18px 18px 0 0; }
+
+/* exemplo: antes da variável que usa color-mix */
+#li-comparativo .li-col.sem { background: var(--surface); }
+#li-comparativo .li-col.com { background: var(--card); }
+/* sua linha com color-mix vem depois (e sobrescreve nos browsers suportados) */
