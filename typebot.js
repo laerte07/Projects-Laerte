@@ -1,8 +1,9 @@
 // Typebot carregado como módulo (arquivo separado)
 export default async function loadTypebot() {
   try {
+    // ALTERAÇÃO AQUI: Removemos o '@0' para garantir a versão mais recente
     const { default: Typebot } = await import(
-      "https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js"
+      "https://cdn.jsdelivr.net/npm/@typebot.io/js/dist/web.js"
     );
 
     Typebot.initBubble({
@@ -10,8 +11,8 @@ export default async function loadTypebot() {
       previewMessage: {
         message: " Olá! Sou a IA da Laerte Invest. Posso te ajudar a investir melhor?",
         autoShowDelay: 2000,
-        // PARÂMETRO ADICIONADO AQUI:
-        closeDelay: 5000, // A mensagem de pré-visualização fechará após 5 segundos (5000ms)
+        // O parâmetro closeDelay está correto e deve funcionar com a versão mais recente
+        closeDelay: 5000, 
       },
       theme: {
         button: {
