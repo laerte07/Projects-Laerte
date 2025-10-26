@@ -5,8 +5,8 @@
   --bg:#ffffff;
   --text:#0c4a6e;
   --muted:#e0f2fe;
-  --card:#f0f9ff;
-  --primary:#006779;
+  --card: #00677982;
+  --primary: #006779;
   --primary-contrast:#ffffff;
   --hero-bg:#0ea5e9;
   --hero-card-bg:#0284c7;
@@ -17,7 +17,7 @@
   --overlay:rgba(0,0,0,.45);
   --success:#10b981;
   --hero-grad-start:#0ea5e9;
-  --hero-grad-end:#10b981;
+  --hero-grad-end: #10b981;
   --success-2:#059669;
 }
 
@@ -28,18 +28,18 @@ html[data-theme="dark"]{
   --bg:#00000b;
   --text:#f1f5f9;
   --muted:#64748b;
-  --card:#1e293b;
+  --card: #033993c7;
   --primary:#005860;
   --primary-contrast:#ffffff;
-  --hero-bg:#000a19;
+  --hero-bg: #1e1b4b;
   --hero-card-bg:#334155;
   --border:rgba(255,255,255,.1);
   --muted-text:#94a3b8;
-  --surface:#1e293b;
+  --surface: #2d2d2d;
   --surface-2:#334155;
   --overlay:rgba(0,0,0,.65);
   --success:#10b981;
-  --hero-grad-start:#1e293b;
+  --hero-grad-start: #0444B2;
   --hero-grad-end:#f97316;
   --success-2:#059669;
 }
@@ -55,18 +55,18 @@ html[data-theme="dark-luxury"]{
   --bg:#0a0a0f;
   --text:#f8fafc;
   --muted:#64748b;
-  --card:#1e1b4b;
+  --card: #595589;
   --primary:#2C4BFF;
   --primary-contrast:#ffffff;
   --hero-bg:#1e1b4b;
   --hero-card-bg:#312e81;
   --border:rgba(255,255,255,.08);
   --muted-text:#94a3b8;
-  --surface:#000000;
+  --surface: #141233;
   --surface-2:#ffffff;
   --overlay:rgba(0,0,0,.7);
   --success:#059669;
-  --hero-grad-start:#1e1b4b;
+  --hero-grad-start: #6863b3;
   --hero-grad-end:#fbbf24;
   --success-2:#047857;
 }
@@ -101,7 +101,7 @@ body{
 }
 
 #li-root .li-container{
-  max-width:1000px !important;
+  max-width: 1000px !important;
   width:100% !important;
   padding:0 32px !important;
   margin:0 auto !important;
@@ -235,7 +235,7 @@ body{
 }
 
 @media (max-width:640px){
-  #li-root .li-container{ padding:10px 0 !important; width:100% !important; }
+  #li-root .li-container{padding: 10px 20px  !important;width:100% !important;}
   #li-root .li-hero h1{ font-size:28px !important; }
 }
 
@@ -260,17 +260,17 @@ body{
 }
 
 html[data-theme="dark"] {
-  --cmp-grad-start: #005860;
+  --cmp-grad-start: #030303;
   --cmp-grad-end:   var(--hero-grad-start);
   --cmp-row-left:   color-mix(in lch, var(--surface) 88%, #ffffff 12%);
   --cmp-row-right:  color-mix(in lch, var(--card)    88%, #ffffff 12%);
 }
 
 html[data-theme="dark-luxury"] {
-  --cmp-grad-start: #2C4BFF;
+  --cmp-grad-start: #000000;
   --cmp-grad-end:   var(--hero-grad-start);
   --cmp-row-left:   color-mix(in lch, var(--surface) 82%, #ffffff 18%);
-  --cmp-row-right:  color-mix(in lch, var(--card)    82%, #ffffff 18%);
+  --cmp-row-right:  color-mix(in lch, var(--card) 82%, #ffffff 18%);
 }
 
 /* ======= SEÇÃO E ESTRUTURA ======= */
@@ -450,7 +450,7 @@ html[data-theme="dark-luxury"] {
 
 /* Mobile da seção */
 @media (max-width:640px){
-  #li-root .li-section{ padding:48px 0 !important; }
+  #li-root .li-section{padding: 48px 0px !important;}
   #li-root .li-benefits-box{ padding:20px !important; }
   #li-root .li-receber-item h4{ font-size:15px !important; }
   #li-root .li-receber-item p{ font-size:13px !important; }
@@ -467,8 +467,13 @@ html[data-theme="dark-luxury"] {
   display:grid !important; grid-template-columns:1fr 1fr !important; gap:6px !important; align-items:center !important;
 }
 #li-root .li-card{
-  background:var(--surface) !important; border:1px solid var(--border) !important; border-radius:16px !important;
-  padding:26px !important; box-shadow:0 8px 20px rgba(0,0,0,.05) !important; justify-items:center; width:100%;
+  background:var(--surface) !important;
+  border:1px solid var(--border) !important;
+  border-radius:16px !important;
+  padding: 10px !important;
+  box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
+  justify-items:center;
+  width:100%;
 }
 #li-root .li-bullets{ margin:16px 0 8px !important; padding-left:18px !important; }
 #li-root .li-bullets li{ margin-bottom:10px !important; }
@@ -610,6 +615,8 @@ html[data-theme="dark"]{
   --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 45%, var(--bg) 55%);
   --cmp-badge-com-bg: #005860;
 }
+
+.li-col-title.sem {}
 html[data-theme="dark-luxury"]{
   --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 40%, var(--bg) 60%);
   --cmp-badge-com-bg: #2C4BFF;
@@ -679,3 +686,19 @@ html[data-theme="dark-luxury"]{
 /* Garanta que os SVGs herdem a cor */
 #li-root .li-receber-item .icon svg { width: 22px !important; height: 22px !important; }
 #li-root .li-receber-item .icon svg * { fill: currentColor !important; }
+
+/* === Somente DARK + mobile: coluna "sem método" fica preta === */
+@media (max-width: 640px){
+  html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem{
+    background: #000000 !important;             /* fundo preto */
+    color: #e5e7eb !important;                  /* texto claro */
+    border-bottom: 1px dashed rgba(255,255,255,.18) !important;
+  }
+
+  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
+  html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
+    background: rgba(255,255,255,.08) !important;
+    color: #ffffff !important;
+  }
+}
