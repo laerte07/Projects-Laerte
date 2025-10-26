@@ -10,6 +10,8 @@ export default async function loadTypebot() {
       previewMessage: {
         message: " Olá! Sou a IA da Laerte Invest. Posso te ajudar a investir melhor?",
         autoShowDelay: 2000,
+        // PARÂMETRO ADICIONADO AQUI:
+        closeDelay: 5000, // A mensagem de pré-visualização fechará após 5 segundos (5000ms)
       },
       theme: {
         button: {
