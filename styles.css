@@ -39,7 +39,7 @@ html[data-theme="dark"]{
   --surface-2:#334155;
   --overlay:rgba(0,0,0,.65);
   --success:#10b981;
-  --hero-grad-start: #0444B2;
+  --hero-grad-start: #0444b2;
   --hero-grad-end:#f97316;
   --success-2:#059669;
 }
@@ -66,7 +66,7 @@ html[data-theme="dark-luxury"]{
   --surface-2:#ffffff;
   --overlay:rgba(0,0,0,.7);
   --success:#059669;
-  --hero-grad-start: #6863b3;
+  --hero-grad-start: #A020F0;
   --hero-grad-end:#fbbf24;
   --success-2:#047857;
 }
@@ -254,22 +254,22 @@ body{
 
 /* ======= VARIAÇÕES DE COR POR TEMA ======= */
 :root {
-  --cmp-grad-start: color-mix(in lch, var(--hero-grad-start) 82%, var(--bg) 18%);
-  --cmp-grad-end:   color-mix(in lch, var(--hero-grad-end)   82%, var(--bg) 18%);
+  --cmp-grad-start:  color-mix(in lch, var(--hero-grad-start) 82%, var(--bg) 18%);
+  --cmp-grad-end:  color-mix(in lch, #10b981 82%, var(--bg) 18%);
   --cmp-row-left:   color-mix(in lch, var(--surface) 96%, var(--bg) 4%);
   --cmp-row-right:  color-mix(in lch, var(--card)    96%, var(--bg) 4%);
 }
 
 html[data-theme="dark"] {
   --cmp-grad-start: #030303;
-  --cmp-grad-end:   var(--hero-grad-start);
+  --cmp-grad-end: #0444b2;
   --cmp-row-left:   color-mix(in lch, var(--surface) 88%, #ffffff 12%);
   --cmp-row-right:  color-mix(in lch, var(--card)    88%, #ffffff 12%);
 }
 
 html[data-theme="dark-luxury"] {
   --cmp-grad-start: #000000;
-  --cmp-grad-end:   var(--hero-grad-start);
+  --cmp-grad-end: #a020f0;
   --cmp-row-left:   color-mix(in lch, var(--surface) 82%, #ffffff 18%);
   --cmp-row-right:  color-mix(in lch, var(--card) 82%, #ffffff 18%);
 }
@@ -609,18 +609,18 @@ html[data-theme="light"] #li-root .li-hero-card .li-price span{ color:rgba(255,2
 :root{
   /* cores das pílulas */
   --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 35%, var(--bg) 65%);
-  --cmp-badge-com-bg: var(--cmp-grad-start);
+  --cmp-badge-com-bg: #10b981;
   --cmp-badge-text:    var(--primary-contrast);
 }
 html[data-theme="dark"]{
   --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 45%, var(--bg) 55%);
-  --cmp-badge-com-bg: #005860;
+  --cmp-badge-com-bg: #0444b2;
 }
 
 .li-col-title.sem {}
 html[data-theme="dark-luxury"]{
   --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 40%, var(--bg) 60%);
-  --cmp-badge-com-bg: #2C4BFF;
+  --cmp-badge-com-bg: #a020f0;
 }
 
 @media (max-width:640px){
@@ -688,11 +688,11 @@ html[data-theme="dark-luxury"]{
 #li-root .li-receber-item .icon svg { width: 22px !important; height: 22px !important; }
 #li-root .li-receber-item .icon svg * { fill: currentColor !important; }
 
-/* === Somente DARK + mobile: coluna "sem método" fica preta === */
+/* === Somente Temas Darks+ mobile: coluna "sem método" fica preta === */
 @media (max-width: 640px){
   html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem{
     background: #000000 !important;             /* fundo preto */
-    color: #e5e7eb !important;                  /* texto claro */
+    color: #ffffff !important;                  /* texto claro */
     border-bottom: 1px dashed rgba(255,255,255,.18) !important;
   }
 
@@ -701,5 +701,30 @@ html[data-theme="dark-luxury"]{
     /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
     background: rgba(255,255,255,.08) !important;
     color: #ffffff !important;
+    border-bottom: 1px solid #ffffff;
+  }
+}
+
+@media (max-width: 640px){
+  html[data-theme="dark-luxury"] #li-comparativo .li-compare-row .li-col.sem{
+    background: #000000 !important;             /* fundo preto */
+    color: #e5e7eb !important;                  /* texto claro */
+    border-bottom: 1px dashed rgb(255 255 255, .18) !important;
+  }
+  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
+  html[data-theme="dark-luxury"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
+    background: rgba(255,255,255,.08) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #ffffff;
+  }
+}
+@media (max-width: 640px){
+  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
+  html[data-theme="light"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
+    background: rgb(0 0 0 / 0%) !important;
+    color: #000000 !important;
+    border-bottom: 1px solid #000000;
   }
 }
