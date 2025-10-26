@@ -6,7 +6,7 @@
   --text:#0c4a6e;
   --muted:#e0f2fe;
   --card: #00677982;
-  --primary: #006779;
+  --primary: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
   --primary-contrast:#ffffff;
   --hero-bg:#0ea5e9;
   --hero-card-bg:#0284c7;
@@ -29,7 +29,7 @@ html[data-theme="dark"]{
   --text:#f1f5f9;
   --muted:#64748b;
   --card: #033993c7;
-  --primary:#005860;
+  --primary: linear-gradient(90deg, #0A1124 5%, #0047FF 100%);
   --primary-contrast:#ffffff;
   --hero-bg: #1e1b4b;
   --hero-card-bg:#334155;
@@ -56,7 +56,7 @@ html[data-theme="dark-luxury"]{
   --text:#f8fafc;
   --muted:#64748b;
   --card: #595589;
-  --primary:#2C4BFF;
+  --primary: linear-gradient(90deg, #A020F0 0%, #FF0080 100%);
   --primary-contrast:#ffffff;
   --hero-bg:#1e1b4b;
   --hero-card-bg:#312e81;
@@ -118,12 +118,13 @@ body{
   color:var(--primary-contrast);
   font-weight:800;
   text-decoration:none;
-  border-radius:18px;
+  border-radius: 30px;
   font-size:16px;
   padding:12px 20px;
   transition:.2s;
   box-shadow:none;
   text-align:center;
+  border: 1px solid #00000069;
 }
 #li-root .li-btn:hover{ opacity:.9; }
 
