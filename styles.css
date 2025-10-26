@@ -591,7 +591,7 @@ html[data-theme="dark-luxury"] .star{ opacity:0; } html[data-theme="dark-luxury"
 /* textos brancos forçados no tema claro (hero) */
 html[data-theme="light"] #li-root .li-eyebrow,
 html[data-theme="light"] #li-root .li-hero-feat span,
-html[data-theme="light"] #li-root .li-hero-card .li-price{ color:#ffffff !important; }
+html[data-theme="light"] #li-root .li-hero-card .li-price{color: #000000 !important;}
 html[data-theme="light"] #li-root .li-price,
 html[data-theme="light"] #li-root .li-hero .li-price,
 html[data-theme="light"] #li-root .li-hero-card .li-price{ color:#fff !important; }
