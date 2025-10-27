@@ -529,7 +529,12 @@ html[data-theme="dark-luxury"] {
 #li-checkout-modal .li-modal-footer{
   padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px;
 }
-#li-checkout-modal .li-price{ font-weight:700; color:var(--hero-grad-start); }
+#li-checkout-modal .li-price{ 
+   font-weight: 900;
+    font-size: 30px;
+    color: var(--text);
+    text-shadow: 0 0 8px var(--hero-grad-start);
+}
 #li-checkout-modal .li-price span{ font-weight:600; opacity:.6; font-size:13px; }
 
 @keyframes li-pop{ from{ transform:scale(.98); opacity:.85; } to{ transform:scale(1); opacity:1; } }
