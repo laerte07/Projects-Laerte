@@ -733,3 +733,24 @@ html[data-theme="dark-luxury"]{
     border-bottom: 1px solid #000000;
   }
 }
+
+/* CTA exclusivo do modal */
+#li-checkout-modal .li-modal-footer .li-modal-cta{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 18px; border-radius:14px;
+  background: var(--primary);               /* usa seu gradiente */
+  color:#fff; font-weight:800; text-decoration:none;
+  border:1px solid rgba(0,0,0,.25);
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  white-space:nowrap;
+}
+#li-checkout-modal .li-modal-footer .li-modal-cta:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.03);
+  box-shadow:0 12px 26px rgba(0,0,0,.22);
+}
+#li-checkout-modal .li-modal-footer .li-modal-cta:active{ transform:translateY(0); }
+#li-checkout-modal .li-modal-footer .li-modal-cta:focus-visible{
+  outline:2px solid #fff; outline-offset:2px;
+}
