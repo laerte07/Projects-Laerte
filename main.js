@@ -9,7 +9,7 @@ const OFFER_DURATION = 1727 * 1000;
 
 // Elementos do DOM (Verifique se esses IDs existem no seu index.html!)
 const timerElement = document.getElementById('li-countdown');
-const expiredElement = document.getElementById('li-timer-expired');
+// REMOVEMOS: const expiredElement = document.getElementById('li-timer-expired');
 let countdownInterval;
 
 // Verifica, cria ou limpa o tempo de expiração no LocalStorage
@@ -17,7 +17,6 @@ function getExpiryTime() {
     let expiryTime = localStorage.getItem(STORAGE_KEY);
     
     // 1. VERIFICAÇÃO DE EXPIRAÇÃO: Se o tempo atual é maior que o tempo de expiração salvo
-    // O valor deve ser a DURAÇÃO DA OFERTA (em ms) para a lógica de reinício.
     if (expiryTime && new Date().getTime() > parseInt(expiryTime)) {
         // Se a expiração ocorreu, removemos o registro para forçar um novo ciclo (reinício)
         localStorage.removeItem(STORAGE_KEY);
@@ -36,16 +35,19 @@ function getExpiryTime() {
 }
 
 function updateCountdown() {
-    // Sai da função se os elementos HTML não forem encontrados (erro seguro)
-    if (!timerElement || !expiredElement) return;
+    // Agora só precisamos verificar se o elemento do TIMER existe
+    if (!timerElement) return;
 
     const expiryTime = getExpiryTime();
     
     if (!expiryTime) {
-        // Caso o getExpiryTime tenha limpado a chave ou o tempo acabou
+        // Caso o getExpiryTime tenha limpado a chave (tempo expirou)
         clearInterval(countdownInterval);
-        timerElement.style.display = 'none';
-        expiredElement.style.display = 'block';
+        
+        // Aqui, em vez de mostrar a mensagem de expiração, apenas esconde o contador.
+        timerElement.style.display = 'none'; 
+        
+        // Você pode inserir aqui o código para esconder o header/hero inteiro se desejar.
         return;
     }
 
@@ -56,13 +58,15 @@ function updateCountdown() {
         // Tempo acabou
         clearInterval(countdownInterval);
         localStorage.removeItem(STORAGE_KEY); // Limpa para permitir reinício
+        
+        // Esconde o contador.
         timerElement.style.display = 'none';
-        expiredElement.style.display = 'block';
+        
+        // Se a oferta não deve mais aparecer, você deve esconder o elemento pai.
         return;
     }
 
-    // Cálculo e preenchimento dos elementos HTML
-    // O cálculo permanece o mesmo (converte ms em h/m/s)
+    // Cálculo e preenchimento dos elementos HTML (Correto)
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
