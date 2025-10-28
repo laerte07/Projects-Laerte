@@ -1,1390 +1,873 @@
 /* =========================================================
-   BASE GLOBAL — namespaces e estrutura geral
-   ========================================================= */
-/* =========================================================
-                     VARIÁVEIS DE TEMA
+   VARIÁVEIS DE TEMA
    ========================================================= */
 :root {
-  --bg: #ffffff;
-  --text: #0c4a6e;
-  --muted: #e0f2fe;
-  --card: #f0f9ff;
-  --primary: #06b6d4;
-  --primary-contrast: #ffffff;
-  --hero-bg: #0ea5e9;
-  --hero-card-bg: #0284c7;
-  --border: rgba(0,0,0,.08);
-  --muted-text: #64748b;
-  --surface: #f8fafc;
-  --surface-2: #f1f5f9;
-  --overlay: rgba(0,0,0,.45);
-  --success: #10b981;
-  --hero-grad-start: #0ea5e9;
+  --bg:#ffffff;
+  --text:#0c4a6e;
+  --muted:#e0f2fe;
+  --card: #00677982;
+  --primary: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+  --primary-contrast:#ffffff;
+  --hero-bg:#0ea5e9;
+  --hero-card-bg:#0284c7;
+  --border:rgba(0,0,0,.08);
+  --muted-text:#64748b;
+  --surface:#f8fafc;
+  --surface-2:#f1f5f9;
+  --overlay:rgba(0,0,0,.45);
+  --success:#10b981;
+  --hero-grad-start:#0ea5e9;
   --hero-grad-end: #10b981;
-  --success-2: #059669;
+  --success-2:#059669;
 }
 
 /* =========================================================
-               TEMA DARK REFINADO – LAERTE INVEST
+   TEMA DARK
    ========================================================= */
-
-html[data-theme="dark"] {
-  --bg: #00000b;
-  --text: #f1f5f9;
-  --muted: #64748b;
-  --card: #1e293b;
-  --primary: #005860;
-  --primary-contrast: #ffffff;
-  --hero-bg: #000a19;
-  --hero-card-bg: #334155;
-  --border: rgba(255, 255, 255, 0.1);
-  --muted-text: #94a3b8;
-  --surface: #1e293b;
-  --surface-2: #334155;
-  --overlay: rgba(0, 0, 0, 0.65);
-  --success: #10b981;
-  --hero-grad-start: #1e293b;
-  --hero-grad-end: #f97316;
-  --success-2: #059669;
-}
-
-/* Fundo com gradiente sutil e suave */
-body[data-theme="dark"] {
-  background: radial-gradient(circle at top left, #0a1124 0%, #060913 100%);
-  color: var(--text);
-}
-
-/* Cards com profundidade e brilho suave */
-.card, .section-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.card:hover, .section-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-}
-
-/* Botões */
-button, .btn, .cta-button {
-  background: linear-gradient(135deg, var(--primary), #2563eb);
-  color: var(--primary-contrast);
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
-}
-
-button:hover, .btn:hover, .cta-button:hover {
-  background: linear-gradient(135deg, #4f9eff, #1e40af);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-  transform: translateY(-1px);
-}
-
-/* Botões de contraste (ex: "Ver o que está incluso") */
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-outline:hover {
-  background: var(--primary);
-  color: var(--primary-contrast);
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
-}
-
-/* Seção hero */
-.hero-section {
-  background: linear-gradient(135deg, var(--hero-grad-start), var(--hero-grad-end));
-  color: var(--primary-contrast);
-  padding: 60px 20px;
-  text-align: center;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Destaques e badges */
-.badge {
-  background: rgba(59, 130, 246, 0.15);
-  color: var(--primary);
-  border-radius: 30px;
-  padding: 4px 12px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-/* Links */
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: #60a5fa;
-}
-
-/* Chatbot flutuante */
-.chatbox {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
-  border-radius: 12px;
-  color: var(--text);
-}
-
-/* =========================================================
-   TEMA DARK LUXURY – LAERTE INVEST
-   ========================================================= */
-html[data-theme="dark-luxury"] {
-  --bg: #0a0a0f;
-  --text: #f8fafc;
-  --muted: #64748b;
-  --card: #1e1b4b;
-  --primary: #2C4BFF;
-  --primary-contrast: #ffffff;
+html[data-theme="dark"]{
+  --bg:#00000b;
+  --text:#f1f5f9;
+  --muted:#64748b;
+  --card: #033993c7;
+  --primary: linear-gradient(90deg, #0A1124 5%, #0047FF 100%);
+  --primary-contrast:#ffffff;
   --hero-bg: #1e1b4b;
-  --hero-card-bg: #312e81;
-  --border: rgba(255, 255, 255, 0.08);
-  --muted-text: #94a3b8;
-  --surface: #000000;
-  --surface-2: #ffffff;
-  --overlay: rgba(0, 0, 0, 0.7);
-  --success: #059669;
-  --hero-grad-start: #1e1b4b;
-  --hero-grad-end: #fbbf24;
-  --success-2: #047857;
+  --hero-card-bg:#334155;
+  --border:rgba(255,255,255,.1);
+  --muted-text:#94a3b8;
+  --surface: #2d2d2d;
+  --surface-2:#334155;
+  --overlay:rgba(0,0,0,.65);
+  --success:#10b981;
+  --hero-grad-start: #0444b2;
+  --hero-grad-end:#f97316;
+  --success-2:#059669;
 }
-
-/* Fundo com gradiente petróleo + roxo */
-body[data-theme="dark-luxury"] {
-  background: linear-gradient(160deg, #060912 0%, #0e0f1e 50%, #161933 100%);
-  color: var(--text);
-}
-
-/* Cards e seções com contraste metálico */
-.card, .section-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-}
-
-.card:hover, .section-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(108, 99, 255, 0.2);
-}
-
-/* Botões principais */
-button, .btn, .cta-button {
-  background: linear-gradient(135deg, #6c63ff, #4f46e5);
-  color: var(--primary-contrast);
-  border: none;
-  border-radius: 10px;
-  padding: 12px 26px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 12px rgba(108, 99, 255, 0.3);
-}
-
-button:hover, .btn:hover, .cta-button:hover {
-  background: linear-gradient(135deg, #7c73ff, #4338ca);
-  box-shadow: 0 0 18px rgba(108, 99, 255, 0.45);
-  transform: translateY(-2px);
-}
-
-/* Botões de contorno */
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-outline:hover {
-  background: var(--primary);
-  color: var(--primary-contrast);
-  box-shadow: 0 0 14px rgba(108, 99, 255, 0.4);
-}
-
-/* Seção hero com gradiente roxo petróleo */
-.hero-section {
-  background: linear-gradient(135deg, var(--hero-grad-start), var(--hero-grad-end));
-  color: var(--primary-contrast);
-  padding: 70px 20px;
-  text-align: center;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(108, 99, 255, 0.25);
-}
-
-/* Badges e destaques */
-.badge {
-  background: rgba(108, 99, 255, 0.15);
-  color: var(--primary);
-  border-radius: 40px;
-  padding: 4px 14px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-/* Links */
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: #8b82ff;
-}
-
-/* Chatbox flutuante */
-.chatbox {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.25);
-  border-radius: 14px;
-  color: var(--text);
+body[data-theme="dark"]{
+  background:radial-gradient(circle at top left,#0a1124 0%,#060913 100%);
+  color:var(--text);
 }
 
 /* =========================================================
-                     BODY E CONTAINER
+   TEMA DARK LUXURY
    ========================================================= */
-body {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  width: 100vw;
+html[data-theme="dark-luxury"]{
+  --bg:#0a0a0f;
+  --text:#f8fafc;
+  --muted:#64748b;
+  --card: #595589;
+  --primary: linear-gradient(90deg, #A020F0 0%, #FF0080 100%);
+  --primary-contrast:#ffffff;
+  --hero-bg:#1e1b4b;
+  --hero-card-bg:#312e81;
+  --border:rgba(255,255,255,.08);
+  --muted-text:#94a3b8;
+  --surface: #141233;
+  --surface-2:#ffffff;
+  --overlay:rgba(0,0,0,.7);
+  --success:#059669;
+  --hero-grad-start: #A020F0;
+  --hero-grad-end:#fbbf24;
+  --success-2:#047857;
+}
+body[data-theme="dark-luxury"]{
+  background:linear-gradient(160deg,#060912 0%,#0e0f1e 50%,#161933 100%);
+  color:var(--text);
 }
 
-#li-root .li-container {
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ color-scheme: light dark; }
+a{ color:var(--primary); text-decoration:none; transition:color .2s; }
+a:hover{ color:#60a5fa; }
+
+body{
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  width:100%; /* evita overflow horizontal de 100vw */
+}
+
+/* transições suaves de tema em blocos principais */
+#li-root .li-card,
+#li-root .li-hero,
+#li-root .li-benefits-box,
+#li-root .li-hero-card,
+#li-root .li-q{
+  transition:background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+#li-root .li-container{
   max-width: 1000px !important;
-  width: 100% !important;
-  padding: 0px 32px !important;
-  margin: 0 auto !important;
-  box-sizing: border-box !important;
+  width:100% !important;
+  padding:0 32px !important;
+  margin:0 auto !important;
 }
 
 /* =========================================================
-               BOTÕES — estilos gerais e variações
+   BOTÕES
    ========================================================= */
-#li-root .li-btn {
-    display: inline-flex ;
-    background:var(--primary);
-    color:var(--primary-contrast);
-    font-weight: 800 ;
-    text-decoration: none ;
-    border-radius: 8px ;
-    font-size: 16px ;
-    padding: 12px 20px ;
-    transition: .2s ;
-    box-shadow: none ;
-}
-
-#li-root .li-btn:hover {
-  opacity: .9 ;
-}
-.animated-button{
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 16px;
-  color:var(--primary-contrast);
-  background: transparent;
-  box-shadow:0 0 0 2px var(--primary);
-  cursor: pointer;
-  overflow: hidden;
-  text-decoration: none;
-  isolation: isolate;                 /* garante pilha de z-index independente */
-  transition: box-shadow .3s ease, color .3s ease;
-}
-
-/* Círculo de “ripple” fica por baixo do texto */
-.animated-button .circle{
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 12px; height: 12px;
+#li-root .li-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   background:var(--primary);
-  border-radius: 999px;
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-  z-index: 0;
-  transition: transform .6s cubic-bezier(0.23,1,0.32,1), opacity .6s;
+  color:var(--primary-contrast);
+  font-weight:800;
+  text-decoration:none;
+  border-radius: 30px;
+  font-size:16px;
+  padding:12px 20px;
+  transition:.2s;
+  box-shadow:none;
+  text-align:center;
+  border: 1px solid #00000069;
 }
+#li-root .li-btn:hover{ opacity:.9; }
 
-/* Texto acima do ripple */
-.animated-button .text{ 
-  position: relative; 
-  z-index: 1; 
-  transform: translateX(-10px);
-  transition: transform .6s cubic-bezier(0.23,1,0.32,1);
+/* Botão animado opcional */
+.animated-button{
+  position:relative; display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 20px; border-radius:8px; font-weight:700; font-size:16px;
+  color:var(--text); background:transparent; box-shadow:0 0 0 2px var(--text);
+  cursor:pointer; overflow:hidden; text-decoration:none; isolation:isolate;
+  transition:box-shadow .3s ease, color .3s ease;
 }
-
-/* Ícone entra da direita */
+.animated-button .circle{
+  position:absolute; top:50%; left:50%; width:12px; height:12px; background:var(--primary);
+  border-radius:999px; transform:translate(-50%,-50%) scale(0); opacity:0; z-index:0;
+  transition:transform .6s cubic-bezier(0.23,1,0.32,1), opacity .6s;
+}
+.animated-button .text{ position:relative; z-index:1; transform:translateX(-10px);
+  transition:transform .6s cubic-bezier(0.23,1,0.32,1);}
 .animated-button svg{
-  position: absolute;
-  top: 50%; right: 14px;
-  width: 14px;
-  transform: translateY(-50%) translateX(10px);
-  opacity: 0;
-  z-index: 1;
-  fill: currentColor;
-  transition: transform .4s ease, opacity .4s ease;
+  position:absolute; top:50%; right:14px; width:14px; transform:translateY(-50%) translateX(10px);
+  opacity:0; z-index:1; fill:currentColor; transition:transform .4s ease, opacity .4s ease;
 }
+.animated-button:hover{ color:var(--primary-contrast); box-shadow:0 0 0 4px var(--primary); }
+.animated-button:hover .circle{ transform:translate(-50%,-50%) scale(26); opacity:1; }
+.animated-button:hover .text{ transform:translateX(6px); }
+.animated-button:hover svg{ transform:translateY(-50%) translateX(0); opacity:1; }
+.animated-button:active{ transform:scale(0.98); }
 
-/* Hover: ripple cobre todo o botão, texto desliza e ícone aparece */
-.animated-button:hover{
-   color: var(--primary-contrast);
-  box-shadow: 0 0 0 4px var(--primary);
-}
-.animated-button:hover .circle{
-  transform: translate(-50%, -50%) scale(26);
-  opacity: 1;
-}
-.animated-button:hover .text{
-  transform: translateX(6px);
-}
-.animated-button:hover svg{
-  transform: translateY(-50%) translateX(0);
-  opacity: 1;
-}
-.animated-button:active{
-  transform: scale(0.98);
+/* foco teclado */
+#li-root .li-btn:focus-visible,
+#li-root .animated-button:focus-visible{
+  outline:2px solid var(--primary);
+  outline-offset:2px;
 }
 
 /* =========================================================
-                 --- HERO SECTION AJUSTADA ---
+   HERO
    ========================================================= */
-
-/*
- * Seção: Hero
- * Contém o estilo principal do bloco "li-hero"
- */
-#li-root .li-hero {
-  /* Layout e Posicionamento */
-  justify-content: center !important;
-
-  /* Modelo de Caixa */
-  padding: 36px 56px !important;
-
-  /* Visual e Cores */
+#li-root .li-hero{
+  justify-content:center !important;
+  padding:36px 56px !important;
   background:var(--hero-bg);
   color:var(--text) !important;
-  width: 100vw;
+  width:100%; /* corrigido */
+}
+#li-root .li-hero .li-wrap{
+  display:grid !important;
+  grid-template-columns:1.1fr 0.9fr !important;
+  align-items:center !important;
+  gap:48px !important;
+  width:100% !important;
+  max-width:1000px !important;
+}
+#li-root .li-eyebrow{
+  display:inline-block !important;
+  border-radius:999px !important;
+  padding:8px 12px !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  background:rgba(255,255,255,.14) !important;
+}
+#li-root .li-hero h1{
+  font-size:34px !important; line-height:1.3 !important;
+  margin:14px 0 !important;
+}
+#li-root .li-hero p{
+  font-size:16px !important; line-height:1.5 !important;
+  color:var(--muted) !important;
+  margin:0 0 24px !important;
+}
+#li-root .li-cta-group{
+  display:flex !important; flex-wrap:wrap !important; gap:12px !important;
+}
+#li-root .li-cta-secondary{
+  background:transparent !important; border:2px solid var(--primary-contrast) !important;
+  color:var(--primary-contrast) !important;
 }
 
-/*
- * Seção: Wrap do Hero
- * Estilo para o container interno que usa Grid
- */
-/* <<< bloco correto do wrap >>> */
-#li-root .li-hero .li-wrap {
-  display: grid !important;
-  grid-template-columns: 1.1fr 0.9fr !important;
-  align-items: center !important;
-  gap: 48px !important;
-  width: 100% !important;
-  max-width: 1000px !important;
+/* 🚀 NOVO CSS: ESTILO DO PREÇO NA COLUNA PRINCIPAL */
+#li-root .li-hero-price {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: var(--text); /* Cor base */
 }
+/* FIM NOVO CSS */
 
-/*
- * Seção: Eyebrow (Selo/Etiqueta)
- */
-#li-root .li-eyebrow {
-  /* Layout e Posicionamento */
-  display: inline-block !important;
-
-  /* Modelo de Caixa */
-  border-radius: 999px !important;
-  padding: 8px 12px !important;
-
-  /* Tipografia */
-  font-size: 13px !important;
-  font-weight: 600 !important;
-
-  /* Visual e Cores */
-  background: rgba(255, 255, 255, .14) !important;
+#li-root .li-hero-feat{
+  display:grid !important; gap:10px !important; grid-template-columns:repeat(2,1fr) !important;
+  margin-top:18px !important;
 }
-
-/*
- * Seção: Título Principal do Hero
- */
-#li-root .li-hero h1 {
-  /* Tipografia */
-  font-size: 34px !important;
-  line-height: 1.3 !important;
-
-  /* Modelo de Caixa */
-  margin: 14px 0 !important;
-}
-
-/*
- * Seção: Parágrafo do Hero
- */
-#li-root .li-hero p {
-  /* Tipografia */
-  font-size: 16px !important;
-  line-height: 1.5 !important;
-
-  /* Visual e Cores */
-color: var(--muted) !important;
-   
-  /* Modelo de Caixa */
-  margin: 0 0 24px !important;
-}
-
-/*
- * Seção: Grupo de Ações (CTA Group)
- */
-#li-root .li-cta-group {
-  /* Layout e Posicionamento */
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 12px !important;
-}
-
-/*
- * Seção: CTA Secundário
- */
-#li-root .li-cta-secondary {
-  /* Visual e Cores */
-  background: transparent !important;
-  border: 2px solid var(--primary-contrast) !important;
-  color: var(--primary-contrast) !important;
-}
-
-/*
- * Seção: Destaques (Features) do Hero
- */
-#li-root .li-hero-feat {
-  /* Layout e Posicionamento */
-  display: grid !important;
-  gap: 10px !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-
-  /* Modelo de Caixa */
-  margin-top: 18px !important;
-}
-
-/*
- * Seção: Spans dos Destaques
- */
-#li-root .li-hero-feat span {
-  /* Tipografia */
-  font-size: 14px !important;
-
-  /* Modelo de Caixa */
-  border-radius: 6px !important;
-  padding: 6px 10px !important;
-
-  /* Visual e Cores */
+#li-root .li-hero-feat span{
+  font-size:14px !important; border-radius:6px !important; padding:6px 10px !important;
   background:rgba(255,255,255,.1) !important;
 }
-
-/*
- * Seção: Card do Hero
- */
 #li-root .li-hero-card{
   border:1px solid var(--border) !important;
-  box-shadow:0 10px 24px rgba(0,0,0,.15) !important; /* ok manter sombra */
+  box-shadow:0 10px 24px rgba(0,0,0,.15) !important;
   background:var(--hero-card-bg) !important;
-  padding: 22px !important;
-  /* Visual e Cores */
+  padding:22px !important;
+  width:100% !important; border-radius:30px;
+}
+#li-root .li-hero-card img{
+  display:block !important; border-radius:14px !important; margin-bottom:14px !important; width:100% !important;
 }
 
-/*
- * Seção: Imagem dentro do Card do Hero
- */
-#li-root .li-hero-card img {
-  /* Layout e Posicionamento */
-  display: block !important;
-
-  /* Modelo de Caixa */
-  border-radius: 14px !important;
-  margin-bottom: 14px !important;
-  width: 100% !important;
-}
-/* =========================================================
-            RESPONSIVIDADE: AJUSTE DO HERO (960px)
-   ========================================================= */
-@media (max-width: 960px) {
-  /* Empilha e centraliza TUDO no hero */
-  #li-root .li-hero .li-wrap {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  place-items: center !important;  /* centraliza horizontal e vertical */
-  gap: 30px !important;
-  text-align: center !important;
-}
-
-  /* Cada item fica bem dimensionado */
+/* Hero: responsivo */
+@media (max-width:960px){
+  #li-root .li-hero .li-wrap{
+    grid-template-columns:1fr !important; place-items:center !important;
+    gap:30px !important; text-align:center !important;
+  }
   #li-root .li-hero .li-hero-content,
-  #li-root .li-hero .li-hero-card {
-    /* align-self funciona em flex (substitui justify-self do grid) */
-    justify-self: center !important;
-    width: min(100%, 420px) !important; /* card não estoura nem fica magro */
+  #li-root .li-hero .li-hero-card{
+    justify-self:center !important; width:min(100%,420px) !important;
   }
+  #li-root .li-cta-group{ justify-content:center !important; }
+  #li-root .li-hero-feat{ justify-content:center !important; }
 
-  /* Grupos internos centralizados */
-  #li-root .li-cta-group { justify-content: center !important; }
-  #li-root .li-hero-feat  { justify-content: center !important; }
+  /* 🚀 NOVO CSS: AJUSTE DE RESPONSIVIDADE DO PREÇO */
+  #li-root .li-hero-price {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px; /* Mais espaço antes dos bullets */
+  }
+  /* FIM NOVO CSS */
+}
+
+@media (max-width:640px){
+  #li-root .li-container{padding: 10px 20px  !important;width:100% !important;}
+  #li-root .li-hero h1{ font-size:28px !important; }
 }
 
 /* =========================================================
-                  RESPONSIVIDADE GERAL (640px)
+   SEÇÕES GENÉRICAS
    ========================================================= */
-@media (max-width: 640px) {
-  #li-root .li-container {padding: 10px 0px 10px !important;width: 100% !important;}
-
-  #li-root .li-hero {width: 100vw !important;  /* opcional: ajusta espaçamento interno */ /* remove possíveis margens laterais do container */}
-
-  /* Mantém FLEX no mobile pequeno (não volte pro grid) */
-  #li-root .li-hero .li-wrap {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-
-  #li-root .li-hero h1 { font-size: 28px !important; }
+#li-root .li-section{ padding:36px 0 !important; }
+#li-root .li-section-title{margin:0 0 10px !important;font-size: 35px;}
+#li-root .li-section-sub{
+  color:var(--muted-text) !important; font-size:16px !important; margin:0 0 30px !important; text-align:center !important;
 }
-
 /* =========================================================
-                        SEÇÕES GENÉRICAS
-   ========================================================= */
-#li-root .li-section {
-  padding: 72px 0 !important;
-}
-
-#li-root .li-section-title {
-  font-size: 28px !important;
-  margin: 0 0 10px !important;
-}
-
-#li-root .li-section-sub {
-   color: var(--muted-text) !important;
-  font-size: 16px !important;
-  margin: 0 0 30px !important;
-  text-align: center !important; /* se quiser manter centralizado */
-}
-
-/* =========================================================
-         BENEFÍCIOS - SEÇÃO "O QUE VOCÊ VAI RECEBER"
+   COMPARATIVO — FIX FINAL MOBILE + TEMAS
    ========================================================= */
 
-#li-root .li-section-title {
-  font-size: 28px !important;
-  margin-bottom: 10px !important;
-  text-align: center !important;
+/* ======= VARIAÇÕES DE COR POR TEMA ======= */
+:root {
+  --cmp-grad-start:  color-mix(in lch, var(--hero-grad-start) 82%, var(--bg) 18%);
+  --cmp-grad-end:  color-mix(in lch, #10b981 82%, var(--bg) 18%);
+  --cmp-row-left:   color-mix(in lch, var(--surface) 96%, var(--bg) 4%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    96%, var(--bg) 4%);
 }
 
-/* ===== Caixa principal ===== */
-#li-root .li-benefits-box {
-  background: var(--surface) !important;
-  border:1px solid var(--border) !important;
-  border-radius: 16px !important;
-  padding: 26px !important;
-  box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
-  max-width: 1100px !important;
-  margin: 0 auto !important;
+html[data-theme="dark"] {
+  --cmp-grad-start: #030303;
+  --cmp-grad-end: #0444b2;
+  --cmp-row-left:   color-mix(in lch, var(--surface) 88%, #ffffff 12%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    88%, #ffffff 12%);
 }
 
-#li-root .li-benefits-box h3 {
-  text-align: center !important;
-  margin-bottom: 22px !important;
-  font-size: 22px !important;
-  color:var(--text) !important;
+html[data-theme="dark-luxury"] {
+  --cmp-grad-start: #000000;
+  --cmp-grad-end: #a020f0;
+  --cmp-row-left:   color-mix(in lch, var(--surface) 82%, #ffffff 18%);
+  --cmp-row-right:  color-mix(in lch, var(--card) 82%, #ffffff 18%);
 }
 
-/* ===== Grid dos itens ===== */
-#li-root .li-receber-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 18px !important;
+/* ======= SEÇÃO E ESTRUTURA ======= */
+#li-comparativo {
+  background: var(--bg);
 }
 
-/* ===== Item individual ===== */
-#li-root .li-receber-item {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 12px !important;
-  padding: 16px !important;
-  border:1px solid var(--border) !important;
-  background: var(--bg) !important;
-  transition: transform .2s ease, box-shadow .2s ease !important;
+#li-comparativo .li-compare-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
-#li-root .li-receber-item:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, .08) !important;
-}
-
-/* ===== Ícones ===== */
-#li-root .li-receber-item .icon {
-  width: 42px !important;
-  height: 42px !important;
-  flex-shrink: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-#li-root .li-receber-item .icon svg {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* ===== Textos ===== */
-#li-root .li-receber-item h4 {
-  margin: 0 0 4px !important;
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  color: var(--text) !important;
-}
-
-#li-root .li-receber-item p {
-  margin: 0 !important;
-  font-size: 14px !important;
-  color: var(--muted-text) !important;
-  line-height: 1.5 !important;
-}
-
-/* ===== Botão ===== */
-#li-root .li-benefits-box .li-btn {
-  display: inline-block !important;
-  background:var(--hero-bg) !important;
-  color:var(--primary-contrast) !important;
-  font-weight: 800 !important;
-  text-decoration: none !important;
-  border-radius: 8px !important;
-  font-size: 18px !important;
-  padding: 14px 22px !important;
-  transition: .2s !important;
-  margin-top: 24px !important;
-box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
-}
-
-#li-root .li-benefits-box .li-btn:hover {
-  opacity: .9 !important;
-  transform: translateY(-2px) !important;
-}
-
-/* =========================================================
-                        RESPONSIVIDADE
-   ========================================================= */
-/*
-   🔧 PONTO DE CORTE PRINCIPAL: 640px
-   (Altere aqui se quiser ajustar manualmente)
-*/
-@media (max-width: 640px) {
-
-  #li-root .li-section {
-    padding: 48px 0 !important;
-  }
-
-  #li-root .li-benefits-box {
-    padding: 20px !important;
-  }
-
-  #li-root .li-receber-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  #li-root .li-receber-item {
-    flex-direction: row !important;
-    align-items: center !important;
-    text-align: left !important;
-  }
-
-  #li-root .li-receber-item h4 {
-    font-size: 15px !important;
-  }
-
-  #li-root .li-receber-item p {
-    font-size: 13px !important;
-  }
-
-  #li-root .li-benefits-box h3 {
-    font-size: 20px !important;
-  }
-
-  #li-root .li-benefits-box .li-btn {
-    width: 100% !important;
-    max-width: 250px !important;
-    margin: 18px auto 0 !important;
-    display: flex !important;
-  }
-}
-
-/* =========================================================
-        AJUSTES ADICIONAIS PARA TABLETS (641px–900px)
-   ========================================================= */
-@media (min-width: 641px) and (max-width: 900px) {
-  #li-root .li-receber-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  #li-root .li-benefits-box h3 {
-    font-size: 21px !important;
-  }
-}
-
-
-/* =========================================================
-                        PRODUTO E CARDS
-   ========================================================= */
-#li-root .li-product {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 20px !important;
-  align-items: center !important;
-}
-
-#li-root .li-card {
-  background:var(--surface) !important;
-  border:1px solid var(--border) !important;
-  border-radius: 16px !important;
-  padding: 26px !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .05) !important;
-  justify-items: center;
-  width: 100%;
-}
-
-#li-root .li-bullets {
-  margin: 16px 0 8px !important;
-  padding-left: 18px !important;
-}
-
-#li-root .li-bullets li {
-  margin-bottom: 10px !important;
-}
-
-/* =========================================================
-                           TESTEMUNHOS
-   ========================================================= */
-.li-testimonials {
-  margin-top: 40px;
-}
-
-.li-testimonials-grid {
+/* ======= CABEÇALHO ======= */
+#li-comparativo .li-compare-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  background: linear-gradient(90deg, var(--cmp-grad-start), var(--cmp-grad-end));
+  color: var(--primary-contrast);
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.05rem;
+}
+#li-comparativo .li-col-title {
+  padding: 14px 10px;
 }
 
-.li-testimonial {
-  background:var(--hero-card-bg);
-  color:var(--primary-contrast);
-  border:1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* ======= LINHAS ======= */
+#li-comparativo .li-compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
 }
 
-.li-testimonial p {
-  margin: 0 0 10px;
-  font-size: 13px;
-  line-height: 1.5;
-  font-weight: 500;
+/* ======= CÉLULAS ======= */
+#li-comparativo .li-col {
+  padding: 16px 18px;
+  line-height: 1.55;
+  font-size: 15px;
+}
+
+#li-comparativo .li-col.sem {
+  background: var(--cmp-row-left);
+  color: var(--muted-text);
+}
+
+#li-comparativo .li-col.com {
+  background: var(--cmp-row-right);
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ======= DIVISÓRIA VERTICAL (DESKTOP) ======= */
+#li-comparativo .li-compare-row .li-col + .li-col {
+  border-left: 1px solid var(--border);
+}
+
+/* ======= MOBILE FIX ======= */
+@media (max-width: 640px) {
+  /* empilha as colunas */
+  #li-comparativo .li-compare-header,
+  #li-comparativo .li-compare-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* cada célula pinta seu próprio fundo */
+  #li-comparativo .li-compare-row .li-col.sem {
+    background: var(--cmp-row-left) !important;
+    color: var(--muted-text);
+    border-bottom: 1px dashed var(--border);
+  }
+
+  #li-comparativo .li-compare-row .li-col.com {
+    background: var(--cmp-row-right) !important;
+    color: var(--text);
+  }
+
+  /* remove bordas verticais e gaps escuros */
+  #li-comparativo .li-compare-row,
+  #li-comparativo .li-compare-table {
+    background: var(--bg) !important;
+  }
+  #li-comparativo .li-compare-row .li-col + .li-col {
+    border-left: none;
+  }
+
+  #li-comparativo .li-col {
+    padding: 14px 16px;
+  }
 }
 
 /* =========================================================
-                        FAQ SECTION
+   COMPARATIVO — AJUSTES VISUAIS E FINESSE
    ========================================================= */
-#li-root .li-faq {
-  display: grid !important;
-  grid-template-columns: 3fr 3fr !important;
-  gap: 4px !important;
-  font-size: 15px !important;
+
+/* cantos arredondados no topo */
+#li-comparativo .li-compare-table { border-radius: 18px; }
+#li-comparativo .li-compare-header { border-radius: 18px 18px 0 0; }
+
+/* zebra suave nas linhas do lado "com IA" */
+#li-comparativo .li-compare-row:nth-child(even) .li-col.com {
+  filter: saturate(1.02) brightness(1.02);
 }
 
-#li-root .li-q {
+/* divisor mais leve no mobile */
+@media (max-width:640px){
+  #li-comparativo .li-col.sem { border-bottom-style: dotted; }
+}
+
+/* micro contorno nas pílulas mobile (melhor contraste) */
+@media (max-width:640px){
+  #li-comparativo .li-compare-row .li-col::before{
+    outline: 1px solid color-mix(in lch, #000 15%, transparent 85%);
+    outline-offset: 0;
+  }
+}
+
+/* leve aumento do padding no mobile */
+@media (max-width:640px){
+  #li-comparativo .li-col { padding: 16px 18px; }
+}
+
+
+
+/* =========================================================
+   “O QUE VOCÊ VAI RECEBER”
+   ========================================================= */
+#li-root .li-benefits-box{
+  background:var(--surface) !important; border:1px solid var(--border) !important;
+  border-radius:16px !important; padding:26px !important; box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
+  max-width:7000px !important; margin:0 auto !important;
+}
+#li-root .li-benefits-box h3{
+  text-align:center !important; margin-bottom:22px !important; font-size:22px !important; color:var(--text) !important;
+}
+/* O que você vai receber — grid responsiva */
+#li-root .li-receber-grid{
+  display: grid !important;
+  gap: 6px !important;
+  grid-template-columns: 1fr !important;            /* mobile */
+}
+
+@media (min-width: 641px){
+  #li-root .li-receber-grid{ grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (min-width: 980px){
+  #li-root .li-receber-grid{ grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+#li-root .li-receber-item{
+  display:flex !important; align-items:flex-start !important; gap:12px !important; padding:16px !important;
+  border:1px solid var(--border) !important; background:var(--bg) !important;
+  transition:transform .2s ease, box-shadow .2s ease !important;
+}
+#li-root .li-receber-item:hover{ transform:translateY(-3px) !important; box-shadow:0 6px 14px rgba(0,0,0,.08) !important; }
+#li-root .li-receber-item .icon{
+  width:42px !important; height:42px !important; flex-shrink:0 !important; display:flex !important; align-items:center !important; justify-content:center !important;
+}
+#li-root .li-receber-item .icon svg{ width:22px !important; height:22px !important; }
+#li-root .li-receber-item h4{
+  margin:0 0 4px !important; font-size:16px !important; font-weight:700 !important; color:var(--text) !important;
+}
+#li-root .li-receber-item p{
+  margin:0 !important; font-size:14px !important; color:var(--muted-text) !important; line-height:1.5 !important;
+}
+
+/* botão dentro da caixa */
+#li-root .li-benefits-box .li-btn{
+  display:inline-block !important; background:var(--hero-bg) !important; color:var(--primary-contrast) !important;
+  font-weight:800 !important; border-radius:8px !important; font-size:18px !important; padding:14px 22px !important;
+  transition:.2s !important; margin-top:24px !important; box-shadow:0 0 10px rgba(255,255,255,.4) !important;
+}
+#li-root .li-benefits-box .li-btn:hover{ opacity:.9 !important; transform:translateY(-2px) !important; }
+
+/* Mobile da seção */
+@media (max-width:640px){
+  #li-root .li-section{padding: 48px 0px !important;}
+  #li-root .li-benefits-box{ padding:20px !important; }
+  #li-root .li-receber-item h4{ font-size:15px !important; }
+  #li-root .li-receber-item p{ font-size:13px !important; }
+  #li-root .li-benefits-box h3{ font-size:20px !important; }
+  #li-root .li-benefits-box .li-btn{
+    width:100% !important; max-width:250px !important; margin:18px auto 0 !important; display:flex !important; justify-content:center;
+  }
+}
+
+/* =========================================================
+   PRODUTO / CARDS GENÉRICOS
+   ========================================================= */
+#li-root .li-product{
+  display:grid !important; grid-template-columns:1fr 1fr !important; gap:6px !important; align-items:center !important;
+}
+#li-root .li-card{
   background:var(--surface) !important;
   border:1px solid var(--border) !important;
-  border-radius: 14px !important;
+  border-radius:16px !important;
   padding: 10px !important;
+  box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
+  justify-items:center;
+  width:100%;
+}
+#li-root .li-bullets{ margin:16px 0 8px !important; padding-left:18px !important; }
+#li-root .li-bullets li{ margin-bottom:10px !important; }
+
+/* =========================================================
+   TESTEMUNHOS
+   ========================================================= */
+.li-testimonials{ margin-top:40px; }
+.li-testimonials-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.li-testimonial{
+  background:var(--hero-card-bg); color:var(--primary-contrast);
+  border:1px solid var(--border); border-radius:10px; padding:12px; box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+.li-testimonial p{ margin:0 0 10px; font-size:13px; line-height:1.5; font-weight:500; }
+
+@media (max-width:640px){
+  .li-testimonials-grid{ grid-template-columns:1fr; }
 }
 
 /* =========================================================
-                        CTA BAR E FOOTER
+   FAQ
    ========================================================= */
-#li-root .li-cta-bar {
-  background:var(--hero-grad-start) !important;
-  color:var(--primary-contrast) !important;
-  padding: 28px 0 !important;
-}
-
-#li-root .li-cta-bar strong {
-  font-size: 20px !important;
-}
-
-#li-root .li-footer {
-  padding: 28px 0 !important;
-  text-align: center !important;
-  color:var(--muted-text) !important;
-  font-size: 14px !important;
+#li-root .li-faq{display:grid !important;grid-template-columns:1fr 1fr !important;gap:8px !important;font-size: 13px !important;}
+#li-root .li-q{ background:var(--surface) !important; border:1px solid var(--border) !important; border-radius:14px !important; padding:10px !important; }
+@media (max-width:640px){
+  #li-root .li-faq{grid-template-columns:1fr !important;}
+  #li-root .li-q{ padding:6px !important; text-align:justify !important; }
 }
 
 /* =========================================================
-                        MODAL DE CHECKOUT
+   CTA BAR & FOOTER
    ========================================================= */
-#li-checkout-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background:var(--overlay);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  backdrop-filter: blur(6px) !important;
-}
-
-#li-checkout-modal .li-modal-box {
-  background:var(--bg);
-  border-radius: 16px;
-  max-width: 680px;
-  width: 100%;
-  box-shadow:0 20px 60px rgba(0,0,0,.25);
-  overflow: hidden;
-  position: relative;
-  animation: li-pop .15s ease;
-}
-
-#li-checkout-modal img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: cover;
-}
-
-#li-checkout-modal .li-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  border: 0;
-  background: transparent;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  color:var(--muted-text);
-}
-
-#li-checkout-modal .li-modal-footer {
-  padding: 16px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-#li-checkout-modal .li-price {
-  font-weight: 700;
-  color:var(--hero-grad-start);
-}
-
-#li-checkout-modal .li-price span {
-  font-weight: 600;
-  opacity: .6;
-  font-size: 13px;
-}
-
-@keyframes li-pop {
-  from {
-    transform: scale(.98);
-    opacity: .85;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+#li-root .li-cta-bar{ background:var(--hero-grad-start) !important; color:var(--primary-contrast) !important; padding:28px 0 !important; }
+#li-root .li-cta-bar strong{ font-size:20px !important; }
+#li-root .li-footer{ padding:28px 0 !important; text-align:center !important; color:var(--muted-text) !important; font-size:14px !important; }
 
 /* =========================================================
-   (PARTE 2/2)
+   MODAL DE CHECKOUT
    ========================================================= */
+#li-checkout-modal{
+  display:none; position:fixed; inset:0; background:var(--overlay); z-index:1000;
+  align-items:center; justify-content:center; padding:16px; backdrop-filter:blur(6px) !important;
+}
+#li-checkout-modal .li-modal-box{
+  background:var(--bg); border-radius:16px; max-width:680px; width:100%; box-shadow:0 20px 60px rgba(0,0,0,.25);
+  overflow:hidden; position:relative; animation:li-pop .15s ease;
+}
+#li-checkout-modal img{ display:block; width:100%; height:auto; max-height:420px; object-fit:cover; }
+#li-checkout-modal .li-close{
+  position:absolute; top:10px; right:15px; border:0; background:transparent; font-size:28px; font-weight:bold; cursor:pointer; color:var(--muted-text);
+}
+#li-checkout-modal .li-modal-footer{
+  padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+#li-checkout-modal .li-price{ 
+   font-weight: 900;
+    font-size: 30px;
+    color: var(--text);
+    text-shadow: 0 0 8px var(--hero-grad-start);
+}
+#li-checkout-modal .li-price span{ font-weight:600; opacity:.6; font-size:13px; }
+
+@keyframes li-pop{ from{ transform:scale(.98); opacity:.85; } to{ transform:scale(1); opacity:1; } }
 
 /* =========================================================
-   RECEBER SECTION
+   AJUSTES FINAIS / HELPERS
    ========================================================= */
-#li-root .li-receber {
-  background:var(--surface-2) !important;
-  padding: 72px 0 !important;
-}
-
-#li-root .li-receber-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 22px !important;
-}
-
-#li-root .li-receber-item {
-  background:var(--bg) !important;
-  border-radius: 14px !important;
-  padding: 24px !important;
-  border:1px solid var(--border) !important;
-  text-align: center !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, .05) !important;
-}
-
-#li-root .li-receber-item img {
-  width: 68px !important;
-  margin-bottom: 14px !important;
-}
+#li-root .li-center{ text-align:center !important; }
+#li-root .li-hidden{ display:none !important; }
+#li-root .li-show{ display:block !important; }
 
 /* =========================================================
-   ÚLTIMA CHANCE / CTA FINAL
+   THEME TOGGLE (3 temas)
    ========================================================= */
-#li-root .li-last-chance {
-  background:linear-gradient(135deg,var(--hero-grad-start),var(--hero-grad-end)) !important;
-  color:var(--primary-contrast) !important;
-  text-align: center !important;
-  padding: 64px 18px !important;
-  border-top:6px solid var(--success) !important;
+.theme-toggle{ position:fixed; top:14px; right:14px; z-index:9999; }
+.switch{
+  font-size:17px; position:relative; display:inline-block; width:4em; height:2.2em;
+  border-radius:30px; box-shadow:0 0 10px rgba(0,0,0,0.1); overflow:hidden; cursor:pointer;
+}
+.switch input[type="checkbox"]{ position:absolute; inset:0; opacity:0; pointer-events:none; }
+.slider{ position:absolute; inset:0; border-radius:30px; background-color:#2a2a2a; transition:.4s ease; }
+.slider::before{
+  content:""; position:absolute; height:1.2em; width:1.2em; left:.5em; bottom:.5em; border-radius:50%;
+  background:#fff; transition:all .4s ease; display:flex; align-items:center; justify-content:center; font-size:1em;
 }
 
-#li-root .li-last-chance h2 {
-  font-size: 26px !important;
-  margin-bottom: 14px !important;
+/* ícones do slider */
+html[data-theme="dark"] .slider::before{
+  content:"☽"; font-size:1.05em; background:transparent; box-shadow:none; transform:translateX(0) rotate(0deg);
+  filter:drop-shadow(0 0 4px rgba(255,255,255,.4));
+}
+html[data-theme="light"] .slider::before{
+  content:""; font-size:1.05em; background:transparent; box-shadow:none; transform:translateX(1.8em) rotate(20deg);
+  filter:drop-shadow(0 0 6px #ffcf48);
+}
+html[data-theme="dark-luxury"] .slider::before{
+  content:"💎"; font-size:1.1em; background:none; box-shadow:none; transform:translateX(1.8em) rotate(0deg);
+  filter:drop-shadow(0 0 6px rgba(179,68,255,0.9)); transition:transform .4s ease, filter .4s ease;
 }
 
-#li-root .li-last-chance p {
-  font-size: 17px !important;
-  margin-bottom: 24px !important;
-}
+/* estrelas / nuvem decorativas */
+.star{ background-color:#fff; border-radius:50%; position:absolute; width:5px; height:5px; opacity:1; transition:all .4s ease; }
+.star_1{ left:2.5em; top:.5em; } .star_2{ left:2.2em; top:1.2em; } .star_3{ left:3em; top:.9em; }
+.cloud{ width:3.5em; position:absolute; bottom:-1.4em; left:-1.1em; opacity:0; fill:#fff; transition:all .4s ease; }
 
-#li-root .li-last-chance .li-btn {
-  background:var(--success) !important;
-  border-radius: 10px !important;
-  font-size: 18px !important;
-  padding: 14px 28px !important;
-}
+/* estados por tema */
+html[data-theme="light"] .slider{ background-color:#00a6ff; }
+html[data-theme="light"] .slider::before{ transform:translateX(1.8em); background:#ffcf48; box-shadow:inset 0 0 0 2px #fff; }
+html[data-theme="light"] .star{ opacity:0; } html[data-theme="light"] .cloud{ opacity:1; }
 
-/* =========================================================
-   BOTÕES ESPECIAIS E EFEITOS
-   ========================================================= */
-#li-root .li-btn.neon {
-  background:var(--success) !important;
-  box-shadow:0 0 12px var(--success),0 0 24px var(--success) !important;
-}
+html[data-theme="dark"] .slider{ background-color:#2a2a2a; }
+html[data-theme="dark"] .slider::before{ transform:translateX(0); box-shadow:inset 8px -4px 0 0 #fff; background:#fff; }
+html[data-theme="dark"] .star{ opacity:1; } html[data-theme="dark"] .cloud{ opacity:0; }
 
-#li-root .li-btn.neon:hover {
-  box-shadow:0 0 18px var(--success),0 0 36px var(--success) !important;
-  transform: translateY(-2px) !important;
-}
+html[data-theme="dark-luxury"] .slider{ background-color:#6c2cf9; box-shadow:0 0 10px rgba(108,44,249,0.6); }
+html[data-theme="dark-luxury"] .slider::before{ transform:translateX(1.8em); background:linear-gradient(45deg,#ffb6ff,#b344ff); box-shadow:0 0 8px #b344ff; }
+html[data-theme="dark-luxury"] .star{ opacity:0; } html[data-theme="dark-luxury"] .cloud{ opacity:.2; filter:drop-shadow(0 0 8px #b344ff); }
 
-#li-root .li-btn-gradient {
-  background: linear-gradient(90deg, var(--success), var(--success-2)) !important;
-  color: #fff !important;
-  font-weight: 800 !important;
-}
-
-/* =========================================================
-   ANIMAÇÕES
-   ========================================================= */
-@keyframes li-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes li-zoom {
-  from {
-    transform: scale(0.98);
-    opacity: 0.9;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* =========================================================
-   RESPONSIVIDADE GERAL
-   ========================================================= */
-/* 
-   🔧 PONTO DE CORTE PRINCIPAL: 640px
-   Para ajustar o comportamento mobile manualmente,
-   altere o valor abaixo. Exemplo:
-   @media (max-width: 768px) { ... }
-*/
-  /* ===== HERO ===== */
-  #li-root .li-hero .li-wrap {
-    text-align: center !important;
-  }
-
-  #li-root .li-hero h1 {
-    font-size: 28px !important;
-  }
-
-  #li-root .li-hero p {
-    font-size: 15px !important;
-  }
-
-  #li-root .li-cta-group {
-    justify-content: center !important;
-  }
-
-  #li-root .li-hero-card {
-    max-width: 400px !important;
-    margin: 0 auto !important;
-  }
-
-  /* ===== BENEFÍCIOS ===== */
-  #li-root .li-benefits {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  #li-root .li-benefit {
-    padding: 14px !important;
-  }
-
-  /* ===== RECEBER ===== */
-  #li-root .li-receber-grid {
-   grid-template-columns: repeat(2, 1fr) !important;
-   }
-
-  /* ===== TESTEMUNHOS ===== */
-  .li-testimonials-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* ===== FAQ ===== */
-  #li-root .li-q {
-    padding: 6px !important;
-    text-align: justify !important;
-  }
-
-  /* ===== ÚLTIMA CHANCE ===== */
-  #li-root .li-last-chance h2 {
-    font-size: 22px !important;
-  }
-
-  #li-root .li-last-chance p {
-    font-size: 15px !important;
-  }
-
-  #li-root .li-last-chance .li-btn {
-    width: 100% !important;
-    max-width: 360px !important;
-    margin: 0 auto !important;
-    display: block !important;
-  }
-
-  /* ===== MODAL ===== */
-  #li-checkout-modal .li-modal-box {
-    max-width: 90% !important;
-  }
-
-  #li-checkout-modal img {
-    max-height: 240px !important;
-  }
-}
-
-/* =========================================================
-   RESPONSIVIDADE MÉDIA (entre 641px e 900px)
-   ========================================================= */
-@media (min-width: 641px) and (max-width: 900px) {
-
-  #li-root .li-hero .li-wrap {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 30px !important;
-  }
-
-  #li-root .li-benefits {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  #li-root .li-receber-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  .li-testimonials-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  #li-root .li-faq {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* =========================================================
-   AJUSTES FINAIS
-   ========================================================= */
-#li-root .li-center {
-  text-align: center !important;
-}
-
-#li-root .li-hidden {
-  display: none !important;
-}
-
-#li-root .li-show {
-  display: block !important;
-}
-
-/* =========================================================
-   Teste
-   ========================================================= */
-
-#li-root .li-hero-card {
-  width: 100% !important;
-  border-radius: 30px;
-}
-
-/* =========================================================
-   ACESSIBILIDADE & TRANSIÇÕES DE TEMA
-   ========================================================= */
-
-/* Foco visível para navegação por teclado */
-#li-root .li-btn:focus-visible,
-#li-root .animated-button:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-/* Sugere ao navegador que a página tem versão light/dark */
-html { 
-  color-scheme: light dark; 
-}
-
-/* Transição suave ao alternar temas */
-body, 
-#li-root .li-card, 
-#li-root .li-hero, 
-#li-root .li-benefits-box, 
-#li-root .li-hero-card, 
-#li-root .li-q {
-  transition: background-color .25s ease, 
-              color .25s ease, 
-              border-color .25s ease;
-}
-
-/* === THEME TOGGLE REESTRUTURADO (3 temas) === */
-.theme-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 9999;
-}
-
-/* Base */
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 4em;
-  height: 2.2em;
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  cursor: pointer;
-}
-
-/* Checkbox oculto */
-.switch input[type="checkbox"] {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Trilha */
-.slider {
-  position: absolute;
-  inset: 0;
-  border-radius: 30px;
-  background-color: #2a2a2a;
-  transition: 0.4s ease;
-}
-
-/* === Ícones animados do switch de tema === */
-
-/* Base do botão */
-.slider::before {
-  content: "";
-  position: absolute;
-  height: 1.2em;
-  width: 1.2em;
-  left: 0.5em;
-  bottom: 0.5em;
-  border-radius: 50%;
-  background: #fff;
-  transition: all .4s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
-}
-
-/* 🌙 Lua no modo escuro */
-html[data-theme="dark"] .slider::before {
-  content: "☽";
-  font-size: 1.05em;
-  background: transparent;
-  box-shadow: none;
-  transform: translateX(0) rotate(0deg);
-  filter: drop-shadow(0 0 4px rgba(255,255,255,0.4));
-}
-
-/* ☀️ Sol no modo claro */
-html[data-theme="light"] .slider::before {
-  content: "";
-  font-size: 1.05em;
-  background: transparent;
-  box-shadow: none;
-  transform: translateX(1.8em) rotate(20deg);
-  filter: drop-shadow(0 0 6px #ffcf48);
-}
-
-/* 💎 Diamante no modo dark-luxury */
-html[data-theme="dark-luxury"] .slider::before {
-  content: "💎";
-  font-size: 1.1em;
-  background: none;
-  box-shadow: none;
-  transform: translateX(1.8em) rotate(0deg);
-  filter: drop-shadow(0 0 6px rgba(179,68,255,0.9));
-  transition: transform .4s ease, filter .4s ease;
-}
-
-/* === Elementos decorativos === */
-.star {
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  opacity: 1;
-  transition: all .4s ease;
-}
-.star_1 { left: 2.5em; top: .5em; }
-.star_2 { left: 2.2em; top: 1.2em; }
-.star_3 { left: 3em;   top: .9em;  }
-
-.cloud {
-  width: 3.5em;
-  position: absolute;
-  bottom: -1.4em;
-  left: -1.1em;
-  opacity: 0;
-  fill: #fff;
-  transition: all .4s ease;
-}
-
-/* === Estados por tema === */
-
-/* ☀️ Tema Claro */
-html[data-theme="light"] .slider {
-  background-color: #00a6ff;
-}
-html[data-theme="light"] .slider::before {
-  transform: translateX(1.8em);
-  background: #ffcf48;
-  box-shadow: inset 0 0 0 2px #fff;
-}
-html[data-theme="light"] .star {
-  opacity: 0;
-}
-html[data-theme="light"] .cloud {
-  opacity: 1;
-}
-
-/* 🌙 Tema Escuro */
-html[data-theme="dark"] .slider {
-  background-color: #2a2a2a;
-}
-html[data-theme="dark"] .slider::before {
-  transform: translateX(0);
-  box-shadow: inset 8px -4px 0 0 #fff; /* lua */
-  background: #fff;
-}
-html[data-theme="dark"] .star {
-  opacity: 1;
-}
-html[data-theme="dark"] .cloud {
-  opacity: 0;
-}
-
-/* 💎 Tema Dark Luxury */
-html[data-theme="dark-luxury"] .slider {
-  background-color: #6c2cf9;
-  box-shadow: 0 0 10px rgba(108,44,249,0.6);
-}
-html[data-theme="dark-luxury"] .slider::before {
-  transform: translateX(1.8em);
-  background: linear-gradient(45deg, #ffb6ff, #b344ff);
-  box-shadow: 0 0 8px #b344ff;
-}
-html[data-theme="dark-luxury"] .star {
-  opacity: 0;
-}
-html[data-theme="dark-luxury"] .cloud {
-  opacity: 0.2;
-  filter: drop-shadow(0 0 8px #b344ff);
-}
-
-
-/* ================================================
-   Textos que devem ser brancos no tema light
-   ================================================ */
+/* textos brancos forçados no tema claro (hero) */
 html[data-theme="light"] #li-root .li-eyebrow,
 html[data-theme="light"] #li-root .li-hero-feat span,
-html[data-theme="light"] #li-root .li-hero-card .li-price {
-  color: #ffffff !important;
+html[data-theme="light"] #li-root .li-hero-card .li-btn{
+    color: #ffffff !important;
 }
 
-/* --- Forçar preço branco no tema claro --- */
-html[data-theme="light"] #li-root .li-price,
-html[data-theme="light"] #li-root .li-hero .li-price,
-html[data-theme="light"] #li-root .li-hero-card .li-price {
-  color: #fff !important;
+/* Removida a linha que forçava cor branca no preço do card (agora que o preço saiu do card) */
+/* Removida a linha que forçava cor branca no preço do modal (agora que o preço está limpo) */
+
+
+/* ícones da seção receber */
+#li-root .li-receber-item .icon{ width:42px !important; height:42px !important; display:flex !important; align-items:center !important; justify-content:center !important; flex-shrink:0 !important; }
+#li-root .li-receber-item .icon svg{ width:22px !important; height:22px !important; }
+
+/* =========================================================
+   COMPARATIVO — RÓTULOS AUTOMÁTICOS (mobile)
+   ========================================================= */
+:root{
+  /* cores das pílulas */
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 35%, var(--bg) 65%);
+  --cmp-badge-com-bg: #10b981;
+  --cmp-badge-text:    var(--primary-contrast);
+}
+html[data-theme="dark"]{
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 45%, var(--bg) 55%);
+  --cmp-badge-com-bg: #0444b2;
 }
 
-/* Texto auxiliar do preço (ex.: "preço de relançamento") */
-html[data-theme="light"] #li-root .li-price span,
-html[data-theme="light"] #li-root .li-hero .li-price span,
-html[data-theme="light"] #li-root .li-hero-card .li-price span {
-  color: rgba(255,255,255,.85) !important;
-}
-/* FIX — seção "O que você vai receber" no tema claro */
-html[data-theme="light"] #li-root .li-receber-item h4,
-html[data-theme="light"] #li-root .li-receber-item span {
-  color: var(--text) !important;        /* título e pequenos spans em texto escuro */
+.li-col-title.sem {}
+html[data-theme="dark-luxury"]{
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 40%, var(--bg) 60%);
+  --cmp-badge-com-bg: #a020f0;
 }
 
-html[data-theme="light"] #li-root .li-receber-item p {
-  color: var(--muted-text) !important;  /* descrição em cinza escuro */
+@media (max-width:640px){
+  /* espaço extra para a pílula */
+  #li-comparativo .li-compare-row .li-col{
+    position: relative;
+    padding-top: 40px !important; /* altura da pílula + respiro */
+  }
+
+  /* pílulas */
+  #li-comparativo .li-compare-row .li-col.sem::before,
+  #li-comparativo .li-compare-row .li-col.com::before{
+    content: "";
+    position: absolute;
+    top: 10px; left: 12px;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--cmp-badge-text);
+    background: var(--cmp-badge-sem-bg);
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* textos específicos */
+  #li-comparativo .li-compare-row .li-col.sem::before{
+    content: "😩 Sem método";
+    background: var(--cmp-badge-sem-bg);
+  }
+  #li-comparativo .li-compare-row .li-col.com::before{
+    content: "🚀 Com IA Laerte Invest";
+    background: var(--cmp-badge-com-bg);
+  }
+}
+#li-comparativo .li-compare-table { border-radius: 18px; }
+#li-comparativo .li-compare-header { border-radius: 18px 18px 0 0; }
+
+/* exemplo: antes da variável que usa color-mix */
+#li-comparativo .li-col.sem { background: var(--cmp-row-left); }
+#li-comparativo .li-col.com { background: var(--cmp-row-right); }
+/* sua linha com color-mix vem depois (e sobrescreve nos browsers suportados) */
+
+/* Pastilha do ícone: tamanho/cores */
+#li-root .li-receber-item .icon{
+  width: 42px !important; height: 42px !important;
+  border-radius: 12px !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  background: rgba(255,255,255,.08);    /* base; sobrescrevemos por tipo */
+  color: #9ecbff;                       /* cor do desenho (SVG usa currentColor) */
 }
 
-/* (opcional) garante tamanho/centralização dos ícones */
-#li-root .li-receber-item .icon {
-  width: 42px !important;
-  height: 42px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
+/* Cores por tipo (ajuste fino por tema se quiser) */
+#li-root .icon-pdf        { background: rgba(37,99,235,.15) !important; color:#60a5fa !important; }
+#li-root .icon-video      { background: rgba(239,68,68,.15) !important; color:#f87171 !important; }
+#li-root .icon-planilha   { background: rgba(34,197,94,.15) !important; color:#34d399 !important; }
+#li-root .icon-bot        { background: rgba(59,130,246,.15) !important; color:#93c5fd !important; }
+#li-root .icon-simulador  { background: rgba(108,92,231,.18) !important; color:#b3a8ff !important; }
+#li-root .icon-comunidade { background: rgba(251,191,36,.18) !important; color:#facc15 !important; }
+
+/* Garanta que os SVGs herdem a cor */
+#li-root .li-receber-item .icon svg { width: 22px !important; height: 22px !important; }
+#li-root .li-receber-item .icon svg * { fill: currentColor !important; }
+
+/* === Somente Temas Darks+ mobile: coluna "sem método" fica preta === */
+@media (max-width: 640px){
+  html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem{
+    background: #000000 !important;             /* fundo preto */
+    color: #ffffff !important;                  /* texto claro */
+    border-bottom: 1px dashed rgba(255,255,255,.18) !important;
+  }
+
+  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
+  html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
+    background: rgba(255,255,255,.08) !important;
+    color: #ffffff !important;
+  }
 }
-#li-root .li-receber-item .icon svg {
-  width: 22px !important;
-  height: 22px !important;
+
+@media (max-width: 640px){
+  html[data-theme="dark-luxury"] #li-comparativo .li-compare-row .li-col.sem{
+    background: #000000 !important;             /* fundo preto */
+    color: #e5e7eb !important;                  /* texto claro */
+    border-bottom: 1px dashed rgba(255,255,255,.18) !important;
+  }
+  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
+  html[data-theme="dark-luxury"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
+    background: rgba(255,255,255,.08) !important;
+    color: #ffffff !important;
+  }
+}
+@media (max-width: 640px){
+  /* (opcional) se quiser a pílula com contraste um pouco maior no light */
+  html[data-theme="light"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o branco */
+    background: rgba(0,0,0,.04) !important;
+    color: #000000 !important;
+  }
+}
+
+/* CTA exclusivo do modal */
+#li-checkout-modal .li-modal-footer .li-modal-cta{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 18px; border-radius:14px;
+  background: var(--primary);               /* usa seu gradiente */
+  color:#fff; font-weight:800; text-decoration:none;
+  border:1px solid rgba(0,0,0,.25);
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  white-space:nowrap;
+}
+#li-checkout-modal .li-modal-footer .li-modal-cta:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.03);
+  box-shadow:0 12px 26px rgba(0,0,0,.22);
+}
+#li-checkout-modal .li-modal-footer .li-modal-cta:active{ transform:translateY(0); }
+#li-checkout-modal .li-modal-footer .li-modal-cta:focus-visible{
+  outline:2px solid #fff; outline-offset:2px;
+}
+/* =========================================================
+   CONTADOR DE TEMPO / URGÊNCIA (COMPATÍVEL COM 3 TEMAS)
+   ========================================================= */
+
+/* Contêiner principal: Remove a caixa, move para cima, e centraliza */
+#li-root .li-timer-box {
+  text-align: center;
+  margin: 0 auto 10px; /* Movido para cima: 0px acima, 10px abaixo */
+  padding: 0;
+  max-width: fit-content; /* Largura justa para tirar a sensação de 'caixa' */
+  
+  /* Garante transparência e anula qualquer fundo anterior */
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Título do contador (Texto: "A oferta..."): Diminuído e limpo */
+#li-root .li-timer-label {
+  font-size: 0.85rem; /* Diminui o texto */
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px; /* Menos espaço entre texto e números */
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+}
+
+/* Números principais: Aumentados */
+#li-root .li-countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 3rem; /* Aumenta os números */
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Valor numérico */
+#li-root .li-time-value {
+  color: var(--hero-grad-end);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--hero-grad-end) 80%, transparent 20%);
+  transition: color .3s ease, text-shadow .3s ease;
+}
+
+/* Grupo (número + sufixo 'h', 'm', 's'): Ajustado */
+#li-root .li-time-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  font-size: 20px; /* Diminui os sufixos */
+  color: var(--muted-text);
+  margin-top: -16px; /* Puxa o sufixo para mais perto do número */
+}
+
+/* =========================================================
+   VARIAÇÕES POR TEMA
+   ========================================================= */
+
+/* O fundo e a sombra FORAM REMOVIDOS destas regras de tema, 
+   deixando apenas o ajuste de cor do número (`li-time-value`). */
+
+/* --- Tema Claro --- */
+html[data-theme="light"] #li-root .li-timer-box {
+  /* Fundo e sombra removidos */
+}
+html[data-theme="light"] #li-root .li-time-value {
+  color: var(--success-2); /* Mantém o verde de sucesso */
+  text-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+/* Força a cor do texto do timer para a variável text */
+html[data-theme="light"] #li-root .li-timer-label,
+html[data-theme="light"] #li-root .li-time-group {
+    color: var(--text) !important;
+}
+
+
+/* --- Tema Dark --- */
+html[data-theme="dark"] #li-root .li-timer-box {
+  /* Fundo e sombra removidos */
+}
+html[data-theme="dark"] #li-root .li-time-value {
+  color: var(--hero-grad-end); /* Laranja vibrante */
+  text-shadow: 0 0 16px rgba(255,115,0,.6);
+}
+
+/* --- Tema Dark Luxury --- */
+html[data-theme="dark-luxury"] #li-root .li-timer-box {
+  /* Fundo, borda e sombra removidos */
+}
+html[data-theme="dark-luxury"] #li-root .li-time-value {
+  color: var(--hero-grad-end); /* Amarelo/Laranja do gradiente */
+  text-shadow: 0 0 16px rgba(251,191,36,.6);
+}
+
+/* Responsivo */
+@media (max-width:640px){
+  /* Reajustes para mobile */
+  #li-root .li-timer-box { padding: 0 10px; max-width: 100%; }
+  #li-root .li-countdown-timer { font-size: 2.2rem; gap: 8px; } /* Números menores no mobile */
+  #li-root .li-time-group { font-size: 16px; margin-top: -12px; }
 }
