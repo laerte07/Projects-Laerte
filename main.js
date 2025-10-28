@@ -3,8 +3,9 @@
 // =========================================================
 
 const STORAGE_KEY = 'laerte_offer_expiry';
-// Duração da oferta em MILISSEGUNDOS (24 horas)
-const OFFER_DURATION = 24 * 60 * 60 * 1000; 
+
+// Duração da oferta em MILISSEGUNDOS: 1727 segundos * 1000 ms/seg
+const OFFER_DURATION = 1727 * 1000; 
 
 // Elementos do DOM (Verifique se esses IDs existem no seu index.html!)
 const timerElement = document.getElementById('li-countdown');
@@ -15,10 +16,10 @@ let countdownInterval;
 function getExpiryTime() {
     let expiryTime = localStorage.getItem(STORAGE_KEY);
     
-    // 1. A oferta já expirou? (Tempo atual é maior que o tempo de expiração salvo)
-    if (expiryTime && new Date().getTime() > parseInt(expiryTime) + (24 * 60 * 60 * 1000)) {
-        // Se a expiração foi há mais de 24h (para evitar que reinicie em todo F5 se o usuário só voltou), 
-        // ou você pode simplesmente limpar se distance <= 0
+    // 1. VERIFICAÇÃO DE EXPIRAÇÃO: Se o tempo atual é maior que o tempo de expiração salvo
+    // O valor deve ser a DURAÇÃO DA OFERTA (em ms) para a lógica de reinício.
+    if (expiryTime && new Date().getTime() > parseInt(expiryTime)) {
+        // Se a expiração ocorreu, removemos o registro para forçar um novo ciclo (reinício)
         localStorage.removeItem(STORAGE_KEY);
         return null; 
     }
@@ -45,7 +46,6 @@ function updateCountdown() {
         clearInterval(countdownInterval);
         timerElement.style.display = 'none';
         expiredElement.style.display = 'block';
-        // Você pode adicionar aqui uma lógica para que a oferta reinicie (ex: 24h após a expiração)
         return;
     }
 
@@ -62,6 +62,7 @@ function updateCountdown() {
     }
 
     // Cálculo e preenchimento dos elementos HTML
+    // O cálculo permanece o mesmo (converte ms em h/m/s)
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -79,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
         countdownInterval = setInterval(updateCountdown, 1000); 
     }
 });
-
 
 // =========================================================
 // Funções de modal e listeners
