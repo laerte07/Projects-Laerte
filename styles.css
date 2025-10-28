@@ -804,9 +804,9 @@ html[data-theme="dark-luxury"]{
   flex-direction: column;
   align-items: center;
   line-height: 1;
-  font-size: 0.6rem; /* Diminui os sufixos */
+  font-size: 20px; /* Diminui os sufixos */
   color: var(--muted-text);
-  margin-top: -6px; /* Puxa o sufixo para mais perto do número */
+  margin-top: -16px; /* Puxa o sufixo para mais perto do número */
 }
 
 /* =========================================================
@@ -821,7 +821,7 @@ html[data-theme="light"] #li-root .li-timer-box {
   /* Fundo e sombra removidos */
 }
 html[data-theme="light"] #li-root .li-time-value {
-  color: #f9b316; /* laranja vibrante no claro */
+  color: #da0000; /* laranja vibrante no claro */
   text-shadow: 0 0 10px rgb(255 255 255);
 }
 
@@ -831,7 +831,7 @@ html[data-theme="dark"] #li-root .li-timer-box {
 }
 html[data-theme="dark"] #li-root .li-time-value {
   color: #da0000; /* Vermelho/laranja */
-  text-shadow: 0 0 16px rgba(251,146,60,.55);
+  text-shadow: 0 0 16px rgb(60 66 251);
 }
 
 /* --- Tema Dark Luxury --- */
@@ -839,8 +839,8 @@ html[data-theme="dark-luxury"] #li-root .li-timer-box {
   /* Fundo, borda e sombra removidos */
 }
 html[data-theme="dark-luxury"] #li-root .li-time-value {
-  color: #ff66ff; /* Roxo vibrante */
-  text-shadow: 0 0 16px rgba(255,102,255,.55);
+  color: #da0000; /* Roxo vibrante */
+  text-shadow: 0 0 16px rgb(255 102 255);
 }
 
 /* Responsivo */
@@ -848,7 +848,7 @@ html[data-theme="dark-luxury"] #li-root .li-time-value {
   /* Reajustes para mobile */
   #li-root .li-timer-box { padding: 0 10px; max-width: 100%; }
   #li-root .li-countdown-timer { font-size: 2.2rem; gap: 8px; } /* Números menores no mobile */
-  #li-root .li-time-group { font-size: 0.5rem; margin-top: -4px; }
+  #li-root .li-time-group {font-size: 25px;margin-top: -4px;}
   
   /* Garante que o texto quebre e centralize, mas no desktop fica em linha (se o BR for removido) */
   #li-root .li-timer-label {
