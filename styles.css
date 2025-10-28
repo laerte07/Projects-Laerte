@@ -758,35 +758,35 @@ html[data-theme="dark-luxury"]{
    CONTADOR DE TEMPO / URGÊNCIA (COMPATÍVEL COM 3 TEMAS)
    ========================================================= */
 
-/* Contêiner principal */
+/* Contêiner principal: Remove a caixa, move para cima, e centraliza */
 #li-root .li-timer-box {
   text-align: center;
-  margin: 32px auto;
-  padding: 18px 14px;
-  background: color-mix(in lch, var(--hero-grad-start) 20%, var(--bg) 80%);
-  border-radius: 16px;
-  max-width: 340px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  border: 1px solid var(--border);
-  transition: background-color .25s ease, box-shadow .25s ease;
+  margin: 0 auto 10px; /* Movido para cima: 0px acima, 10px abaixo */
+  padding: 0;
+  max-width: fit-content; /* Largura justa para tirar a sensação de 'caixa' */
+  
+  /* Garante transparência e anula qualquer fundo anterior */
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
-/* Título do contador */
+/* Título do contador (Texto: "A oferta..."): Diminuído e limpo */
 #li-root .li-timer-label {
-  font-size: 1.05rem;
+  font-size: 0.85rem; /* Diminui o texto */
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 10px;
+  margin-bottom: 4px; /* Menos espaço entre texto e números */
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1px;
 }
 
-/* Números principais */
+/* Números principais: Aumentados */
 #li-root .li-countdown-timer {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  font-size: 2.6rem;
+  gap: 12px;
+  font-size: 3rem; /* Aumenta os números */
   font-weight: 900;
   text-align: center;
 }
@@ -798,36 +798,27 @@ html[data-theme="dark-luxury"]{
   transition: color .3s ease, text-shadow .3s ease;
 }
 
-/* Grupo (número + sufixo) */
+/* Grupo (número + sufixo 'h', 'm', 's'): Ajustado */
 #li-root .li-time-group {
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 1;
-  font-size: 0.8rem;
+  font-size: 0.6rem; /* Diminui os sufixos */
   color: var(--muted-text);
-}
-
-/* Mensagem de expiração */
-#li-root .li-expired-message {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--primary-contrast);
-  background: linear-gradient(90deg, #ef4444, #b91c1c);
-  padding: 10px;
-  border-radius: 8px;
-  margin-top: 18px;
-  text-shadow: 0 0 8px rgba(0,0,0,.25);
+  margin-top: -6px; /* Puxa o sufixo para mais perto do número */
 }
 
 /* =========================================================
    VARIAÇÕES POR TEMA
    ========================================================= */
 
+/* O fundo e a sombra FORAM REMOVIDOS destas regras de tema, 
+   deixando apenas o ajuste de cor do número (`li-time-value`). */
+
 /* --- Tema Claro --- */
 html[data-theme="light"] #li-root .li-timer-box {
-  background:  color-mix(in lch, var(--hero-grad-start) 12%, #000000 88%);
-  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  /* Fundo e sombra removidos */
 }
 html[data-theme="light"] #li-root .li-time-value {
   color: #f9b316; /* laranja vibrante no claro */
@@ -836,33 +827,40 @@ html[data-theme="light"] #li-root .li-time-value {
 
 /* --- Tema Dark --- */
 html[data-theme="dark"] #li-root .li-timer-box {
-  background:  color-mix(in lch, var(--hero-grad-start) 35%, #000000 65%);
-  box-shadow: 0 0 20px rgba(0,0,0,.4);
+  /* Fundo e sombra removidos */
 }
 html[data-theme="dark"] #li-root .li-time-value {
-  color: #da0000;
+  color: #da0000; /* Vermelho/laranja */
   text-shadow: 0 0 16px rgba(251,146,60,.55);
 }
 
 /* --- Tema Dark Luxury --- */
 html[data-theme="dark-luxury"] #li-root .li-timer-box {
-  background: color-mix(in lch, var(--hero-grad-start) 40%, var(--bg) 60%);
-  border: 1px solid rgba(255,255,255,.1);
-  box-shadow: 0 0 20px rgba(162,0,255,.25);
+  /* Fundo, borda e sombra removidos */
 }
 html[data-theme="dark-luxury"] #li-root .li-time-value {
-  color: #ff66ff;
+  color: #ff66ff; /* Roxo vibrante */
   text-shadow: 0 0 16px rgba(255,102,255,.55);
 }
 
 /* Responsivo */
 @media (max-width:640px){
-  #li-root .li-timer-box { padding: 14px 10px; max-width: 280px; }
-  #li-root .li-countdown-timer { font-size: 2rem; gap: 10px; }
+  /* Reajustes para mobile */
+  #li-root .li-timer-box { padding: 0 10px; max-width: 100%; }
+  #li-root .li-countdown-timer { font-size: 2.2rem; gap: 8px; } /* Números menores no mobile */
+  #li-root .li-time-group { font-size: 0.5rem; margin-top: -4px; }
+  
+  /* Garante que o texto quebre e centralize, mas no desktop fica em linha (se o BR for removido) */
+  #li-root .li-timer-label {
+    white-space: normal;
+    text-align: center;
+  }
 }
 
-/* FORÇA branco puro no timer*/
+/* FORÇA branco puro no timer label e remove sombra indesejada */
 #li-root .li-timer-box .li-timer-label{
   color: #ffffff !important;
-  text-shadow: 0 0 10px rgba(255,255,255,.4);
+  text-shadow: none;
 }
+
+/* O bloco de correção duplicado foi removido daqui para evitar conflitos! */
