@@ -145,3 +145,59 @@ document.addEventListener("click", function (e) {
     console.log(`🎨 Tema alterado para: ${nextTheme}`);
   });
 })();
+
+// =========================================================
+// 3. LÓGICA DO POP-UP DE SAÍDA (EXIT-INTENT) - NOVA TENTATIVA
+//    Usando o evento 'mouseleave' no nível do corpo do documento.
+// =========================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+    // ... [Seu código do Contador] ...
+
+    // Continua a lógica do Exit-Intent
+    if (typeof liOpenModal === 'function') {
+        
+        const EXIT_DELAY_MS = 200; // Um pequeno delay
+        let timeoutId;
+        
+        // Tentativa 1: Monitora a saída do mouse de TODO o documento
+        document.body.addEventListener('mouseleave', function(e) {
+            
+            // Apenas para desktop e se não foi mostrado
+            if (window.innerWidth >= 768 && !sessionStorage.getItem('liExitPopupShown')) {
+                
+                // Verifica a coordenada Y (se o mouse saiu pela parte superior)
+                if (e.clientY < 10) { // Um limite bem próximo do topo
+                    
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        if (!sessionStorage.getItem('liExitPopupShown')) {
+                            liOpenModal();
+                            sessionStorage.setItem('liExitPopupShown', 'true');
+                            console.log("Pop-up de Saída disparado (mouseleave)!");
+                        }
+                    }, EXIT_DELAY_MS);
+                }
+            }
+        });
+
+        // Tentativa 2: Fallback (monitora o movimento do mouse para a borda superior)
+        document.addEventListener('mousemove', function(e) {
+            if (window.innerWidth >= 768 && e.clientY < 50) {
+                if (!sessionStorage.getItem('liExitPopupShown')) {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        if (!sessionStorage.getItem('liExitPopupShown')) {
+                            liOpenModal();
+                            sessionStorage.setItem('liExitPopupShown', 'true');
+                            console.log("Pop-up de Saída disparado (mousemove fallback)!");
+                        }
+                    }, 500); // Aumentamos o delay neste para maior certeza
+                }
+            }
+        });
+        
+    } else {
+        console.warn("Função liOpenModal não está definida. O Exit-Intent não foi iniciado.");
+    }
+});
