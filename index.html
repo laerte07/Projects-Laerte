@@ -1,387 +1,442 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Investidor Inteligente com IA - Laerte Invest</title>
-    <meta
-      name="description"
-      content="Do zero à prática: seu guia definitivo para investir com confiança. Guias, curso curto, planilhas e suporte com IA Laerte Invest. Aprenda a investir do zero e faça sua 1ª alocação em 7 dias — com apoio da IA Laerte Invest."
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investidor Inteligente com IA - Laerte Invest</title>
+    <meta
+      name="description"
+      content="Do zero à prática: seu guia definitivo para investir com confiança. Guias, curso curto, planilhas e suporte com IA Laerte Invest. Aprenda a investir do zero e faça sua 1ª alocação em 7 dias — com apoio da IA Laerte Invest."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    
+    <script>
+        function importHotmartScripts(){
+            // Importa o script do widget Hotmart
+            if (!document.querySelector('script[src*="hotmart.com/checkout/widget.min.js"]')) {
+                var imported = document.createElement('script');
+                imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+                document.head.appendChild(imported);
 
-  <body>
+                // Importa o CSS necessário para o checkout (hotmart-fb.min.css)
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+                document.head.appendChild(link);
+            }
+        }
+        // Executa a importação no carregamento da página
+        importHotmartScripts(); 
+    </script>
+  </head>
+
+  <body>
 
 <div class="theme-toggle">
-  <label class="switch" aria-label="Alternar tema claro/escuro">
-    <input id="theme-checkbox" type="checkbox" />
-    <span class="slider">
-      <span class="star star_1"></span>
-      <span class="star star_2"></span>
-      <span class="star star_3"></span>
-      <svg viewBox="0 0 16 16" class="cloud" aria-hidden="true">
-        <path transform="matrix(.77976 0 0 .78395-299.99-418.63)"
-              d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"/>
-      </svg>
-    </span>
-  </label>
+  <label class="switch" aria-label="Alternar tema claro/escuro">
+    <input id="theme-checkbox" type="checkbox" />
+    <span class="slider">
+      <span class="star star_1"></span>
+      <span class="star star_2"></span>
+      <span class="star star_3"></span>
+      <svg viewBox="0 0 16 16" class="cloud" aria-hidden="true">
+        <path transform="matrix(.77976 0 0 .78395-299.99-418.63)"
+              d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"/>
+      </svg>
+    </span>
+  </label>
 </div>
 
-    <div id="li-root">
-      <header class="li-hero">
-      <div class="li-timer-box"> 
-    <p class="li-timer-label">A oferta de relançamento encerra em:</p>
-    
-    <div id="li-countdown" class="li-countdown-timer">
-      <span class="li-time-group"><span id="li-hours" class="li-time-value">00</span>h</span>
-      <span class="li-time-group"><span id="li-minutes" class="li-time-value">00</span>m</span>
-      <span class="li-time-group"><span id="li-seconds" class="li-time-value">00</span>s</span>
-    </div>
-  </div>
-        
-  <div class="li-container">
-    <div class="li-wrap">
-      <div class="li-hero-content">
-        <span class="li-eyebrow"><strong>🔥 Oferta por tempo limitado</strong></span>
-        
-        <h1>Investidor Inteligente com IA</h1>
+    <div id="li-root">
+      <header class="li-hero">
+      <div class="li-timer-box"> 
+    <p class="li-timer-label">A oferta de relançamento encerra em:</p>
+    
+    <div id="li-countdown" class="li-countdown-timer">
+      <span class="li-time-group"><span id="li-hours" class="li-time-value">00</span>h</span>
+      <span class="li-time-group"><span id="li-minutes" class="li-time-value">00</span>m</span>
+      <span class="li-time-group"><span id="li-seconds" class="li-time-value">00</span>s</span>
+    </div>
+  </div>
+        
+  <div class="li-container">
+    <div class="li-wrap">
+      <div class="li-hero-content">
+        <span class="li-eyebrow"><strong>🔥 Oferta por tempo limitado</strong></span>
+        
+        <h1>Investidor Inteligente com IA</h1>
 
-        <p>
-          Do zero à prática: seu guia definitivo para investir com confiança.
-          Guias, aulas curtas, planilhas e suporte com a IA
-          <strong>Laerte Invest</strong>.
-        </p>
+        <p>
+          Do zero à prática: seu guia definitivo para investir com confiança.
+          Guias, aulas curtas, planilhas e suporte com a IA
+          <strong>Laerte Invest</strong>.
+        </p>
 
-        <div class="li-cta-group">
-          <a class="li-btn" href="javascript:void(0)" onclick="liOpenModal()">Quero começar agora</a>
-          <a class="animated-button" href="#li-conteudo">
-            <span class="circle"></span>
-            <span class="text">Ver o que está incluso</span>
-          </a>
-        </div>
+        <div class="li-cta-group">
+          <a class="li-btn" href="javascript:void(0)" onclick="liOpenModal()">Quero começar agora</a>
+          <a class="animated-button" href="#li-conteudo">
+            <span class="circle"></span>
+            <span class="text">Ver o que está incluso</span>
+          </a>
+        </div>
 
-        <p class="li-hero-price">
-            <span style="font-size: 1rem; opacity: 0.8; font-weight: 500;">
-                DE R$ 97 POR APENAS
-            </span>
-            <br>
-            <strong style="font-size: 2.5rem; font-weight: 900; color: var(--hero-grad-end);">
-                R$ 9,97
-            </strong>
-        </p>
+        <p class="li-hero-price">
+            <span style="font-size: 1rem; opacity: 0.8; font-weight: 500;">
+                DE R$ 97 POR APENAS
+            </span>
+            <br>
+            <strong style="font-size: 2.5rem; font-weight: 900; color: var(--hero-grad-end);">
+                R$ 9,97
+            </strong>
+        </p>
 
-        <div class="li-hero-feat">
-          <span>✅ Acesso imediato</span>
-          <span>🛡️ Garantia de 7 dias</span>
-          <span>🤖 IA exclusiva Laerte Invest</span>
-          <span>📈 Método validado</span>
-        </div>
-      </div>
+        <div class="li-hero-feat">
+          <span>✅ Acesso imediato</span>
+          <span>🛡️ Garantia de 7 dias</span>
+          <span>🤖 IA exclusiva Laerte Invest</span>
+          <span>📈 Método validado</span>
+        </div>
+      </div>
 
-      <div class="li-hero-card">
-        <img
-          alt="Mockup do produto"
-          src="https://cdn.awsli.com.br/2660/2660978/arquivos/foto-1-capa-investimentos-4por3.png"
-        />
-        <a
-          class="li-btn"
-          href="javascript:void(0)"
-          onclick="liOpenModal()"
-          >Garantir acesso</a
-        >
-        
-      </div>
-    </div>
-  </div>
+      <div class="li-hero-card">
+        <img
+          alt="Mockup do produto"
+          src="https://cdn.awsli.com.br/2660/2660978/arquivos/foto-1-capa-investimentos-4por3.png"
+        />
+        <a
+          class="li-btn"
+          href="javascript:void(0)"
+          onclick="liOpenModal()"
+          >Garantir acesso</a
+        >
+        
+      </div>
+    </div>
+  </div>
 </header>
 
-      <section id="li-comparativo" class="li-section">
-  <div class="li-container">
-    <h2 class="li-section-title li-center">O Fim da Insegurança: Comece a Investir Certo com a IA Laerte Invest</h2>
-    <p class="li-section-sub li-center">Veja a transformação: O método que elimina o "achismo" e te dá clareza total em apenas 7 dias.</p>
+      <section id="li-comparativo" class="li-section">
+  <div class="li-container">
+    <h2 class="li-section-title li-center">O Fim da Insegurança: Comece a Investir Certo com a IA Laerte Invest</h2>
+    <p class="li-section-sub li-center">Veja a transformação: O método que elimina o "achismo" e te dá clareza total em apenas 7 dias.</p>
 
-    <div class="li-compare-table">
-      <div class="li-compare-header">
-        <div class="li-col-title sem">😩 Sem método</div>
-        <div class="li-col-title com">🚀 Com IA Laerte Invest</div>
-      </div>
+    <div class="li-compare-table">
+      <div class="li-compare-header">
+        <div class="li-col-title sem">😩 Sem método</div>
+        <div class="li-col-title com">🚀 Com IA Laerte Invest</div>
+      </div>
 
-      <div class="li-compare-row">
-        <div class="li-col sem">
-          ❌ Perde <strong>horas</strong> em vídeos soltos no YouTube, sem saber se a informação é <strong>confiável ou aplicável</strong>.
-        </div>
-        <div class="li-col com">
-          ✅ Aprende em apenas <strong>15 minutos por dia</strong>, com planos diretos e <strong>clareza total em 7 dias</strong>.
-        </div>
-      </div>
+      <div class="li-compare-row">
+        <div class="li-col sem">
+          ❌ Perde <strong>horas</strong> em vídeos soltos no YouTube, sem saber se a informação é <strong>confiável ou aplicável</strong>.
+        </div>
+        <div class="li-col com">
+          ✅ Aprende em apenas <strong>15 minutos por dia</strong>, com planos diretos e <strong>clareza total em 7 dias</strong>.
+        </div>
+      </div>
 
-      <div class="li-compare-row">
-        <div class="li-col sem">
-          ❌ Tenta a sorte: Investe no <strong>escuro</strong>, sem entender o <strong>risco real</strong> de cada ativo, e vive o <strong>medo do prejuízo</strong>.
-        </div>
-        <div class="li-col com">
-          ✅ Tenha a certeza: Receba a <strong>análise de risco</strong> e a <strong>clareza da IA</strong> antes de investir. (Sem adivinhações).
-        </div>
-      </div>
+      <div class="li-compare-row">
+        <div class="li-col sem">
+          ❌ Tenta a sorte: Investe no <strong>escuro</strong>, sem entender o <strong>risco real</strong> de cada ativo, e vive o <strong>medo do prejuízo</strong>.
+        </div>
+        <div class="li-col com">
+          ✅ Tenha a certeza: Receba a <strong>análise de risco</strong> e a <strong>clareza da IA</strong> antes de investir. (Sem adivinhações).
+        </div>
+      </div>
 
-      <div class="li-compare-row">
-        <div class="li-col sem">
-          ❌ Falta <strong>constância</strong>, o que faz perder <strong>60% dos ganhos potenciais em 3 meses</strong>.
-        </div>
-        <div class="li-col com">
-          ✅ Chega de autosabotagem: A IA é seu <strong>Guia Diário</strong>, enviando alertas para garantir a <strong>constância</strong> e o <strong>máximo retorno</strong>.
-        </div>
-          </div>
+      <div class="li-compare-row">
+        <div class="li-col sem">
+          ❌ Falta <strong>constância</strong>, o que faz perder <strong>60% dos ganhos potenciais em 3 meses</strong>.
+        </div>
+        <div class="li-col com">
+          ✅ Chega de autosabotagem: A IA é seu <strong>Guia Diário</strong>, enviando alertas para garantir a <strong>constância</strong> e o <strong>máximo retorno</strong>.
+        </div>
+          </div>
 
-      <div class="li-compare-row">
-        <div class="li-col sem">
-          ❌ Preso a <strong>planilhas velhas</strong> e <strong>cálculos manuais</strong> que consomem tempo e aumentam a chance de <strong>erros</strong>.
-        </div>
-        <div class="li-col com">
-          ✅ <strong>Zero trabalho</strong>: Planilhas <strong>100% automáticas</strong> integradas à IA. Apenas veja o cálculo e <strong>invista</strong>.
-        </div>
-      </div>
-    </div>
-  </div>
+      <div class="li-compare-row">
+        <div class="li-col sem">
+          ❌ Preso a <strong>planilhas velhas</strong> e <strong>cálculos manuais</strong> que consomem tempo e aumentam a chance de <strong>erros</strong>.
+        </div>
+        <div class="li-col com">
+          ✅ <strong>Zero trabalho</strong>: Planilhas <strong>100% automáticas</strong> integradas à IA. Apenas veja o cálculo e <strong>invista</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-      <section class="li-section" id="li-conteudo">
-        <div class="li-container">
-          <h2 class="li-section-title">Por que este produto é diferente?</h2>
-          <p class="li-section-sub">
-            Aprenda a analisar ações, Stocks, FIIs, ETFs e BDRs com um método prático
-            + suporte de IA para aplicar no dia a dia.
-          </p>
+      <section class="li-section" id="li-conteudo">
+        <div class="li-container">
+          <h2 class="li-section-title">Por que este produto é diferente?</h2>
+          <p class="li-section-sub">
+            Aprenda a analisar ações, Stocks, FIIs, ETFs e BDRs com um método prático
+            + suporte de IA para aplicar no dia a dia.
+          </p>
 
-          <div class="li-card li-benefits-box">
-            <h3>O que você vai receber</h3>
+          <div class="li-card li-benefits-box">
+            <h3>O que você vai receber</h3>
 
 <div class="li-receber-grid">
-  <div class="li-receber-item">
-    <div class="icon icon-pdf" aria-hidden="true">
-  <svg viewBox="0 0 24 24" role="img" aria-label="PDF">
-    <path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/>
-    <path d="M14 2v6h6"/>
-  </svg>
+  <div class="li-receber-item">
+    <div class="icon icon-pdf" aria-hidden="true">
+  <svg viewBox="0 0 24 24" role="img" aria-label="PDF">
+    <path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/>
+    <path d="M14 2v6h6"/>
+  </svg>
 </div>
-    <div>
-      <h4>Ebook / Guia prático (PDF)</h4>
-      <p>Material direto ao ponto para começar a investir com clareza.</p>
-    </div>
-  </div>
+    <div>
+      <h4>Ebook / Guia prático (PDF)</h4>
+      <p>Material direto ao ponto para começar a investir com clareza.</p>
+    </div>
+  </div>
 
-  <div class="li-receber-item">
-    <div class="icon icon-video" aria-hidden="true">
-  <svg viewBox="0 0 24 24" role="img" aria-label="Vídeo">
-    <path d="M9 7v10l8-5-8-5Z"/>
-  </svg>
+  <div class="li-receber-item">
+    <div class="icon icon-video" aria-hidden="true">
+  <svg viewBox="0 0 24 24" role="img" aria-label="Vídeo">
+    <path d="M9 7v10l8-5-8-5Z"/>
+  </svg>
 </div>
-    <div>
-      <h4>Curso curto – aulas rápidas</h4>
-      <p>Aulas objetivas que você pode aplicar imediatamente.</p>
-    </div>
-  </div>
+    <div>
+      <h4>Curso curto – aulas rápidas</h4>
+      <p>Aulas objetivas que você pode aplicar imediatamente.</p>
+    </div>
+  </div>
 
-  <div class="li-receber-item">
-    <div class="icon icon-planilha" aria-hidden="true">
-  <svg viewBox="0 0 24 24" role="img" aria-label="Planilha">
-    <rect x="3" y="3" width="18" height="18" rx="2"/>
-    <path d="M8 3v18M3 8h18M12 12h6M12 16h6"/>
-  </svg>
-</div>
-
-    <div>
-      <h4>Planilhas com checklists</h4>
-      <p>Ferramentas práticas para organizar e acompanhar seus investimentos.</p>
-    </div>
-  </div>
-
-  <div class="li-receber-item">
-    <div class="icon icon-bot" aria-hidden="true">
-  <svg viewBox="0 0 24 24" role="img" aria-label="Bot">
-    <circle cx="12" cy="12" r="8"/>
-    <path d="M9 11h6M9 14h6"/>
-    <circle cx="9" cy="9" r="1.2"/>
-    <circle cx="15" cy="9" r="1.2"/>
-  </svg>
+  <div class="li-receber-item">
+    <div class="icon icon-planilha" aria-hidden="true">
+  <svg viewBox="0 0 24 24" role="img" aria-label="Planilha">
+    <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <path d="M8 3v18M3 8h18M12 12h6M12 16h6"/>
+  </svg>
 </div>
 
-    <div>
-      <h4>Acesso ao bot Laerte Invest</h4>
-      <p>Suporte inteligente 24h para tirar dúvidas e auxiliar nas decisões.</p>
-    </div>
-  </div>
+    <div>
+      <h4>Planilhas com checklists</h4>
+      <p>Ferramentas práticas para organizar e acompanhar seus investimentos.</p>
+    </div>
+  </div>
 
-  <div class="li-receber-item">
-    <div class="icon icon-simulador" aria-hidden="true">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico">
-        <path d="M3 17h2v4H3zM8 13h2v8H8zM13 9h2v12h-2zM18 5h2v16h-2z" fill="#6C5CE7"></path>
-      </svg>
-    </div>
-    <div>
-      <h4>Simulador de investimentos</h4>
-      <p>Teste cenários e veja projeções reais com base no seu perfil e tempo de investimento.</p>
-    </div>
-  </div>
+  <div class="li-receber-item">
+    <div class="icon icon-bot" aria-hidden="true">
+  <svg viewBox="0 0 24 24" role="img" aria-label="Bot">
+    <circle cx="12" cy="12" r="8"/>
+    <path d="M9 11h6M9 14h6"/>
+    <circle cx="9" cy="9" r="1.2"/>
+    <circle cx="15" cy="9" r="1.2"/>
+  </svg>
+</div>
 
-  <div class="li-receber-item">
-    <div class="icon icon-comunidade" aria-hidden="true">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comunidade">
-        <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zM4 20v-1c0-2.21 3.58-4 8-4s8 1.79 8 4v1z" fill="#FBBF24"></path>
-      </svg>
-    </div>
-    <div>
-      <h4>Comunidade de investidores</h4>
-      <p>Conecte-se a outros alunos e compartilhe experiências de investimento guiadas pela IA.</p>
-    </div>
-  </div>
+    <div>
+      <h4>Acesso ao bot Laerte Invest</h4>
+      <p>Suporte inteligente 24h para tirar dúvidas e auxiliar nas decisões.</p>
+    </div>
+  </div>
+
+  <div class="li-receber-item">
+    <div class="icon icon-simulador" aria-hidden="true">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico">
+        <path d="M3 17h2v4H3zM8 13h2v8H8zM13 9h2v12h-2zM18 5h2v16h-2z" fill="#6C5CE7"></path>
+      </svg>
+    </div>
+    <div>
+      <h4>Simulador de investimentos</h4>
+      <p>Teste cenários e veja projeções reais com base no seu perfil e tempo de investimento.</p>
+    </div>
+  </div>
+
+  <div class="li-receber-item">
+    <div class="icon icon-comunidade" aria-hidden="true">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comunidade">
+        <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zM4 20v-1c0-2.21 3.58-4 8-4s8 1.79 8 4v1z" fill="#FBBF24"></path>
+      </svg>
+    </div>
+    <div>
+      <h4>Comunidade de investidores</h4>
+      <p>Conecte-se a outros alunos e compartilhe experiências de investimento guiadas pela IA.</p>
+    </div>
+  </div>
 </div> <div style="text-align:center;margin-top:20px">
-              <a
-                class="li-btn"
-                href="https://pay.hotmart.com/K102600120C?checkoutMode=10"
-                style="font-size:18px!important;padding:14px 22px!important"
-                target="_blank"
-                rel="noopener"
-                >Quero garantir meu acesso</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
+              <a
+                class="li-btn"
+                href="https://pay.hotmart.com/K102600120C"
+                style="font-size:18px!important;padding:14px 22px!important"
+                target="_blank"
+                rel="noopener"
+                >Quero garantir meu acesso</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="li-testimonials">
-        <div class="li-container">
-          <h2 class="li-section-title">O que dizem nossos alunos</h2>
+      <section class="li-testimonials">
+        <div class="li-container">
+          <h2 class="li-section-title">O que dizem nossos alunos</h2>
 
-          <div class="li-testimonials-grid">
-            <div class="li-testimonial">
-              <p>“Aprendi a avaliar meus investimentos de forma prática e hoje invisto com segurança. A IA Laerte Invest faz toda a diferença!”</p>
-              <div>★★★★★ — <strong>Julia Amorim</strong></div>
-            </div>
+          <div class="li-testimonials-grid">
+            <div class="li-testimonial">
+              <p>“Aprendi a avaliar meus investimentos de forma prática e hoje invisto com segurança. A IA Laerte Invest faz toda a diferença!”</p>
+              <div>★★★★★ — <strong>Julia Amorim</strong></div>
+            </div>
 
-            <div class="li-testimonial">
-              <p>“Nunca imaginei que aprender a investir pudesse ser tão simples. O suporte da IA me ajudou a tomar decisões mais rápidas e seguras.”</p>
-              <div>★★★★★ — <strong>Carlos Mendes</strong></div>
-            </div>
+            <div class="li-testimonial">
+              <p>“Nunca imaginei que aprender a investir pudesse ser tão simples. O suporte da IA me ajudou a tomar decisões mais rápidas e seguras.”</p>
+              <div>★★★★★ — <strong>Carlos Mendes</strong></div>
+            </div>
 
-            <div class="li-testimonial">
-              <p>“Gostei muito do conteúdo direto ao ponto e das planilhas. Agora consigo organizar meus investimentos com muito mais clareza.”</p>
-              <div>★★★★★ — <strong>Ana Souza</strong></div>
-            </div>
+            <div class="li-testimonial">
+              <p>“Gostei muito do conteúdo direto ao ponto e das planilhas. Agora consigo organizar meus investimentos com muito mais clareza.”</p>
+              <div>★★★★★ — <strong>Ana Souza</strong></div>
+            </div>
 
-            <div class="li-testimonial">
-              <p>“O curso superou minhas expectativas. As aulas são rápidas e objetivas, e já consegui aplicar no meu dia a dia com ótimos resultados.”</p>
-              <div>★★★★★ — <strong>Rafael Lima</strong></div>
-            </div>
-          </div>
-        </div>
-      </section>
+            <div class="li-testimonial">
+              <p>“O curso superou minhas expectativas. As aulas são rápidas e objetivas, e já consegui aplicar no meu dia a dia com ótimos resultados.”</p>
+              <div>★★★★★ — <strong>Rafael Lima</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="li-section">
-        <div class="li-container">
-          <h2 class="li-section-title">Dúvidas frequentes</h2>
+      <section class="li-section">
+        <div class="li-container">
+          <h2 class="li-section-title">Dúvidas frequentes</h2>
 
-          <div class="li-faq">
-            <div class="li-q">
-              <h3>⏳ <em><strong>Por quanto tempo terei acesso?</strong></em></h3>
-              <p>
-                Acesso vitalício ao conteúdo adquirido + 12 meses de atualizações gratuitas.
-                Após esse período, você poderá renovar se desejar.
-              </p>
-            </div>
+          <div class="li-faq">
+            <div class="li-q">
+              <h3>⏳ <em><strong>Por quanto tempo terei acesso?</strong></em></h3>
+              <p>
+                Acesso vitalício ao conteúdo adquirido + 12 meses de atualizações gratuitas.
+                Após esse período, você poderá renovar se desejar.
+              </p>
+            </div>
 
-            <div class="li-q">
-              <h3>🎯 <em><strong>O produto é para iniciantes?</strong></em></h3>
-              <p>
-                Sim! Você pode começar do zero, sem nenhum conhecimento prévio. O curso evolui
-                gradualmente até estratégias práticas de investimento.
-              </p>
-            </div>
+            <div class="li-q">
+              <h3>🎯 <em><strong>O produto é para iniciantes?</strong></em></h3>
+              <p>
+                Sim! Você pode começar do zero, sem nenhum conhecimento prévio. O curso evolui
+                gradualmente até estratégias práticas de investimento.
+              </p>
+            </div>
 
-            <div class="li-q">
-              <h3>🛡️ <em><strong>Como funciona a garantia?</strong></em></h3>
-              <p>
-                Você tem 7 dias para testar sem risco. Se não gostar, basta enviar um e-mail e devolvemos
-                100% do valor, sem burocracia.
-              </p>
-            </div>
+            <div class="li-q">
+              <h3>🛡️ <em><strong>Como funciona a garantia?</strong></em></h3>
+              <p>
+                Você tem 7 dias para testar sem risco. Se não gostar, basta enviar um e-mail e devolvemos
+                100% do valor, sem burocracia.
+              </p>
+            </div>
 
-            <div class="li-q">
-              <h3>🤖 <em><strong>O bot Laerte Invest responde dúvidas?</strong></em></h3>
-              <p>
-                Sim! A IA responde 24h por dia com base no conteúdo do curso. E, se precisar, você também
-                poderá acionar nosso suporte humano.
-              </p>
-            </div>
+            <div class="li-q">
+              <h3>🤖 <em><strong>O bot Laerte Invest responde dúvidas?</strong></em></h3>
+              <p>
+                Sim! A IA responde 24h por dia com base no conteúdo do curso. E, se precisar, você também
+                poderá acionar nosso suporte humano.
+              </p>
+            </div>
 
-            <div class="li-q">
-              <h3>📧 <em><strong>Como recebo o acesso ao curso?</strong></em></h3>
-              <p>
-                Assim que o pagamento for aprovado, você receberá um e-mail com login e senha para começar imediatamente.
-              </p>
-            </div>
+            <div class="li-q">
+              <h3>📧 <em><strong>Como recebo o acesso ao curso?</strong></em></h3>
+              <p>
+                Assim que o pagamento for aprovado, você receberá um e-mail com login e senha para começar imediatamente.
+              </p>
+            </div>
 
-            <div class="li-q">
-              <h3>📱 <em><strong>Posso assistir no celular?</strong></em></h3>
-              <p>Sim! O acesso funciona no computador, tablet ou celular com internet.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+            <div class="li-q">
+              <h3>📱 <em><strong>Posso assistir no celular?</strong></em></h3>
+              <p>Sim! O acesso funciona no computador, tablet ou celular com internet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="li-cta-bar">
-        <div
-          class="li-container"
-          style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap"
-        >
-          <div>
-            <strong>🚀 Última chance de garantir seu acesso!</strong>
-            <div style="opacity:.9">Comece a investir com confiança e tenha suporte da IA Laerte Invest.</div>
-          </div>
-          <a
-            class="li-btn"
-            href="javascript:void(0)"
-            onclick="liOpenModal()"
-            style="font-size:18px!important;padding:16px 22px!important"
-            >✅ Quero meu acesso agora</a
-          >
-        </div>
-      </section>
+      <section class="li-cta-bar">
+        <div
+          class="li-container"
+          style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap"
+        >
+          <div>
+            <strong>🚀 Última chance de garantir seu acesso!</strong>
+            <div style="opacity:.9">Comece a investir com confiança e tenha suporte da IA Laerte Invest.</div>
+          </div>
+          <a
+            class="li-btn"
+            href="javascript:void(0)"
+            onclick="liOpenModal()"
+            style="font-size:18px!important;padding:16px 22px!important"
+            >✅ Quero meu acesso agora</a
+          >
+        </div>
+      </section>
 
-      <footer class="li-footer">© Laerte Invest • Todos os direitos reservados</footer>
-    </div>
+      <footer class="li-footer">© Laerte Invest • Todos os direitos reservados</footer>
+    </div>
 
-    <div aria-hidden="true" id="li-checkout-modal">
-      <div aria-modal="true" class="li-modal-box" role="dialog">
-        <button aria-label="Fechar" class="li-close" onclick="liCloseModal()">×</button>
-        <img
-          alt="Investidor Inteligente com IA"
-          src="https://cdn.awsli.com.br/2660/2660978/arquivos/foto-1-capa-investimentos-4por3.png"
-        />
-        <div class="li-modal-footer">
-  <div class="li-price">R$ 9,97 <span>- preço de relançamento</span></div>
+    <div aria-hidden="true" id="li-checkout-modal">
+      <div aria-modal="true" class="li-modal-box" role="dialog">
+        <button aria-label="Fechar" class="li-close" onclick="liCloseModal()">×</button>
+        <img
+          alt="Investidor Inteligente com IA"
+          src="https://cdn.awsli.com.br/2660/2660978/arquivos/foto-1-capa-investimentos-4por3.png"
+        />
+        <div class="li-modal-footer">
+  <div class="li-price">R$ 9,97 <span>- preço de relançamento</span></div>
 
-  <a class="li-modal-cta"
-      href="https://pay.hotmart.com/K102600120C?checkoutMode=10"
-      target="_blank" rel="noopener">
-    <span>Começar agora</span>
-  </a>
+    <a class="li-modal-cta hotmart-fb"
+      href="https://pay.hotmart.com/K102600120C?checkoutMode=10"
+      onclick="return false;" 
+      rel="noopener">
+    <span>Começar agora</span>
+  </a>
 </div>
 
 
-        <div class="li-social-proof" style="padding: 10px;">
-          <span class="li-stars">★★★★★</span>
-          Mais de <strong>500 alunos</strong> já adquiriram este curso!
-        </div>
-      </div>
-    </div>
+        <div class="li-social-proof" style="padding: 10px;">
+          <span class="li-stars">★★★★★</span>
+          Mais de <strong>500 alunos</strong> já adquiriram este curso!
+        </div>
+      </div>
+    </div>
 
-    <script src="main.js"></script>
-    <script type="module" src="typebot.js"></script>
-  </body>
+    <script>
+        // Esta função é o *wrapper* que aciona o checkout Hotmart em modal
+        function openHotmartCheckout(url) {
+            // Garante que a URL tem o parâmetro para abrir em modal (checkoutMode=10)
+            const checkoutUrl = url.includes('checkoutMode') ? url : url + '?checkoutMode=10';
+
+            if (window.Hotmart && Hotmart.doCheckout) {
+                // Abre o checkout transparente se a API já estiver carregada
+                Hotmart.doCheckout(checkoutUrl);
+            } else {
+                // Fallback: Redireciona a página (menos ideal, mas funcional)
+                window.location.href = checkoutUrl; 
+                console.warn("Hotmart widget not ready, redirecting to full checkout.");
+            }
+        }
+        
+        // Mantendo a função liOpenModal() original para abrir SEU modal
+        function liOpenModal() {
+            var modal = document.getElementById('li-checkout-modal');
+            if (modal) {
+                modal.style.display = 'flex'; // Exibe o seu modal
+                // O botão dentro deste modal é quem chamará a Hotmart
+            }
+        }
+        
+        // Mantendo a função liCloseModal() original para fechar SEU modal
+        function liCloseModal() {
+            var modal = document.getElementById('li-checkout-modal');
+            if (modal) {
+                modal.style.display = 'none'; // Esconde o seu modal
+            }
+        }
+
+    </script>
+    <script src="main.js"></script>
+    <script type="module" src="typebot.js"></script>
+  </body>
 </html>
