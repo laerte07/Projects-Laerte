@@ -85,74 +85,96 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
 // =========================================================
-// Funções de modal e listeners
+// =========== 2. INTEGRAÇÃO HOTMART & MODAL ==============
 // =========================================================
+
+/**
+ * Função para acionar o checkout Hotmart em modo modal/pop-up.
+ * Esta função deve ser chamada nos botões (onclick) que levam à compra.
+ * Foi colocada no HTML para garantir que seja carregada antes de ser chamada.
+ * @param {string} url - A URL do checkout da Hotmart com ?checkoutMode=10.
+ */
+function openHotmartCheckout(url) {
+    if (window.Hotmart && Hotmart.doCheckout) {
+        // Usa a API do widget Hotmart (preferencial)
+        Hotmart.doCheckout(url);
+    } else {
+        // Fallback: Se o script ainda não carregou, redireciona diretamente
+        window.location.href = url; 
+        console.warn("Hotmart widget not ready, redirecting to full checkout.");
+    }
+}
+
+
+// Funções de modal e listeners (MANTIDAS para o modal de AVISO)
+// Note: Se o seu HTML foi atualizado para chamar openHotmartCheckout() diretamente nos CTAs, 
+// a função liOpenModal() só será usada pelo Exit-Intent.
 function liOpenModal() {
-  var m = document.getElementById("li-checkout-modal");
-  if (m) {
-    m.style.display = "flex";
-    m.classList.add("show");
-    document.body.style.overflow = "hidden";
-  }
+    var m = document.getElementById("li-checkout-modal");
+    if (m) {
+        m.style.display = "flex";
+        m.classList.add("show");
+        document.body.style.overflow = "hidden";
+    }
 }
 
 function liCloseModal() {
-  var m = document.getElementById("li-checkout-modal");
-  if (m) {
-    m.style.display = "none";
-    m.classList.remove("show");
-    document.body.style.overflow = "";
-  }
+    var m = document.getElementById("li-checkout-modal");
+    if (m) {
+        m.style.display = "none";
+        m.classList.remove("show");
+        document.body.style.overflow = "";
+    }
 }
 
 // Fechar modal com ESC
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") liCloseModal();
+    if (e.key === "Escape") liCloseModal();
 });
 
 // Fechar modal clicando fora
 document.addEventListener("click", function (e) {
-  if (e.target && e.target.id === "li-checkout-modal") liCloseModal();
+    if (e.target && e.target.id === "li-checkout-modal") liCloseModal();
 });
 
 // === THEME TOGGLE 3 MODOS (light | dark | dark-luxury) ===
 (function () {
-  const html = document.documentElement;
-  const chk = document.querySelector('.switch input[type="checkbox"]');
-  const switchEl = document.querySelector('.switch');
-  if (!chk) return;
+    const html = document.documentElement;
+    const chk = document.querySelector('.switch input[type="checkbox"]');
+    const switchEl = document.querySelector('.switch');
+    if (!chk) return;
 
-  const themes = ['light', 'dark', 'dark-luxury'];
-  const prefersDark = window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const themes = ['light', 'dark', 'dark-luxury'];
+    const prefersDark = window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  const saved = localStorage.getItem('theme');
-  const current = saved || (prefersDark ? 'dark' : 'light');
-  html.setAttribute('data-theme', current);
-  switchEl.setAttribute('data-theme', current);
+    const saved = localStorage.getItem('theme');
+    const current = saved || (prefersDark ? 'dark' : 'light');
+    html.setAttribute('data-theme', current);
+    switchEl.setAttribute('data-theme', current);
 
-  chk.checked = (current === 'light');
+    chk.checked = (current === 'light');
 
-  chk.addEventListener('change', () => {
-    const currentTheme = html.getAttribute('data-theme');
-    const nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
+    chk.addEventListener('change', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
 
-    html.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('theme', nextTheme);
-    switchEl.setAttribute('data-theme', nextTheme);
+        html.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+        switchEl.setAttribute('data-theme', nextTheme);
 
-    console.log(`🎨 Tema alterado para: ${nextTheme}`);
-  });
+        console.log(`🎨 Tema alterado para: ${nextTheme}`);
+    });
 })();
 
 // =========================================================
 // 3. LÓGICA DO POP-UP DE SAÍDA (EXIT-INTENT) - NOVA TENTATIVA
-//    Usando o evento 'mouseleave' no nível do corpo do documento.
 // =========================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-    // ... [Seu código do Contador] ...
+    // A lógica de Contador foi movida para o início do arquivo e usa seu próprio Listener DOMContentLoaded
 
     // Continua a lógica do Exit-Intent
     if (typeof liOpenModal === 'function') {
@@ -172,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     clearTimeout(timeoutId);
                     timeoutId = setTimeout(() => {
                         if (!sessionStorage.getItem('liExitPopupShown')) {
+                            // Chama liOpenModal para mostrar o modal de aviso
                             liOpenModal();
                             sessionStorage.setItem('liExitPopupShown', 'true');
                             console.log("Pop-up de Saída disparado (mouseleave)!");
@@ -188,6 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     clearTimeout(timeoutId);
                     timeoutId = setTimeout(() => {
                         if (!sessionStorage.getItem('liExitPopupShown')) {
+                            // Chama liOpenModal para mostrar o modal de aviso
                             liOpenModal();
                             sessionStorage.setItem('liExitPopupShown', 'true');
                             console.log("Pop-up de Saída disparado (mousemove fallback)!");
