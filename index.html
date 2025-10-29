@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,7 +34,7 @@
 
     <div id="li-root">
       <header class="li-hero">
-      <div class="li-timer-box"> 
+      <div class="li-timer-box"> 
     <p class="li-timer-label">A oferta de relançamento encerra em:</p>
     
     <div id="li-countdown" class="li-countdown-timer">
@@ -43,7 +43,7 @@
       <span class="li-time-group"><span id="li-seconds" class="li-time-value">00</span>s</span>
     </div>
   </div>
-    
+        
   <div class="li-container">
     <div class="li-wrap">
       <div class="li-hero-content">
@@ -243,9 +243,10 @@
 </div> <div style="text-align:center;margin-top:20px">
               <a
                 class="li-btn"
-                href="javascript:void(0)"
-                onclick="liOpenModal()"
+                href="https://pay.hotmart.com/K102600120C?checkoutMode=10"
                 style="font-size:18px!important;padding:14px 22px!important"
+                target="_blank"
+                rel="noopener"
                 >Quero garantir meu acesso</a
               >
             </div>
@@ -356,40 +357,39 @@
     </div>
 
     <div aria-hidden="true" id="li-checkout-modal">
-        <div aria-modal="true" class="li-modal-box" role="dialog">
-            <button aria-label="Fechar" class="li-close" onclick="liCloseModal()">×</button>
-            
-            <div class="li-modal-header">
-                <h3>ATENÇÃO: Sua Oferta Especial Expira em Instantes!</h3>
-                <p>Garanta agora o acesso completo antes que o preço de relançamento seja perdido.</p>
-            </div>
-            
-            <img
-                alt="Investidor Inteligente com IA - Mockup"
-                src="https://cdn.awsli.com.br/2660/2660978/arquivos/foto-1-capa-investimentos-4por3.png"
-            />
+  <div aria-modal="true" role="dialog" class="li-modal-box">
+    <button class="li-close" aria-label="Fechar" onclick="liCloseModal()">×</button>
 
-            <div class="li-modal-footer">
-                <div class="li-price" style="text-align:center;padding:10px 0;">
-                    <span style="opacity:0.65; font-weight:600; font-size:13px; display: block; text-decoration: line-through;">De R$ 97,00</span>
-                    <span style="font-weight:900;font-size: 32px;color: var(--text);text-shadow: 0 0 8px var(--hero-grad-end);">R$ 9,97</span>
-                    <span style="opacity:0.65; font-weight:600; font-size:13px; display: block;"> preço de relançamento</span>
-                </div>
-
-                <a class="li-modal-cta li-btn"
-                    href="https://pay.hotmart.com/K102600120C?checkoutMode=10"
-                    target="_blank" rel="noopener">
-                    <span>Completar minha compra agora</span>
-                </a>
-            </div>
-            
-            <div class="li-social-proof" style="padding: 10px; text-align: center;">
-                <span class="li-stars">★★★★★</span>
-                Mais de **500 alunos** já adquiriram este curso!
-            </div>
-        </div>
+    <div class="li-modal-header">
+      <h3>Última Chance: Sua Oferta Exclusiva Termina em Instantes!</h3>
+      <p>Garanta seu acesso completo agora e aproveite o preço especial de relançamento antes que acabe!</p>
     </div>
 
+    <img
+      alt="Investidor Inteligente com IA - Mockup"
+      src="https://cdn.awsli.com.br/2660/2660978/arquivos/foto-1-capa-investimentos-4por3.png"
+    />
+
+    <div class="li-modal-footer">
+      <div class="li-price">
+        <span class="from">De R$ 97,00</span>
+        <span class="now">R$ 9,97</span>
+        <span class="tag">preço de relançamento</span>
+      </div>
+
+      <a class="li-modal-cta li-btn"
+         href="https://pay.hotmart.com/K102600120C"
+         target="_blank" rel="noopener">
+        Completar minha compra agora
+      </a>
+    </div>
+
+    <div class="li-social-proof">
+      <span class="li-stars">★★★★★</span>
+      Mais de <strong>500 alunos</strong> já adquiriram este curso!
+    </div>
+  </div>
+</div>
 
     <script src="main.js"></script>
     <script type="module" src="typebot.js"></script>
