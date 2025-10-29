@@ -777,7 +777,7 @@ html[data-theme="dark-luxury"]{
 #li-root .li-timer-box {
   text-align: center;
   margin: 0 auto 10px; /* Movido para cima: 0px acima, 10px abaixo */
-  padding: 0;
+  padding: 0px;
   max-width: fit-content; /* Largura justa para tirar a sensação de 'caixa' */
   
   /* Garante transparência e anula qualquer fundo anterior */
@@ -808,7 +808,7 @@ html[data-theme="dark-luxury"]{
 
 /* Valor numérico */
 #li-root .li-time-value {
-  color: var(--hero-grad-end);
+  color: #ffffff;
   text-shadow: 0 0 14px color-mix(in srgb, var(--hero-grad-end) 80%, transparent 20%);
   transition: color .3s ease, text-shadow .3s ease;
 }
@@ -836,8 +836,8 @@ html[data-theme="light"] #li-root .li-timer-box {
   /* Fundo e sombra removidos */
 }
 html[data-theme="light"] #li-root .li-time-value {
-  color: var(--success-2); /* Mantém o verde de sucesso */
-  text-shadow: 0 0 10px rgba(0,0,0,.2);
+   /* Mantém o verde de sucesso */
+   text-shadow: 0 0 10px rgb(255 0 0 / 57%);
 }
 /* Força a cor do texto do timer para a variável text */
 html[data-theme="light"] #li-root .li-timer-label,
@@ -851,8 +851,8 @@ html[data-theme="dark"] #li-root .li-timer-box {
   /* Fundo e sombra removidos */
 }
 html[data-theme="dark"] #li-root .li-time-value {
-  color: var(--hero-grad-end); /* Laranja vibrante */
-  text-shadow: 0 0 16px rgba(255,115,0,.6);
+   /* Laranja vibrante */
+   text-shadow: 0 0 16px rgb(0 194 255);
 }
 
 /* --- Tema Dark Luxury --- */
@@ -860,8 +860,8 @@ html[data-theme="dark-luxury"] #li-root .li-timer-box {
   /* Fundo, borda e sombra removidos */
 }
 html[data-theme="dark-luxury"] #li-root .li-time-value {
-  color: var(--hero-grad-end); /* Amarelo/Laranja do gradiente */
-  text-shadow: 0 0 16px rgba(251,191,36,.6);
+   0 0 16px rgba(251,191,36,.6);
+   text-shadow: 0 0 16px rgb(255 0 233);
 }
 
 /* Responsivo */
