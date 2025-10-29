@@ -1,94 +1,94 @@
 /* =========================================================
-   VARIÁVEIS DE TEMA
-   ========================================================= */
+   VARIÁVEIS DE TEMA
+   ========================================================= */
 :root {
-  --bg:#ffffff;
-  --text:#0c4a6e;
-  --muted:#e0f2fe;
-  --card: #00677982;
-  --primary: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
-  --primary-contrast:#ffffff;
-  --hero-bg:#0ea5e9;
-  --hero-card-bg:#0284c7;
-  --border:rgba(0,0,0,.08);
-  --muted-text:#64748b;
-  --surface:#f8fafc;
-  --surface-2:#f1f5f9;
-  --overlay:rgba(0,0,0,.45);
-  --success:#10b981;
-  --hero-grad-start:#0ea5e9;
-  --hero-grad-end: #10b981;
-  --success-2:#059669;
+  --bg:#ffffff;
+  --text:#0c4a6e;
+  --muted:#e0f2fe;
+  --card: #00677982;
+  --primary: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+  --primary-contrast:#ffffff;
+  --hero-bg:#0ea5e9;
+  --hero-card-bg:#0284c7;
+  --border:rgba(0,0,0,.08);
+  --muted-text:#64748b;
+  --surface:#f8fafc;
+  --surface-2:#f1f5f9;
+  --overlay:rgba(0,0,0,.45);
+  --success:#10b981;
+  --hero-grad-start:#0ea5e9;
+  --hero-grad-end: #10b981;
+  --success-2:#059669;
 }
 
 /* =========================================================
-   TEMA DARK
-   ========================================================= */
+   TEMA DARK
+   ========================================================= */
 html[data-theme="dark"]{
-  --bg:#00000b;
-  --text:#f1f5f9;
-  --muted:#64748b;
-  --card: #033993c7;
-  --primary: linear-gradient(90deg, #0A1124 5%, #0047FF 100%);
-  --primary-contrast:#ffffff;
-  --hero-bg: #1e1b4b;
-  --hero-card-bg:#334155;
-  --border:rgba(255,255,255,.1);
-  --muted-text:#94a3b8;
-  --surface: #2d2d2d;
-  --surface-2:#334155;
-  --overlay:rgba(0,0,0,.65);
-  --success:#10b981;
-  --hero-grad-start: #0444b2;
-  --hero-grad-end:#f97316;
-  --success-2:#059669;
+  --bg:#00000b;
+  --text:#f1f5f9;
+  --muted:#64748b;
+  --card: #033993c7;
+  --primary: linear-gradient(90deg, #0A1124 5%, #0047FF 100%);
+  --primary-contrast:#ffffff;
+  --hero-bg: #1e1b4b;
+  --hero-card-bg:#334155;
+  --border:rgba(255,255,255,.1);
+  --muted-text:#94a3b8;
+  --surface: #2d2d2d;
+  --surface-2:#334155;
+  --overlay:rgba(0,0,0,.65);
+  --success:#10b981;
+  --hero-grad-start: #0444b2;
+  --hero-grad-end:#f97316;
+  --success-2:#059669;
 }
 body[data-theme="dark"]{
-  background:radial-gradient(circle at top left,#0a1124 0%,#060913 100%);
-  color:var(--text);
+  background:radial-gradient(circle at top left,#0a1124 0%,#060913 100%);
+  color:var(--text);
 }
 
 /* =========================================================
-   TEMA DARK LUXURY
-   ========================================================= */
+   TEMA DARK LUXURY
+   ========================================================= */
 html[data-theme="dark-luxury"]{
-  --bg:#0a0a0f;
-  --text:#f8fafc;
-  --muted:#64748b;
-  --card: #595589;
-  --primary: linear-gradient(90deg, #A020F0 0%, #FF0080 100%);
-  --primary-contrast:#ffffff;
-  --hero-bg:#1e1b4b;
-  --hero-card-bg:#312e81;
-  --border:rgba(255,255,255,.08);
-  --muted-text:#94a3b8;
-  --surface: #141233;
-  --surface-2:#ffffff;
-  --overlay:rgba(0,0,0,.7);
-  --success:#059669;
-  --hero-grad-start: #A020F0;
-  --hero-grad-end:#fbbf24;
-  --success-2:#047857;
+  --bg:#0a0a0f;
+  --text:#f8fafc;
+  --muted:#64748b;
+  --card: #595589;
+  --primary: linear-gradient(90deg, #A020F0 0%, #FF0080 100%);
+  --primary-contrast:#ffffff;
+  --hero-bg:#1e1b4b;
+  --hero-card-bg:#312e81;
+  --border:rgba(255,255,255,.08);
+  --muted-text:#94a3b8;
+  --surface: #141233;
+  --surface-2:#ffffff;
+  --overlay:rgba(0,0,0,.7);
+  --success:#059669;
+  --hero-grad-start: #A020F0;
+  --hero-grad-end:#fbbf24;
+  --success-2:#047857;
 }
 body[data-theme="dark-luxury"]{
-  background:linear-gradient(160deg,#060912 0%,#0e0f1e 50%,#161933 100%);
-  color:var(--text);
+  background:linear-gradient(160deg,#060912 0%,#0e0f1e 50%,#161933 100%);
+  color:var(--text);
 }
 
 /* =========================================================
-   GLOBAL
-   ========================================================= */
+   GLOBAL
+   ========================================================= */
 *,*::before,*::after{ box-sizing:border-box; }
 html{ color-scheme: light dark; }
 a{ color:var(--primary); text-decoration:none; transition:color .2s; }
 a:hover{ color:#60a5fa; }
 
 body{
-  margin:0;
-  font-family:Inter, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  width:100%; /* evita overflow horizontal de 100vw */
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  width:100%; /* evita overflow horizontal de 100vw */
 }
 
 /* transições suaves de tema em blocos principais */
@@ -97,55 +97,55 @@ body{
 #li-root .li-benefits-box,
 #li-root .li-hero-card,
 #li-root .li-q{
-  transition:background-color .25s ease, color .25s ease, border-color .25s ease;
+  transition:background-color .25s ease, color .25s ease, border-color .25s ease;
 }
 
 #li-root .li-container{
-  max-width: 1000px !important;
-  width:100% !important;
-  padding:0 32px !important;
-  margin:0 auto !important;
+  max-width: 1000px !important;
+  width:100% !important;
+  padding:0 32px !important;
+  margin:0 auto !important;
 }
 
 /* =========================================================
-   BOTÕES
-   ========================================================= */
+   BOTÕES
+   ========================================================= */
 #li-root .li-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:var(--primary);
-  color:var(--primary-contrast);
-  font-weight:800;
-  text-decoration:none;
-  border-radius: 30px;
-  font-size:16px;
-  padding:12px 20px;
-  transition:.2s;
-  box-shadow:none;
-  text-align:center;
-  border: 1px solid #00000069;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--primary);
+  color:var(--primary-contrast);
+  font-weight:800;
+  text-decoration:none;
+  border-radius: 30px;
+  font-size:16px;
+  padding:12px 20px;
+  transition:.2s;
+  box-shadow:none;
+  text-align:center;
+  border: 1px solid #00000069;
 }
 #li-root .li-btn:hover{ opacity:.9; }
 
 /* Botão animado opcional */
 .animated-button{
-  position:relative; display:inline-flex; align-items:center; justify-content:center;
-  gap:8px; padding:12px 20px; border-radius:8px; font-weight:700; font-size:16px;
-  color:var(--text); background:transparent; box-shadow:0 0 0 2px var(--text);
-  cursor:pointer; overflow:hidden; text-decoration:none; isolation:isolate;
-  transition:box-shadow .3s ease, color .3s ease;
+  position:relative; display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 20px; border-radius:8px; font-weight:700; font-size:16px;
+  color:var(--text); background:transparent; box-shadow:0 0 0 2px var(--text);
+  cursor:pointer; overflow:hidden; text-decoration:none; isolation:isolate;
+  transition:box-shadow .3s ease, color .3s ease;
 }
 .animated-button .circle{
-  position:absolute; top:50%; left:50%; width:12px; height:12px; background:var(--primary);
-  border-radius:999px; transform:translate(-50%,-50%) scale(0); opacity:0; z-index:0;
-  transition:transform .6s cubic-bezier(0.23,1,0.32,1), opacity .6s;
+  position:absolute; top:50%; left:50%; width:12px; height:12px; background:var(--primary);
+  border-radius:999px; transform:translate(-50%,-50%) scale(0); opacity:0; z-index:0;
+  transition:transform .6s cubic-bezier(0.23,1,0.32,1), opacity .6s;
 }
 .animated-button .text{ position:relative; z-index:1; transform:translateX(-10px);
-  transition:transform .6s cubic-bezier(0.23,1,0.32,1);}
+  transition:transform .6s cubic-bezier(0.23,1,0.32,1);}
 .animated-button svg{
-  position:absolute; top:50%; right:14px; width:14px; transform:translateY(-50%) translateX(10px);
-  opacity:0; z-index:1; fill:currentColor; transition:transform .4s ease, opacity .4s ease;
+  position:absolute; top:50%; right:14px; width:14px; transform:translateY(-50%) translateX(10px);
+  opacity:0; z-index:1; fill:currentColor; transition:transform .4s ease, opacity .4s ease;
 }
 .animated-button:hover{ color:var(--primary-contrast); box-shadow:0 0 0 4px var(--primary); }
 .animated-button:hover .circle{ transform:translate(-50%,-50%) scale(26); opacity:1; }
@@ -156,241 +156,241 @@ body{
 /* foco teclado */
 #li-root .li-btn:focus-visible,
 #li-root .animated-button:focus-visible{
-  outline:2px solid var(--primary);
-  outline-offset:2px;
+  outline:2px solid var(--primary);
+  outline-offset:2px;
 }
 
 /* =========================================================
-   HERO
-   ========================================================= */
+   HERO
+   ========================================================= */
 #li-root .li-hero{
-  justify-content:center !important;
-  padding: 10px 15px !important;
-  background:var(--hero-bg);
-  color:var(--text) !important;
-  width:100%; /* corrigido */
+  justify-content:center !important;
+  padding: 10px 15px !important;
+  background:var(--hero-bg);
+  color:var(--text) !important;
+  width:100%; /* corrigido */
 }
 #li-root .li-hero .li-wrap{
-  display:grid !important;
-  grid-template-columns:1.1fr 0.9fr !important;
-  align-items:center !important;
-  gap:48px !important;
-  width:100% !important;
-  max-width:1000px !important;
+  display:grid !important;
+  grid-template-columns:1.1fr 0.9fr !important;
+  align-items:center !important;
+  gap:48px !important;
+  width:100% !important;
+  max-width:1000px !important;
 }
 #li-root .li-eyebrow{
-  display:inline-block !important;
-  border-radius:999px !important;
-  padding:8px 12px !important;
-  font-size:13px !important;
-  font-weight:600 !important;
-  background:rgba(255,255,255,.14) !important;
+  display:inline-block !important;
+  border-radius:999px !important;
+  padding:8px 12px !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  background:rgba(255,255,255,.14) !important;
 }
 #li-root .li-hero h1{
-  font-size:34px !important; line-height:1.3 !important;
-  margin:14px 0 !important;
+  font-size:34px !important; line-height:1.3 !important;
+  margin:14px 0 !important;
 }
 #li-root .li-hero p{
-  font-size:16px !important;
-  line-height: 1.50 !important;
-  color:var(--muted) !important;
-  margin: 0 0 20px !important;
+  font-size:16px !important;
+  line-height: 1.50 !important;
+  color:var(--muted) !important;
+  margin: 0 0 20px !important;
 }
 #li-root .li-cta-group{
-  display:flex !important; flex-wrap:wrap !important; gap:12px !important;
+  display:flex !important; flex-wrap:wrap !important; gap:12px !important;
 }
 #li-root .li-cta-secondary{
-  background:transparent !important; border:2px solid var(--primary-contrast) !important;
-  color:var(--primary-contrast) !important;
+  background:transparent !important; border:2px solid var(--primary-contrast) !important;
+  color:var(--primary-contrast) !important;
 }
 
 /* 🚀 NOVO CSS: ESTILO DO PREÇO NA COLUNA PRINCIPAL */
 #li-root .li-hero-price {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    line-height: 1.1;
-    color: var(--text); /* Cor base */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: var(--text); /* Cor base */
 }
 /* FIM NOVO CSS */
 
 #li-root .li-hero-feat{
-  display:grid !important;
-  gap: 10px !important;
-  t;
-  grid-template-columns:repeat(2,1fr) !important;
-  margin-top: 18px !important;
+  display:grid !important;
+  gap: 10px !important;
+  t;
+  grid-template-columns:repeat(2,1fr) !important;
+  margin-top: 18px !important;
 }
 #li-root .li-hero-feat span{
-  font-size:14px !important; border-radius:6px !important; padding:6px 10px !important;
-  background:rgba(255,255,255,.1) !important;
+  font-size:14px !important; border-radius:6px !important; padding:6px 10px !important;
+  background:rgba(255,255,255,.1) !important;
 }
 #li-root .li-hero-card{
-  border:1px solid var(--border) !important;
-  box-shadow:0 10px 24px rgba(0,0,0,.15) !important;
-  background:var(--hero-card-bg) !important;
-  padding:22px !important;
-  width:100% !important; border-radius:30px;
+  border:1px solid var(--border) !important;
+  box-shadow:0 10px 24px rgba(0,0,0,.15) !important;
+  background:var(--hero-card-bg) !important;
+  padding:22px !important;
+  width:100% !important; border-radius:30px;
 }
 #li-root .li-hero-card img{
-  display:block !important; border-radius:14px !important; margin-bottom:14px !important; width:100% !important;
+  display:block !important; border-radius:14px !important; margin-bottom:14px !important; width:100% !important;
 }
 
 /* Hero: responsivo */
 @media (max-width:960px){
-  #li-root .li-hero .li-wrap{
-    grid-template-columns:1fr !important; place-items:center !important;
-    gap:30px !important; text-align:center !important;
-  }
-  #li-root .li-hero .li-hero-content,
-  #li-root .li-hero .li-hero-card{
-    justify-self:center !important; width:min(100%,420px) !important;
-  }
-  #li-root .li-cta-group{ justify-content:center !important; }
-  #li-root .li-hero-feat{ justify-content:center !important; }
+  #li-root .li-hero .li-wrap{
+    grid-template-columns:1fr !important; place-items:center !important;
+    gap:30px !important; text-align:center !important;
+  }
+  #li-root .li-hero .li-hero-content,
+  #li-root .li-hero .li-hero-card{
+    justify-self:center !important; width:min(100%,420px) !important;
+  }
+  #li-root .li-cta-group{ justify-content:center !important; }
+  #li-root .li-hero-feat{ justify-content:center !important; }
 
-  /* 🚀 NOVO CSS: AJUSTE DE RESPONSIVIDADE DO PREÇO */
-  #li-root .li-hero-price {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 30px; /* Mais espaço antes dos bullets */
-  }
-  /* FIM NOVO CSS */
+  /* 🚀 NOVO CSS: AJUSTE DE RESPONSIVIDADE DO PREÇO */
+  #li-root .li-hero-price {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px; /* Mais espaço antes dos bullets */
+  }
+  /* FIM NOVO CSS */
 }
 
 @media (max-width:640px){
-  #li-root .li-container{padding: 10px 20px  !important;width:100% !important;}
-  #li-root .li-hero h1{ font-size:28px !important; }
+  #li-root .li-container{padding: 10px 20px  !important;width:100% !important;}
+  #li-root .li-hero h1{ font-size:28px !important; }
 }
 
 /* =========================================================
-   SEÇÕES GENÉRICAS
-   ========================================================= */
+   SEÇÕES GENÉRICAS
+   ========================================================= */
 #li-root .li-section{ padding:36px 0 !important; }
 #li-root .li-section-title{margin:0 0 10px !important;font-size: 35px;}
 #li-root .li-section-sub{
-  color:var(--muted-text) !important; font-size:16px !important; margin:0 0 30px !important; text-align:center !important;
+  color:var(--muted-text) !important; font-size:16px !important; margin:0 0 30px !important; text-align:center !important;
 }
 /* =========================================================
-   COMPARATIVO — FIX FINAL MOBILE + TEMAS
-   ========================================================= */
+   COMPARATIVO — FIX FINAL MOBILE + TEMAS
+   ========================================================= */
 
 /* ======= VARIAÇÕES DE COR POR TEMA ======= */
 :root {
-  --cmp-grad-start:  color-mix(in lch, var(--hero-grad-start) 82%, var(--bg) 18%);
-  --cmp-grad-end:  color-mix(in lch, #10b981 82%, var(--bg) 18%);
-  --cmp-row-left:   color-mix(in lch, var(--surface) 96%, var(--bg) 4%);
-  --cmp-row-right:  color-mix(in lch, var(--card)    96%, var(--bg) 4%);
+  --cmp-grad-start:  color-mix(in lch, var(--hero-grad-start) 82%, var(--bg) 18%);
+  --cmp-grad-end:  color-mix(in lch, #10b981 82%, var(--bg) 18%);
+  --cmp-row-left:   color-mix(in lch, var(--surface) 96%, var(--bg) 4%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    96%, var(--bg) 4%);
 }
 
 html[data-theme="dark"] {
-  --cmp-grad-start: #030303;
-  --cmp-grad-end: #0444b2;
-  --cmp-row-left:   color-mix(in lch, var(--surface) 88%, #ffffff 12%);
-  --cmp-row-right:  color-mix(in lch, var(--card)    88%, #ffffff 12%);
+  --cmp-grad-start: #030303;
+  --cmp-grad-end: #0444b2;
+  --cmp-row-left:   color-mix(in lch, var(--surface) 88%, #ffffff 12%);
+  --cmp-row-right:  color-mix(in lch, var(--card)    88%, #ffffff 12%);
 }
 
 html[data-theme="dark-luxury"] {
-  --cmp-grad-start: #000000;
-  --cmp-grad-end: #a020f0;
-  --cmp-row-left:   color-mix(in lch, var(--surface) 82%, #ffffff 18%);
-  --cmp-row-right:  color-mix(in lch, var(--card) 82%, #ffffff 18%);
+  --cmp-grad-start: #000000;
+  --cmp-grad-end: #a020f0;
+  --cmp-row-left:   color-mix(in lch, var(--surface) 82%, #ffffff 18%);
+  --cmp-row-right:  color-mix(in lch, var(--card) 82%, #ffffff 18%);
 }
 
 /* ======= SEÇÃO E ESTRUTURA ======= */
 #li-comparativo {
-  background: var(--bg);
+  background: var(--bg);
 }
 
 #li-comparativo .li-compare-table {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
 /* ======= CABEÇALHO ======= */
 #li-comparativo .li-compare-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: linear-gradient(90deg, var(--cmp-grad-start), var(--cmp-grad-end));
-  color: var(--primary-contrast);
-  font-weight: 800;
-  text-align: center;
-  font-size: 1.05rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(90deg, var(--cmp-grad-start), var(--cmp-grad-end));
+  color: var(--primary-contrast);
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.05rem;
 }
 #li-comparativo .li-col-title {
-  padding: 14px 10px;
+  padding: 14px 10px;
 }
 
 /* ======= LINHAS ======= */
 #li-comparativo .li-compare-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
 }
 
 /* ======= CÉLULAS ======= */
 #li-comparativo .li-col {
-  padding: 16px 18px;
-  line-height: 1.55;
-  font-size: 15px;
+  padding: 16px 18px;
+  line-height: 1.55;
+  font-size: 15px;
 }
 
 #li-comparativo .li-col.sem {
-  background: var(--cmp-row-left);
-  color: var(--muted-text);
+  background: var(--cmp-row-left);
+  color: var(--muted-text);
 }
 
 #li-comparativo .li-col.com {
-  background: var(--cmp-row-right);
-  color: var(--text);
-  font-weight: 600;
+  background: var(--cmp-row-right);
+  color: var(--text);
+  font-weight: 600;
 }
 
 /* ======= DIVISÓRIA VERTICAL (DESKTOP) ======= */
 #li-comparativo .li-compare-row .li-col + .li-col {
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
 /* ======= MOBILE FIX ======= */
 @media (max-width: 640px) {
-  /* empilha as colunas */
-  #li-comparativo .li-compare-header,
-  #li-comparativo .li-compare-row {
-    grid-template-columns: 1fr;
-  }
+  /* empilha as colunas */
+  #li-comparativo .li-compare-header,
+  #li-comparativo .li-compare-row {
+    grid-template-columns: 1fr;
+  }
 
-  /* cada célula pinta seu próprio fundo */
-  #li-comparativo .li-compare-row .li-col.sem {
-    background: var(--cmp-row-left) !important;
-    color: var(--muted-text);
-    border-bottom: 1px dashed var(--border);
-  }
+  /* cada célula pinta seu próprio fundo */
+  #li-comparativo .li-compare-row .li-col.sem {
+    background: var(--cmp-row-left) !important;
+    color: var(--muted-text);
+    border-bottom: 1px dashed var(--border);
+  }
 
-  #li-comparativo .li-compare-row .li-col.com {
-    background: var(--cmp-row-right) !important;
-    color: var(--text);
-  }
+  #li-comparativo .li-compare-row .li-col.com {
+    background: var(--cmp-row-right) !important;
+    color: var(--text);
+  }
 
-  /* remove bordas verticais e gaps escuros */
-  #li-comparativo .li-compare-row,
-  #li-comparativo .li-compare-table {
-    background: var(--bg) !important;
-  }
-  #li-comparativo .li-compare-row .li-col + .li-col {
-    border-left: none;
-  }
+  /* remove bordas verticais e gaps escuros */
+  #li-comparativo .li-compare-row,
+  #li-comparativo .li-compare-table {
+    background: var(--bg) !important;
+  }
+  #li-comparativo .li-compare-row .li-col + .li-col {
+    border-left: none;
+  }
 
-  #li-comparativo .li-col {
-    padding: 14px 16px;
-  }
+  #li-comparativo .li-col {
+    padding: 14px 16px;
+  }
 }
 
 /* =========================================================
-   COMPARATIVO — AJUSTES VISUAIS E FINESSE
-   ========================================================= */
+   COMPARATIVO — AJUSTES VISUAIS E FINESSE
+   ========================================================= */
 
 /* cantos arredondados no topo */
 #li-comparativo .li-compare-table { border-radius: 18px; }
@@ -398,299 +398,253 @@ html[data-theme="dark-luxury"] {
 
 /* zebra suave nas linhas do lado "com IA" */
 #li-comparativo .li-compare-row:nth-child(even) .li-col.com {
-  filter: saturate(1.02) brightness(1.02);
+  filter: saturate(1.02) brightness(1.02);
 }
 
 /* divisor mais leve no mobile */
 @media (max-width:640px){
-  #li-comparativo .li-col.sem { border-bottom-style: dotted; }
+  #li-comparativo .li-col.sem { border-bottom-style: dotted; }
 }
 
 /* micro contorno nas pílulas mobile (melhor contraste) */
 @media (max-width:640px){
-  #li-comparativo .li-compare-row .li-col::before{
-    outline: 1px solid color-mix(in lch, #000 15%, transparent 85%);
-    outline-offset: 0;
-  }
+  #li-comparativo .li-compare-row .li-col::before{
+    outline: 1px solid color-mix(in lch, #000 15%, transparent 85%);
+    outline-offset: 0;
+  }
 }
 
 /* leve aumento do padding no mobile */
 @media (max-width:640px){
-  #li-comparativo .li-col { padding: 16px 18px; }
+  #li-comparativo .li-col { padding: 16px 18px; }
 }
 
 
 
 /* =========================================================
-   “O QUE VOCÊ VAI RECEBER”
-   ========================================================= */
+   “O QUE VOCÊ VAI RECEBER”
+   ========================================================= */
 #li-root .li-benefits-box{
-  background:var(--surface) !important; border:1px solid var(--border) !important;
-  border-radius:16px !important; padding:26px !important; box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
-  max-width:7000px !important; margin:0 auto !important;
+  background:var(--surface) !important; border:1px solid var(--border) !important;
+  border-radius:16px !important; padding:26px !important; box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
+  max-width:7000px !important; margin:0 auto !important;
 }
 #li-root .li-benefits-box h3{
-  text-align:center !important; margin-bottom:22px !important; font-size:22px !important; color:var(--text) !important;
+  text-align:center !important; margin-bottom:22px !important; font-size:22px !important; color:var(--text) !important;
 }
 /* O que você vai receber — grid responsiva */
 #li-root .li-receber-grid{
-  display: grid !important;
-  gap: 6px !important;
-  grid-template-columns: 1fr !important;            /* mobile */
+  display: grid !important;
+  gap: 6px !important;
+  grid-template-columns: 1fr !important;            /* mobile */
 }
 
 @media (min-width: 641px){
-  #li-root .li-receber-grid{ grid-template-columns: repeat(2, 1fr) !important; }
+  #li-root .li-receber-grid{ grid-template-columns: repeat(2, 1fr) !important; }
 }
 @media (min-width: 980px){
-  #li-root .li-receber-grid{ grid-template-columns: repeat(3, 1fr) !important; }
+  #li-root .li-receber-grid{ grid-template-columns: repeat(3, 1fr) !important; }
 }
 
 #li-root .li-receber-item{
-  display:flex !important; align-items:flex-start !important; gap:12px !important; padding:16px !important;
-  border:1px solid var(--border) !important; background:var(--bg) !important;
-  transition:transform .2s ease, box-shadow .2s ease !important;
+  display:flex !important; align-items:flex-start !important; gap:12px !important; padding:16px !important;
+  border:1px solid var(--border) !important; background:var(--bg) !important;
+  transition:transform .2s ease, box-shadow .2s ease !important;
 }
 #li-root .li-receber-item:hover{ transform:translateY(-3px) !important; box-shadow:0 6px 14px rgba(0,0,0,.08) !important; }
 #li-root .li-receber-item .icon{
-  width:42px !important; height:42px !important; flex-shrink:0 !important; display:flex !important; align-items:center !important; justify-content:center !important;
+  width:42px !important; height:42px !important; flex-shrink:0 !important; display:flex !important; align-items:center !important; justify-content:center !important;
 }
 #li-root .li-receber-item .icon svg{ width:22px !important; height:22px !important; }
 #li-root .li-receber-item h4{
-  margin:0 0 4px !important; font-size:16px !important; font-weight:700 !important; color:var(--text) !important;
+  margin:0 0 4px !important; font-size:16px !important; font-weight:700 !important; color:var(--text) !important;
 }
 #li-root .li-receber-item p{
-  margin:0 !important; font-size:14px !important; color:var(--muted-text) !important; line-height:1.5 !important;
+  margin:0 !important; font-size:14px !important; color:var(--muted-text) !important; line-height:1.5 !important;
 }
 
 /* botão dentro da caixa */
 #li-root .li-benefits-box .li-btn{
-  display:inline-block !important; background:var(--hero-bg) !important; color:var(--primary-contrast) !important;
-  font-weight:800 !important; border-radius:8px !important; font-size:18px !important; padding:14px 22px !important;
-  transition:.2s !important; margin-top:24px !important; box-shadow:0 0 10px rgba(255,255,255,.4) !important;
+  display:inline-block !important; background:var(--hero-bg) !important; color:var(--primary-contrast) !important;
+  font-weight:800 !important; border-radius:8px !important; font-size:18px !important; padding:14px 22px !important;
+  transition:.2s !important; margin-top:24px !important; box-shadow:0 0 10px rgba(255,255,255,.4) !important;
 }
 #li-root .li-benefits-box .li-btn:hover{ opacity:.9 !important; transform:translateY(-2px) !important; }
 
 /* Mobile da seção */
 @media (max-width:640px){
-  #li-root .li-section{padding: 48px 0px !important;}
-  #li-root .li-benefits-box{ padding:20px !important; }
-  #li-root .li-receber-item h4{ font-size:15px !important; }
-  #li-root .li-receber-item p{ font-size:13px !important; }
-  #li-root .li-benefits-box h3{ font-size:20px !important; }
-  #li-root .li-benefits-box .li-btn{
-    width:100% !important; max-width:250px !important; margin:18px auto 0 !important; display:flex !important; justify-content:center;
-  }
+  #li-root .li-section{padding: 48px 0px !important;}
+  #li-root .li-benefits-box{ padding:20px !important; }
+  #li-root .li-receber-item h4{ font-size:15px !important; }
+  #li-root .li-receber-item p{ font-size:13px !important; }
+  #li-root .li-benefits-box h3{ font-size:20px !important; }
+  #li-root .li-benefits-box .li-btn{
+    width:100% !important; max-width:250px !important; margin:18px auto 0 !important; display:flex !important; justify-content:center;
+  }
 }
 
 /* =========================================================
-   PRODUTO / CARDS GENÉRICOS
-   ========================================================= */
+   PRODUTO / CARDS GENÉRICOS
+   ========================================================= */
 #li-root .li-product{
-  display:grid !important; grid-template-columns:1fr 1fr !important; gap:6px !important; align-items:center !important;
+  display:grid !important; grid-template-columns:1fr 1fr !important; gap:6px !important; align-items:center !important;
 }
 #li-root .li-card{
-  background:var(--surface) !important;
-  border:1px solid var(--border) !important;
-  border-radius:16px !important;
-  padding: 10px !important;
-  box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
-  justify-items:center;
-  width:100%;
+  background:var(--surface) !important;
+  border:1px solid var(--border) !important;
+  border-radius:16px !important;
+  padding: 10px !important;
+  box-shadow:0 8px 20px rgba(0,0,0,.05) !important;
+  justify-items:center;
+  width:100%;
 }
 #li-root .li-bullets{ margin:16px 0 8px !important; padding-left:18px !important; }
 #li-root .li-bullets li{ margin-bottom:10px !important; }
 
 /* =========================================================
-   TESTEMUNHOS
-   ========================================================= */
+   TESTEMUNHOS
+   ========================================================= */
 .li-testimonials{ margin-top:40px; }
 .li-testimonials-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 .li-testimonial{
-  background:var(--hero-card-bg); color:var(--primary-contrast);
-  border:1px solid var(--border); border-radius:10px; padding:12px; box-shadow:0 4px 10px rgba(0,0,0,.2);
+  background:var(--hero-card-bg); color:var(--primary-contrast);
+  border:1px solid var(--border); border-radius:10px; padding:12px; box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
 .li-testimonial p{ margin:0 0 10px; font-size:13px; line-height:1.5; font-weight:500; }
 
 @media (max-width:640px){
-  .li-testimonials-grid{ grid-template-columns:1fr; }
+  .li-testimonials-grid{ grid-template-columns:1fr; }
 }
 
 /* =========================================================
-   FAQ
-   ========================================================= */
+   FAQ
+   ========================================================= */
 #li-root .li-faq{display:grid !important;grid-template-columns:1fr 1fr !important;gap:8px !important;font-size: 13px !important;}
 #li-root .li-q{ background:var(--surface) !important; border:1px solid var(--border) !important; border-radius:14px !important; padding:10px !important; }
 @media (max-width:640px){
-  #li-root .li-faq{grid-template-columns:1fr !important;}
-  #li-root .li-q{ padding:6px !important; text-align:justify !important; }
+  #li-root .li-faq{grid-template-columns:1fr !important;}
+  #li-root .li-q{ padding:6px !important; text-align:justify !important; }
 }
 
 /* =========================================================
-   CTA BAR & FOOTER
-   ========================================================= */
+   CTA BAR & FOOTER
+   ========================================================= */
 #li-root .li-cta-bar{ background:var(--hero-grad-start) !important; color:var(--primary-contrast) !important; padding:28px 0 !important; }
 #li-root .li-cta-bar strong{ font-size:20px !important; }
 #li-root .li-footer{ padding:28px 0 !important; text-align:center !important; color:var(--muted-text) !important; font-size:14px !important; }
 
 /* =========================================================
-   MODAL DE CHECKOUT (Otimizado)
+   MODAL (POP-UP) OTIMIZADO — compatível com 3 temas
    ========================================================= */
-#li-checkout-modal {
-    position: fixed;
-    inset: 0;
-    background: var(--overlay); /* Usa o overlay do tema (escuro) */
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    backdrop-filter: blur(6px);
-    
-    /* Estado inicial: Escondido (O JS gerencia as classes li-modal-show) */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+#li-checkout-modal{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.85);
+  z-index:1000;
+  visibility:hidden; opacity:0;
+  transition:opacity .3s ease, visibility .3s ease;
 }
-#li-checkout-modal.li-modal-show {
-    visibility: visible;
-    opacity: 1;
+#li-checkout-modal.li-modal-show{ visibility:visible; opacity:1; }
+
+#li-checkout-modal .li-modal-box{
+  position:relative;
+  width:min(420px, 92vw);
+  background: color-mix(in lch, var(--surface-2) 15%, #1f2341 85%);
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  transform:scale(.92);
+  transition:transform .28s ease;
+}
+#li-checkout-modal.li-modal-show .li-modal-box{ transform:scale(1); }
+
+/* variações suaves por tema */
+html[data-theme="light"] #li-checkout-modal .li-modal-box{
+  background: color-mix(in lch, #ffffff 85%, var(--hero-bg) 15%);
+}
+html[data-theme="dark"] #li-checkout-modal .li-modal-box{
+  background: color-mix(in lch, #0b0e1c 75%, var(--surface-2) 25%);
+}
+html[data-theme="dark-luxury"] #li-checkout-modal .li-modal-box{
+  background: color-mix(in lch, #141233 85%, var(--hero-grad-start) 15%);
+  box-shadow:0 0 24px rgba(160,32,240,.25);
 }
 
-#li-checkout-modal .li-modal-box {
-    background: var(--surface); /* Fundo do modal deve ser uma superfície do tema */
-    border-radius: 16px;
-    max-width: 420px; /* Reduzindo para focar como um 'mini-checkout' */
-    width: 100%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    overflow: hidden;
-    position: relative;
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-    padding: 20px; /* Ajuste o padding interno aqui */
-}
-#li-checkout-modal.li-modal-show .li-modal-box {
-    transform: scale(1);
+/* Fechar */
+#li-checkout-modal .li-close{
+  position:absolute; top:10px; right:12px;
+  background:none; border:0; cursor:pointer;
+  font-size:1.6rem; line-height:1;
+  color:var(--muted-text);
 }
 
-/* Novo Header Persuasivo (Opção B) */
-#li-checkout-modal .li-modal-header {
-    text-align: center;
-    padding: 0 10px 15px;
+/* Header persuasivo */
+#li-checkout-modal .li-modal-header{ text-align:center; padding:0 10px 12px; }
+#li-checkout-modal .li-modal-header h3{
+  margin:0 0 6px; font-size:1.5rem; color:var(--hero-grad-end);
 }
-#li-checkout-modal .li-modal-header h3 {
-    font-size: 1.5rem;
-    color: var(--hero-grad-end); /* Cor de destaque */
-    margin: 0 0 5px;
-}
-#li-checkout-modal .li-modal-header p {
-    font-size: 0.9rem;
-    color: var(--text);
-    opacity: 0.8;
-    margin: 0;
+#li-checkout-modal .li-modal-header p{
+  margin:0; font-size:.95rem; color:var(--text); opacity:.85;
 }
 
-#li-checkout-modal img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* Ajuste o raio da borda da imagem */
-    margin-bottom: 10px;
+/* Imagem */
+#li-checkout-modal img{ width:100%; height:auto; border-radius:8px; display:block; }
+
+/* Footer / preço + CTA */
+#li-checkout-modal .li-modal-footer{ padding-top:10px; }
+#li-checkout-modal .li-price{ text-align:center; padding:10px 0; color:var(--text); }
+#li-checkout-modal .li-price .from{ opacity:.65; font-weight:600; font-size:13px; text-decoration:line-through; display:block; }
+#li-checkout-modal .li-price .now{ font-weight:900; font-size:32px; color:#f8fafc; text-shadow:0 0 8px var(--hero-grad-start); display:block; }
+#li-checkout-modal .li-price .tag{ opacity:.65; font-weight:600; font-size:13px; display:block; }
+
+#li-checkout-modal .li-modal-cta{
+  width:100%; margin-top:10px;
+  background: var(--hero-grad-end);
+  color:#fff; border-radius:30px;
+  padding:14px 20px; font-size:18px; font-weight:800;
+  display:inline-flex; align-items:center; justify-content:center;
 }
 
-#li-checkout-modal .li-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    border: 0;
-    background: transparent;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    color: var(--muted-text);
+/* Prova social */
+#li-checkout-modal .li-social-proof{
+  text-align:center; padding:10px 0 0;
+  font-size:.95rem; color:var(--text); opacity:.9;
 }
+#li-checkout-modal .li-stars{ color:gold; margin-right:6px; }
 
-/* Rodapé */
-#li-checkout-modal .li-modal-footer {
-    padding: 0; /* Remove padding desnecessário */
-    display: block; /* Ocupa toda a largura */
-}
-
-/* Preço no Modal */
-#li-checkout-modal .li-price { 
-    text-align: center;
-    padding: 10px 0;
-    color: var(--text);
-    /* Destaque do preço */
-    text-shadow: 0 0 8px var(--hero-grad-end);
-}
-#li-checkout-modal .li-price span:nth-child(2) { /* O preço grande */
-    font-size: 32px;
-    font-weight: 900;
-    color: var(--text); /* Cor do texto no tema */
-}
-#li-checkout-modal .li-price span { 
-    font-weight: 600;
-    opacity: .65;
-    font-size: 13px;
-    display: block;
-}
-
-/* Botão CTA do Modal */
-#li-checkout-modal .li-modal-cta {
-    font-size: 18px !important;
-    padding: 14px 20px !important;
-    width: 100%;
-    margin-top: 10px;
-    /* Usando a cor de gradiente final do hero, que é vibrante */
-    background: var(--primary); 
-    color: var(--primary-contrast);
-}
-
-/* Prova Social no Modal */
-#li-checkout-modal .li-social-proof {
-    font-size: 0.9rem;
-    color: var(--text);
-    opacity: 0.9;
-    text-align: center;
-    padding: 10px 0 0;
-}
-#li-checkout-modal .li-stars { color: gold; margin-right: 5px; }
-
-/* Não precisamos da keyframe li-pop se estamos usando transform/transition */
 /* =========================================================
-   AJUSTES FINAIS / HELPERS
-   ========================================================= */
+   AJUSTES FINAIS / HELPERS
+   ========================================================= */
 #li-root .li-center{ text-align:center !important; }
 #li-root .li-hidden{ display:none !important; }
 #li-root .li-show{ display:block !important; }
 
 /* =========================================================
-   THEME TOGGLE (3 temas)
-   ========================================================= */
+   THEME TOGGLE (3 temas)
+   ========================================================= */
 .theme-toggle{ position:fixed; top:14px; right:14px; z-index:9999; }
 .switch{
-  font-size:17px; position:relative; display:inline-block; width:4em; height:2.2em;
-  border-radius:30px; box-shadow:0 0 10px rgba(0,0,0,0.1); overflow:hidden; cursor:pointer;
+  font-size:17px; position:relative; display:inline-block; width:4em; height:2.2em;
+  border-radius:30px; box-shadow:0 0 10px rgba(0,0,0,0.1); overflow:hidden; cursor:pointer;
 }
 .switch input[type="checkbox"]{ position:absolute; inset:0; opacity:0; pointer-events:none; }
 .slider{ position:absolute; inset:0; border-radius:30px; background-color:#2a2a2a; transition:.4s ease; }
 .slider::before{
-  content:""; position:absolute; height:1.2em; width:1.2em; left:.5em; bottom:.5em; border-radius:50%;
-  background:#fff; transition:all .4s ease; display:flex; align-items:center; justify-content:center; font-size:1em;
+  content:""; position:absolute; height:1.2em; width:1.2em; left:.5em; bottom:.5em; border-radius:50%;
+  background:#fff; transition:all .4s ease; display:flex; align-items:center; justify-content:center; font-size:1em;
 }
 
 /* ícones do slider */
 html[data-theme="dark"] .slider::before{
-  content:"☽"; font-size:1.05em; background:transparent; box-shadow:none; transform:translateX(0) rotate(0deg);
-  filter:drop-shadow(0 0 4px rgba(255,255,255,.4));
+  content:"☽"; font-size:1.05em; background:transparent; box-shadow:none; transform:translateX(0) rotate(0deg);
+  filter:drop-shadow(0 0 4px rgba(255,255,255,.4));
 }
 html[data-theme="light"] .slider::before{
-  content:""; font-size:1.05em; background:transparent; box-shadow:none; transform:translateX(1.8em) rotate(20deg);
-  filter:drop-shadow(0 0 6px #ffcf48);
+  content:""; font-size:1.05em; background:transparent; box-shadow:none; transform:translateX(1.8em) rotate(20deg);
+  filter:drop-shadow(0 0 6px #ffcf48);
 }
 html[data-theme="dark-luxury"] .slider::before{
-  content:"💎"; font-size:1.1em; background:none; box-shadow:none; transform:translateX(1.8em) rotate(0deg);
-  filter:drop-shadow(0 0 6px rgba(179,68,255,0.9)); transition:transform .4s ease, filter .4s ease;
+  content:"💎"; font-size:1.1em; background:none; box-shadow:none; transform:translateX(1.8em) rotate(0deg);
+  filter:drop-shadow(0 0 6px rgba(179,68,255,0.9)); transition:transform .4s ease, filter .4s ease;
 }
 
 /* estrelas / nuvem decorativas */
@@ -715,7 +669,7 @@ html[data-theme="dark-luxury"] .star{ opacity:0; } html[data-theme="dark-luxury"
 html[data-theme="light"] #li-root .li-eyebrow,
 html[data-theme="light"] #li-root .li-hero-feat span,
 html[data-theme="light"] #li-root .li-hero-card .li-btn{
-    color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 /* Removida a linha que forçava cor branca no preço do card (agora que o preço saiu do card) */
@@ -727,60 +681,60 @@ html[data-theme="light"] #li-root .li-hero-card .li-btn{
 #li-root .li-receber-item .icon svg{ width:22px !important; height:22px !important; }
 
 /* =========================================================
-   COMPARATIVO — RÓTULOS AUTOMÁTICOS (mobile)
-   ========================================================= */
+   COMPARATIVO — RÓTULOS AUTOMÁTICOS (mobile)
+   ========================================================= */
 :root{
-  /* cores das pílulas */
-  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 35%, var(--bg) 65%);
-  --cmp-badge-com-bg: #10b981;
-  --cmp-badge-text:    var(--primary-contrast);
+  /* cores das pílulas */
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 35%, var(--bg) 65%);
+  --cmp-badge-com-bg: #10b981;
+  --cmp-badge-text:    var(--primary-contrast);
 }
 html[data-theme="dark"]{
-  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 45%, var(--bg) 55%);
-  --cmp-badge-com-bg: #0444b2;
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 45%, var(--bg) 55%);
+  --cmp-badge-com-bg: #0444b2;
 }
 
 .li-col-title.sem {}
 html[data-theme="dark-luxury"]{
-  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 40%, var(--bg) 60%);
-  --cmp-badge-com-bg: #a020f0;
+  --cmp-badge-sem-bg: color-mix(in lch, var(--muted-text) 40%, var(--bg) 60%);
+  --cmp-badge-com-bg: #a020f0;
 }
 
 @media (max-width:640px){
-  /* espaço extra para a pílula */
-  #li-comparativo .li-compare-row .li-col{
-    position: relative;
-    padding-top: 40px !important; /* altura da pílula + respiro */
-  }
+  /* espaço extra para a pílula */
+  #li-comparativo .li-compare-row .li-col{
+    position: relative;
+    padding-top: 40px !important; /* altura da pílula + respiro */
+  }
 
-  /* pílulas */
-  #li-comparativo .li-compare-row .li-col.sem::before,
-  #li-comparativo .li-compare-row .li-col.com::before{
-    content: "";
-    position: absolute;
-    top: 10px; left: 12px;
-    display: inline-block;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1;
-    color: var(--cmp-badge-text);
-    background: var(--cmp-badge-sem-bg);
-    box-shadow: 0 2px 6px rgba(0,0,0,.12);
-    z-index: 1;
-    pointer-events: none;
-  }
+  /* pílulas */
+  #li-comparativo .li-compare-row .li-col.sem::before,
+  #li-comparativo .li-compare-row .li-col.com::before{
+    content: "";
+    position: absolute;
+    top: 10px; left: 12px;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--cmp-badge-text);
+    background: var(--cmp-badge-sem-bg);
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    z-index: 1;
+    pointer-events: none;
+  }
 
-  /* textos específicos */
-  #li-comparativo .li-compare-row .li-col.sem::before{
-    content: "😩 Sem método";
-    background: var(--cmp-badge-sem-bg);
-  }
-  #li-comparativo .li-compare-row .li-col.com::before{
-    content: "🚀 Com IA Laerte Invest";
-    background: var(--cmp-badge-com-bg);
-  }
+  /* textos específicos */
+  #li-comparativo .li-compare-row .li-col.sem::before{
+    content: "😩 Sem método";
+    background: var(--cmp-badge-sem-bg);
+  }
+  #li-comparativo .li-compare-row .li-col.com::before{
+    content: "🚀 Com IA Laerte Invest";
+    background: var(--cmp-badge-com-bg);
+  }
 }
 #li-comparativo .li-compare-table { border-radius: 18px; }
 #li-comparativo .li-compare-header { border-radius: 18px 18px 0 0; }
@@ -792,19 +746,19 @@ html[data-theme="dark-luxury"]{
 
 /* Pastilha do ícone: tamanho/cores */
 #li-root .li-receber-item .icon{
-  width: 42px !important; height: 42px !important;
-  border-radius: 12px !important;
-  display: flex !important; align-items: center !important; justify-content: center !important;
-  background: rgba(255,255,255,.08);    /* base; sobrescrevemos por tipo */
-  color: #9ecbff;                       /* cor do desenho (SVG usa currentColor) */
+  width: 42px !important; height: 42px !important;
+  border-radius: 12px !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  background: rgba(255,255,255,.08);    /* base; sobrescrevemos por tipo */
+  color: #9ecbff;                       /* cor do desenho (SVG usa currentColor) */
 }
 
 /* Cores por tipo (ajuste fino por tema se quiser) */
-#li-root .icon-pdf        { background: rgba(37,99,235,.15) !important; color:#60a5fa !important; }
-#li-root .icon-video      { background: rgba(239,68,68,.15) !important; color:#f87171 !important; }
-#li-root .icon-planilha   { background: rgba(34,197,94,.15) !important; color:#34d399 !important; }
-#li-root .icon-bot        { background: rgba(59,130,246,.15) !important; color:#93c5fd !important; }
-#li-root .icon-simulador  { background: rgba(108,92,231,.18) !important; color:#b3a8ff !important; }
+#li-root .icon-pdf        { background: rgba(37,99,235,.15) !important; color:#60a5fa !important; }
+#li-root .icon-video      { background: rgba(239,68,68,.15) !important; color:#f87171 !important; }
+#li-root .icon-planilha   { background: rgba(34,197,94,.15) !important; color:#34d399 !important; }
+#li-root .icon-bot        { background: rgba(59,130,246,.15) !important; color:#93c5fd !important; }
+#li-root .icon-simulador  { background: rgba(108,92,231,.18) !important; color:#b3a8ff !important; }
 #li-root .icon-comunidade { background: rgba(251,191,36,.18) !important; color:#facc15 !important; }
 
 /* Garanta que os SVGs herdem a cor */
@@ -813,153 +767,161 @@ html[data-theme="dark-luxury"]{
 
 /* === Somente Temas Darks+ mobile: coluna "sem método" fica preta === */
 @media (max-width: 640px){
-  html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem{
-    background: #000000 !important;             /* fundo preto */
-    color: #ffffff !important;                  /* texto claro */
-    border-bottom: 1px dashed rgba(255,255,255,.18) !important;
-  }
+  html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem{
+    background: #000000 !important;             /* fundo preto */
+    color: #ffffff !important;                  /* texto claro */
+    border-bottom: 1px dashed rgba(255,255,255,.18) !important;
+  }
 
-  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
-  html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem::before{
-    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
-    background: rgba(255,255,255,.08) !important;
-    color: #ffffff !important;
-  }
+  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
+  html[data-theme="dark"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
+    background: rgba(255,255,255,.08) !important;
+    color: #ffffff !important;
+  }
 }
 
 @media (max-width: 640px){
-  html[data-theme="dark-luxury"] #li-comparativo .li-compare-row .li-col.sem{
-    background: #000000 !important;             /* fundo preto */
-    color: #e5e7eb !important;                  /* texto claro */
-    border-bottom: 1px dashed rgba(255,255,255,.18) !important;
-  }
-  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
-  html[data-theme="dark-luxury"] #li-comparativo .li-compare-row .li-col.sem::before{
-    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
-    background: rgba(255,255,255,.08) !important;
-    color: #ffffff !important;
-  }
+  html[data-theme="dark-luxury"] #li-comparativo .li-compare-row .li-col.sem{
+    background: #000000 !important;             /* fundo preto */
+    color: #e5e7eb !important;                  /* texto claro */
+    border-bottom: 1px dashed rgba(255,255,255,.18) !important;
+  }
+  /* (opcional) se quiser a pílula com contraste um pouco maior no dark */
+  html[data-theme="dark-luxury"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o preto */
+    background: rgba(255,255,255,.08) !important;
+    color: #ffffff !important;
+  }
 }
 @media (max-width: 640px){
-  /* (opcional) se quiser a pílula com contraste um pouco maior no light */
-  html[data-theme="light"] #li-comparativo .li-compare-row .li-col.sem::before{
-    /* mantém seu texto e só deixa a pílula mais visível sobre o branco */
-    background: rgba(0,0,0,.04) !important;
-    color: #000000 !important;
-  }
+  /* (opcional) se quiser a pílula com contraste um pouco maior no light */
+  html[data-theme="light"] #li-comparativo .li-compare-row .li-col.sem::before{
+    /* mantém seu texto e só deixa a pílula mais visível sobre o branco */
+    background: rgba(0,0,0,.04) !important;
+    color: #000000 !important;
+  }
 }
 
 /* CTA exclusivo do modal */
 #li-checkout-modal .li-modal-footer .li-modal-cta{
-  display:inline-flex; align-items:center; justify-content:center;
-  gap:8px; padding:12px 18px; border-radius:14px;
-  background: var(--primary);               /* usa seu gradiente */
-  color:#fff; font-weight:800; text-decoration:none;
-  border:1px solid rgba(0,0,0,.25);
-  box-shadow:0 10px 22px rgba(0,0,0,.18);
-  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
-  white-space:nowrap;
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 18px; border-radius:14px;
+  background: var(--primary);               /* usa seu gradiente */
+  color:#fff; font-weight:800; text-decoration:none;
+  border:1px solid rgba(0,0,0,.25);
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  white-space:nowrap;
 }
 #li-checkout-modal .li-modal-footer .li-modal-cta:hover{
-  transform:translateY(-1px);
-  filter:brightness(1.03);
-  box-shadow:0 12px 26px rgba(0,0,0,.22);
+  transform:translateY(-1px);
+  filter:brightness(1.03);
+  box-shadow:0 12px 26px rgba(0,0,0,.22);
 }
 #li-checkout-modal .li-modal-footer .li-modal-cta:active{ transform:translateY(0); }
 #li-checkout-modal .li-modal-footer .li-modal-cta:focus-visible{
-  outline:2px solid #fff; outline-offset:2px;
+  outline:2px solid #fff; outline-offset:2px;
 }
 /* =========================================================
-   CONTADOR DE TEMPO / URGÊNCIA (COMPATÍVEL COM 3 TEMAS)
-   ========================================================= */
+   CONTADOR DE TEMPO / URGÊNCIA (COMPATÍVEL COM 3 TEMAS)
+   ========================================================= */
 
 /* Contêiner principal: Remove a caixa, move para cima, e centraliza */
 #li-root .li-timer-box {
-  text-align: center;
-  margin: 0 auto 10px; /* Movido para cima: 0px acima, 10px abaixo */
-  padding: 0px;
-  max-width: fit-content; /* Largura justa para tirar a sensação de 'caixa' */
-  
-  /* Garante transparência e anula qualquer fundo anterior */
-  background: none !important;
-  box-shadow: none !important;
-  border: none !important;
+  text-align: center;
+  margin: 0 auto 10px; /* Movido para cima: 0px acima, 10px abaixo */
+  padding: 0px;
+  max-width: fit-content; /* Largura justa para tirar a sensação de 'caixa' */
+  
+  /* Garante transparência e anula qualquer fundo anterior */
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 /* Título do contador (Texto: "A oferta..."): Diminuído e limpo */
 #li-root .li-timer-label {
-  font-size: 0.85rem; /* Diminui o texto */
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 4px; /* Menos espaço entre texto e números */
-  text-transform: uppercase;
-  letter-spacing: 0.1px;
+  font-size: 0.85rem; /* Diminui o texto */
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px; /* Menos espaço entre texto e números */
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
 }
 
 /* Números principais: Aumentados */
 #li-root .li-countdown-timer {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  font-size: 3rem; /* Aumenta os números */
-  font-weight: 900;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 3rem; /* Aumenta os números */
+  font-weight: 900;
+  text-align: center;
 }
 
 /* Valor numérico */
 #li-root .li-time-value {
-  color: #ffffff;
-  text-shadow: 0 0 14px color-mix(in srgb, var(--hero-grad-end) 80%, transparent 20%);
-  transition: color .3s ease, text-shadow .3s ease;
+  color: #ffffff;
+  text-shadow: 0 0 14px color-mix(in srgb, var(--hero-grad-end) 80%, transparent 20%);
+  transition: color .3s ease, text-shadow .3s ease;
 }
 
 /* Grupo (número + sufixo 'h', 'm', 's'): Ajustado */
 #li-root .li-time-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1;
-  font-size: 20px; /* Diminui os sufixos */
-  color: var(--muted-text);
-  margin-top: -16px; /* Puxa o sufixo para mais perto do número */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  font-size: 20px; /* Diminui os sufixos */
+  color: var(--muted-text);
+  margin-top: -16px; /* Puxa o sufixo para mais perto do número */
 }
 
 /* =========================================================
-   VARIAÇÕES POR TEMA
-   ========================================================= */
+   VARIAÇÕES POR TEMA
+   ========================================================= */
 
-/* O fundo e a sombra FORAM REMOVIDOS destas regras de tema, 
-   deixando apenas o ajuste de cor do número (`li-time-value`). */
+/* O fundo e a sombra FORAM REMOVIDOS destas regras de tema, 
+   deixando apenas o ajuste de cor do número (`li-time-value`). */
 
 /* --- Tema Claro --- */
 html[data-theme="light"] #li-root .li-timer-box {
-  /* Fundo e sombra removidos */
+  /* Fundo e sombra removidos */
 }
 html[data-theme="light"] #li-root .li-time-value {
-   /* Mantém o verde de sucesso */
-   text-shadow: 0 0 10px rgb(255 0 0 / 57%);
+   /* Mantém o verde de sucesso */
+   text-shadow: 0 0 10px rgb(255 0 0 / 57%);
 }
 /* Força a cor do texto do timer para a variável text */
 html[data-theme="light"] #li-root .li-timer-label,
 html[data-theme="light"] #li-root .li-time-group {
-    color: var(--text) !important;
+    color: var(--text) !important;
 }
 
 
 /* --- Tema Dark --- */
 html[data-theme="dark"] #li-root .li-timer-box {
-  /* Fundo e sombra removidos */
+  /* Fundo e sombra removidos */
 }
 html[data-theme="dark"] #li-root .li-time-value {
-   /* Laranja vibrante */
-   text-shadow: 0 0 16px rgb(0 194 255);
+   /* Laranja vibrante */
+   text-shadow: 0 0 16px rgb(0 194 255);
 }
 
 /* --- Tema Dark Luxury --- */
 html[data-theme="dark-luxury"] #li-root .li-timer-box {
-  /* Fundo, borda e sombra removidos */
+  /* Fundo, borda e sombra removidos */
 }
 html[data-theme="dark-luxury"] #li-root .li-time-value {
-   0 0 16px rgba(251,191,36,.6);
-   text-shadow: 0 0 16px rgb(255 0 233);
+   0 0 16px rgba(251,191,36,.6);
+   text-shadow: 0 0 16px rgb(255 0 233);
+}
+
+/* Responsivo */
+@media (max-width:640px){
+  /* Reajustes para mobile */
+  #li-root .li-timer-box { padding: 0 10px; max-width: 100%; }
+  #li-root .li-countdown-timer { font-size: 2.2rem; gap: 8px; } /* Números menores no mobile */
+  #li-root .li-time-group { font-size: 16px; margin-top: -12px; }
 }
