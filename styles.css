@@ -17,7 +17,7 @@
   --overlay:rgba(0,0,0,.45);
   --success:#10b981;
   --hero-grad-start:#0ea5e9;
-  --hero-grad-end: #10b981;
+  --hero-grad-end: #000000;
   --success-2:#059669;
 }
 
@@ -40,7 +40,7 @@ html[data-theme="dark"]{
   --overlay:rgba(0,0,0,.65);
   --success:#10b981;
   --hero-grad-start: #0444b2;
-  --hero-grad-end:#f97316;
+  --hero-grad-end: #00ceff;
   --success-2:#059669;
 }
 body[data-theme="dark"]{
@@ -67,7 +67,7 @@ html[data-theme="dark-luxury"]{
   --overlay:rgba(0,0,0,.7);
   --success:#059669;
   --hero-grad-start: #A020F0;
-  --hero-grad-end:#fbbf24;
+  --hero-grad-end: #ffffff;
   --success-2:#047857;
 }
 body[data-theme="dark-luxury"]{
@@ -606,10 +606,13 @@ html[data-theme="dark-luxury"] #li-checkout-modal .li-modal-box{
 
 /* Prova social */
 #li-checkout-modal .li-social-proof{
-  text-align:center; padding:10px 0 0;
-  font-size:.95rem; color:var(--text); opacity:.9;
+  text-align:center;
+  padding:10px 0 0;
+  font-size: .95rem;
+  color:var(--text);
+  opacity:.9;
 }
-#li-checkout-modal .li-stars{ color:gold; margin-right:6px; }
+#li-checkout-modal .li-stars{color:gold;margin-right:6px;font-size: 35px;}
 
 /* =========================================================
    AJUSTES FINAIS / HELPERS
