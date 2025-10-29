@@ -78,14 +78,14 @@
         </p>
 
         <div class="li-cta-group">
-          <a class="li-btn" href="javascript:void(0)" onclick="liOpenModal()">Quero começar agora</a>
+                    <a class="li-btn" href="javascript:void(0)" onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')">Quero começar agora</a>
           <a class="animated-button" href="#li-conteudo">
             <span class="circle"></span>
             <span class="text">Ver o que está incluso</span>
           </a>
         </div>
 
-        <p class="li-hero-price">
+                <p class="li-hero-price">
             <span style="font-size: 1rem; opacity: 0.8; font-weight: 500;">
                 DE R$ 97 POR APENAS
             </span>
@@ -108,10 +108,10 @@
           alt="Mockup do produto"
           src="https://cdn.awsli.com.br/2660/2660978/arquivos/foto-1-capa-investimentos-4por3.png"
         />
-        <a
+                <a
           class="li-btn"
           href="javascript:void(0)"
-          onclick="liOpenModal()"
+          onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')"
           >Garantir acesso</a
         >
         
@@ -164,7 +164,7 @@
         </div>
         <div class="li-col com">
           ✅ <strong>Zero trabalho</strong>: Planilhas <strong>100% automáticas</strong> integradas à IA. Apenas veja o cálculo e <strong>invista</strong>.
-        </div>
+          </div>
       </div>
     </div>
   </div>
@@ -258,15 +258,14 @@
     <div>
       <h4>Comunidade de investidores</h4>
       <p>Conecte-se a outros alunos e compartilhe experiências de investimento guiadas pela IA.</p>
-    </div>
+      </div>
   </div>
 </div> <div style="text-align:center;margin-top:20px">
               <a
                 class="li-btn"
-                href="https://pay.hotmart.com/K102600120C"
+                href="javascript:void(0)"
+                onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')"
                 style="font-size:18px!important;padding:14px 22px!important"
-                target="_blank"
-                rel="noopener"
                 >Quero garantir meu acesso</a
               >
             </div>
@@ -363,10 +362,10 @@
             <strong>🚀 Última chance de garantir seu acesso!</strong>
             <div style="opacity:.9">Comece a investir com confiança e tenha suporte da IA Laerte Invest.</div>
           </div>
-          <a
+                    <a
             class="li-btn"
             href="javascript:void(0)"
-            onclick="liOpenModal()"
+            onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')"
             style="font-size:18px!important;padding:16px 22px!important"
             >✅ Quero meu acesso agora</a
           >
@@ -376,7 +375,7 @@
       <footer class="li-footer">© Laerte Invest • Todos os direitos reservados</footer>
     </div>
 
-    <div aria-hidden="true" id="li-checkout-modal">
+        <div aria-hidden="true" id="li-checkout-modal">
       <div aria-modal="true" class="li-modal-box" role="dialog">
         <button aria-label="Fechar" class="li-close" onclick="liCloseModal()">×</button>
         <img
@@ -386,10 +385,10 @@
         <div class="li-modal-footer">
   <div class="li-price">R$ 9,97 <span>- preço de relançamento</span></div>
 
-    <a class="li-modal-cta hotmart-fb"
-      href="https://pay.hotmart.com/K102600120C?checkoutMode=10"
-      onclick="return false;" 
-      rel="noopener">
+    <a class="li-modal-cta"
+      href="javascript:void(0)"
+      onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')" 
+      data-hotmart-off>
     <span>Começar agora</span>
   </a>
 </div>
@@ -402,40 +401,6 @@
       </div>
     </div>
 
-    <script>
-        // Esta função é o *wrapper* que aciona o checkout Hotmart em modal
-        function openHotmartCheckout(url) {
-            // Garante que a URL tem o parâmetro para abrir em modal (checkoutMode=10)
-            const checkoutUrl = url.includes('checkoutMode') ? url : url + '?checkoutMode=10';
-
-            if (window.Hotmart && Hotmart.doCheckout) {
-                // Abre o checkout transparente se a API já estiver carregada
-                Hotmart.doCheckout(checkoutUrl);
-            } else {
-                // Fallback: Redireciona a página (menos ideal, mas funcional)
-                window.location.href = checkoutUrl; 
-                console.warn("Hotmart widget not ready, redirecting to full checkout.");
-            }
-        }
-        
-        // Mantendo a função liOpenModal() original para abrir SEU modal
-        function liOpenModal() {
-            var modal = document.getElementById('li-checkout-modal');
-            if (modal) {
-                modal.style.display = 'flex'; // Exibe o seu modal
-                // O botão dentro deste modal é quem chamará a Hotmart
-            }
-        }
-        
-        // Mantendo a função liCloseModal() original para fechar SEU modal
-        function liCloseModal() {
-            var modal = document.getElementById('li-checkout-modal');
-            if (modal) {
-                modal.style.display = 'none'; // Esconde o seu modal
-            }
-        }
-
-    </script>
     <script src="main.js"></script>
     <script type="module" src="typebot.js"></script>
   </body>
