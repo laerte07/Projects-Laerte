@@ -13,26 +13,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    
-    <script>
-        function importHotmartScripts(){
-            // Importa o script do widget Hotmart
-            if (!document.querySelector('script[src*="hotmart.com/checkout/widget.min.js"]')) {
-                var imported = document.createElement('script');
-                imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
-                document.head.appendChild(imported);
-
-                // Importa o CSS necessário para o checkout (hotmart-fb.min.css)
-                var link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
-                document.head.appendChild(link);
-            }
-        }
-        // Executa a importação no carregamento da página
-        importHotmartScripts(); 
-    </script>
   </head>
 
   <body>
@@ -54,7 +34,7 @@
 
     <div id="li-root">
       <header class="li-hero">
-      <div class="li-timer-box"> 
+      <div class="li-timer-box"> 
     <p class="li-timer-label">A oferta de relançamento encerra em:</p>
     
     <div id="li-countdown" class="li-countdown-timer">
@@ -78,7 +58,7 @@
         </p>
 
         <div class="li-cta-group">
-          <a class="li-btn" href="javascript:void(0)" onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')">Quero começar agora</a>
+          <a class="li-btn" href="javascript:void(0)" onclick="liOpenModal()">Quero começar agora</a>
           <a class="animated-button" href="#li-conteudo">
             <span class="circle"></span>
             <span class="text">Ver o que está incluso</span>
@@ -111,7 +91,7 @@
         <a
           class="li-btn"
           href="javascript:void(0)"
-          onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')"
+          onclick="liOpenModal()"
           >Garantir acesso</a
         >
         
@@ -258,14 +238,15 @@
     <div>
       <h4>Comunidade de investidores</h4>
       <p>Conecte-se a outros alunos e compartilhe experiências de investimento guiadas pela IA.</p>
-      </div>
+    </div>
   </div>
 </div> <div style="text-align:center;margin-top:20px">
               <a
                 class="li-btn"
-                href="javascript:void(0)"
-                onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')"
+                href="https://pay.hotmart.com/K102600120C?checkoutMode=10"
                 style="font-size:18px!important;padding:14px 22px!important"
+                target="_blank"
+                rel="noopener"
                 >Quero garantir meu acesso</a
               >
             </div>
@@ -365,7 +346,7 @@
           <a
             class="li-btn"
             href="javascript:void(0)"
-            onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')"
+            onclick="liOpenModal()"
             style="font-size:18px!important;padding:16px 22px!important"
             >✅ Quero meu acesso agora</a
           >
@@ -386,8 +367,8 @@
   <div class="li-price">R$ 9,97 <span>- preço de relançamento</span></div>
 
   <a class="li-modal-cta"
-      href="javascript:void(0)"
-      onclick="openHotmartCheckout('https://pay.hotmart.com/K102600120C?checkoutMode=10')">
+      href="https://pay.hotmart.com/K102600120C?checkoutMode=10"
+      target="_blank" rel="noopener">
     <span>Começar agora</span>
   </a>
 </div>
