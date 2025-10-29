@@ -555,7 +555,7 @@ html[data-theme="dark-luxury"] {
   transform:scale(.92);
   transition:transform .28s ease;
 }
-#li-checkout-modal.li-modal-show .li-modal-box{ transform:scale(1); }
+#li-checkout-modal.li-modal-show .li-modal-box{transform: scale(0.88);}
 
 /* variações suaves por tema */
 html[data-theme="light"] #li-checkout-modal .li-modal-box{
