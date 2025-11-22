@@ -1,4 +1,4 @@
-<!-- ==============================
+/* <!-- ==============================
      📱 Chatbot Zaia - Laerte Invest
      ============================== -->
 
@@ -30,7 +30,7 @@
         }
       });
 
-      console.log("💬 Zaia Widget iniciado com sucesso!");
+      console.log("💬 Zaia Widget iniciado com sucesso!"); */
     } catch (err) {
       console.error("❌ Erro ao iniciar o widget da Zaia:", err);
     }
