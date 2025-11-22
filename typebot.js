@@ -1,56 +1,38 @@
-// Typebot carregado como módulo (arquivo separado)
-export default async function loadTypebot() {
-  try {
-    const { default: Typebot } = await import(
-      "https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js"
-    );
+<!-- ==============================
+     📱 Chatbot Zaia - Laerte Invest
+     ============================== -->
 
-    Typebot.initBubble({
-      typebot: "atendimento-ia-invest-osmz6q0",
-      previewMessage: {
-        message: " Olá! Sou a IA da Laerte Invest. Posso te ajudar a investir melhor?",
-        autoShowDelay: 2000,
-      },
-      theme: {
-        button: {
-          customIconSrc:
-            "https://s3.typebot.io/public/workspaces/cmcxlr6lm002xjx04bs33ner1/typebots/ogrozwlcyhhwqdu5sunxlor5/bubble-icon?v=1753189534454",
-          backgroundColor: "rgba(255, 255, 255, 0.4)",
-          size: "64px",
-          animation: "pulse 2s infinite",
-        },
-        chatWindow: {
-          backgroundColor: "rgba(255, 255, 255, 0.75)",
-          backdropFilter: "blur(18px) saturate(160%)",
-          borderRadius: "12px",
-          textColor: "#1e1e1e",
-          width: "380px",
-          height: "580px",
-        },
-        brand: {
-          color: "#3cbed0",
-        },
-      },
-      autoOpen: false,
-      openOnLoadDelay: 0,
-    });
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    try {
+      // 🔹 Configuração principal do widget
+      window.ZWidget = {
+        AgentURL: "https://platform.zaia.app/embed/chat/70741",
+      };
 
-    /* animação de pulsar */
-    const style = document.createElement("style");
-    style.innerHTML = `
-      @keyframes pulse {
-        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(60,190,208,0.4); }
-        70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(60,190,208,0); }
-        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(60,190,208,0); }
-      }
-    `;
-    document.head.appendChild(style);
-  } catch (error) {
-    console.error("❌ Erro ao carregar o Typebot:", error);
-  }
-}
+      // 🔹 Carrega o script do widget (igual o da documentação)
+      const script = document.createElement("script");
+      script.src = "https://platform.zaia.app/script/widget-loader.js";
+      script.defer = true;
+      document.body.appendChild(script);
 
-// Auto-inicializa ao carregar o DOM
-document.addEventListener("DOMContentLoaded", function () {
-  loadTypebot();
-});
+      // 🔹 Espera o widget estar pronto para enviar dados customizados
+      window.addEventListener("message", function (event) {
+        if (event.data?.type === "widget-data" && window.ZWidget?.setCustomData) {
+          window.ZWidget.setCustomData({
+            userId: 222,
+            userData: JSON.stringify({
+              name: "Laerte Invest",
+              origem: "Site Oficial",
+              interesse: "Investimentos com IA",
+            }),
+          });
+        }
+      });
+
+      console.log("💬 Zaia Widget iniciado com sucesso!");
+    } catch (err) {
+      console.error("❌ Erro ao iniciar o widget da Zaia:", err);
+    }
+  });
+</script>
